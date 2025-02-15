@@ -1,23 +1,36 @@
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+jackPan:
+  name: Jack Pan
+  title: Fullstack Engineer and Computer Science Student @ UCL
+  url: https://github.com/dcloud347
+  image_url: https://github.com/dcloud347.png
   page: true
   socials:
-    x: yangshunz
-    github: yangshun
+    linkedin: yue-pan-b35aa1322
+    github: dcloud347
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
-  page:
-    # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
-  socials:
-    x: sebastienlorber
-    linkedin: sebastienlorber
-    github: slorber
-    newsletter: https://thisweekinreact.com
+ryanLi:
+    name: Ryan Li
+    title: Computer Science Student @ UCL
+    url: https://github.com/Ryanli-BP
+    image_url: https://github.com/Ryanli-BP.png
+    page: true
+    socials:
+      github: Ryanli-BP
+
+jackMok:
+    name: Jack Mok
+    title: Computer Science Student @ UCL
+    url: https://github.com/jackmok33
+    image_url: https://github.com/jackmok33.png
+    page: true
+    socials:
+      github: jackmok33
+
+BhowmickPrantanil:
+    name: Prantanil Bhowmick
+    title: Computer Science Student @ UCL
+    url: https://github.com/Pran-bho
+    image_url: https://github.com/Pran-bho.png
+    page: true
+    socials:
+      github: Pran-bho
