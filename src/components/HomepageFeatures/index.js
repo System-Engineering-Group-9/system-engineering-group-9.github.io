@@ -4,12 +4,11 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'For Educational Purposes',
+    Svg: require('@site/static/img/education.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        IBM Mixed Reality Board Game is a project designed for educational purposes to help students learn better using modern technology and AI algorithms.
       </>
     ),
   },
@@ -24,12 +23,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Powered by Unity',
+    Svg: require('@site/static/img/unity.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        IBM Mixed Reality Board Game is powered by Unity, a cross-platform game engine developed by Unity Technologies.
       </>
     ),
   },
