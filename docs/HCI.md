@@ -1,3 +1,9 @@
+---
+id : HCI
+title: HCI Design for IBM Mixed Reality Board Game
+description: HCI design for our project Classroom Explorers, focusing on user requirements and design improvements.
+---
+
 # HCI
 
 ## Section 1 - User Requirements for HCI
