@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'IBM Mixed Reality Board Game',
+  title: 'Classroom Explorers',
   tagline: 'By UCL Computer Science Students 2025',
   favicon: 'img/favicon.ico',
 
@@ -77,7 +77,7 @@ const config = {
       image: 'img/docusaurus-social-card.jpg',
       // Header configuration
       navbar: {
-        title: 'IBM Mixed Reality Board Game',
+        title: 'Classroom Explorers',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -123,7 +123,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} IBM Mixed Reality Board Game, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Classroom Explorers, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

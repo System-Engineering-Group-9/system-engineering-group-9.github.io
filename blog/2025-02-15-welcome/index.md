@@ -1,11 +1,11 @@
 ---
 slug: gamewelcome
-title: Welcome to IBM Mixed Reality Board
+title: Welcome to Classroom Explorers
 authors: [jackPan, ryanLi, jackMok, BhowmickPrantanil]
 tags: [ibm, mixed-reality, game]
 ---
 
-# IBM – Mixed Reality Board and Toy Games with Granite 3 SLMs
+# IBM – Classroom Explorers and Toy Games with Granite 3 SLMs
 
 ## Project Overview
 IBM, UCL, and MotionInput Games are collaborating to build a mixed reality board game engine for educational and family use. This project leverages various AI models from IBM Granite, all offline and embedded for use on devices. The game can host up to 6 players or teams and runs natively in Unity, supporting cross-platform play on mobiles, tablets, and laptops.
@@ -43,4 +43,4 @@ Our team is composed of passionate individuals who are experts in their respecti
 
 We are always looking for feedback and suggestions to improve our project. If you are interested in contributing or have any questions, feel free to reach out to us on GitHub or through our social media channels.
 
-Thank you for visiting our blog, and we hope you enjoy exploring the IBM Mixed Reality Board project!
+Thank you for visiting our blog, and we hope you enjoy exploring the Classroom Explorers project!

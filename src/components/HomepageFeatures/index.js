@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/education.svg').default,
     description: (
       <>
-        IBM Mixed Reality Board Game is a project designed for educational purposes to help students learn better using modern technology and AI algorithms.
+          Classroom Explorers is a project designed for educational purposes to help students learn better using modern technology and AI algorithms.
       </>
     ),
   },
@@ -27,7 +27,7 @@ const FeatureList = [
     Svg: require('@site/static/img/unity.svg').default,
     description: (
       <>
-        IBM Mixed Reality Board Game is powered by Unity, a cross-platform game engine developed by Unity Technologies.
+          Classroom Explorers is powered by Unity, a cross-platform game engine developed by Unity Technologies.
       </>
     ),
   },

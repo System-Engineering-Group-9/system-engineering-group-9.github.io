@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-              IBM Mixed Reality Board Game Tutorial - 5min ⏱️
+              Classroom Explorers Tutorial - 5min ⏱️
           </Link>
         </div>
       </div>
