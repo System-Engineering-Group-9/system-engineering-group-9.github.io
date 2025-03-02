@@ -15,10 +15,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://system-engineering-group-9.github.io/',
+  url: 'https://system-engineering-group-9.github.io', // Turn this into https://students.cs.ucl.ac.uk, when hosting on UCL servers
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/', // Turn this into /2024/group9/, when hosting on UCL servers
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
