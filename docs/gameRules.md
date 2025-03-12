@@ -1,10 +1,3 @@
----
-id : Board Game Introduction and Rules
-title: Classroom Explorers – Board Game Introduction and Rules
-description: Introduction and rules for the Classroom Explorers board game, designed to enhance learning experiences for children.
-sidebar_position: 2
----
-
 # Classroom Explorers – Board Game Introduction and Rules
 
 ## Introduction
