@@ -1,0 +1,22 @@
+.navbar {
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .navbar__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribute items evenly */
+  }
+  
+  .navbar__item {
+    flex: 1 1 auto;
+    min-width: 10px; /* Adjust this value as needed */
+    text-align: center;
+    padding: 0 10px; /* Add some padding for better spacing */
+  }
+  
+  .navbar__items--right {
+    margin-left: auto; /* Push right-aligned items to the right */
+  }

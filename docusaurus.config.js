@@ -42,7 +42,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: false,
         },
         blog: {
           showReadingTime: true,
@@ -75,13 +75,18 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'docsSidebar',
-            position: 'left',
-            label: 'Docs',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/docs/requirements', label:'Requirements', position: 'left'},
+          {to: '/docs/HCI', label:'HCI', position: 'left'},
+          {to: '/docs/research', label:'Research', position: 'left'},
+          {to: '/algorithms', label:'Algorithms', position: 'left'},
+          {to: '/uiDesign', label:'UI Design', position: 'left'},
+          {to: '/systemDesign', label:'System Design', position: 'left'},
+          {to: '/implementation', label:'Implementatioin', position: 'left'},
+          {to: '/testing', label:'Testing', position: 'left'},
+          {to: '/evaluation', label:'Evaluation', position: 'left'},
+
+          {to: '/appendices', label:'Appendices', position: 'right'},
+          {to: '/blog', label: 'Dev. Blog', position: 'right'},
           {
             href: 'https://github.com/System-Engineering-Group-9/',
             label: 'GitHub',
@@ -115,7 +120,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Classroom Explorers, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Classroom Explorers`,
       },
       prism: {
         theme: prismThemes.github,
