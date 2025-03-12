@@ -39,3 +39,35 @@
   max-width: 200px;
   height: auto;
 }
+
+.teamSection {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.teamGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.teamMember {
+  max-width: 200px;
+  text-align: center;
+}
+
+.teamMember img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.teamMember h3 {
+  margin: 0.5rem 0 0.2rem;
+}
+
+.teamMember p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
