@@ -21,8 +21,43 @@
     margin-left: auto; /* Push right-aligned items to the right */
   }
 
-  .centeredText {
-    width: 50%;
+  .footer__links {
+    display: flex;
+    justify-content: center; /* Centers items */
+    flex-wrap: wrap; /* Ensures items wrap if screen is too narrow */
+    gap: 20px; /* Adds spacing between links */
+    width: 70%;
     margin: 0 auto;
-    text-align: center;
   }
+  
+  .footer__links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  
+  .footer__links li {
+    display: inline;
+  }
+  
+  .footer__links a {
+    text-decoration: none;
+    color: var(--ifm-footer-link-color);
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .footer__links a:hover {
+    color: var(--ifm-color-primary);
+  }
+
+  .footer__copyright{
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  
+  

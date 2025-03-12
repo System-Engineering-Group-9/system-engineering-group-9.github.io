@@ -98,11 +98,21 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
             items: [
+              {to: '/docs/requirements', label: 'Requirements'},
+              {to: '/docs/HCI', label: 'HCI'},
+              {to: '/docs/research', label: 'Research'},
+              {to: '/docs/algorithms', label: 'Algorithms'},
+              {to: '/docs/uiDesign', label: 'UI Design'},
+              {to: '/docs/systemDesign', label: 'System Design'},
+              {to: '/docs/implementation', label: 'Implementation'},
+              {to: '/docs/testing', label: 'Testing'},
+              {to: '/docs/evaluation', label: 'Evaluation'},
+              {to: '/docs/gameRules', label: 'Appendices'},
+              {to: '/blog', label: 'Dev. Blog'},
               {
-                label: 'Docs',
-                to: '/',
+                href: 'https://github.com/System-Engineering-Group-9/',
+                label: 'GitHub',
               },
             ],
           },
