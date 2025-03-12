@@ -20,3 +20,9 @@
   .navbar__items--right {
     margin-left: auto; /* Push right-aligned items to the right */
   }
+
+  .centeredText {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }

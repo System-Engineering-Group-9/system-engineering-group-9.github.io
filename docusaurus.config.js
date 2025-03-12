@@ -85,7 +85,7 @@ const config = {
           {to: '/testing', label:'Testing', position: 'left'},
           {to: '/evaluation', label:'Evaluation', position: 'left'},
 
-          {to: '/appendices', label:'Appendices', position: 'right'},
+          {to: '/docs/gameRules', label:'Appendices', position: 'right'},
           {to: '/blog', label: 'Dev. Blog', position: 'right'},
           {
             href: 'https://github.com/System-Engineering-Group-9/',
@@ -103,19 +103,6 @@ const config = {
               {
                 label: 'Docs',
                 to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/System-Engineering-Group-9/',
               },
             ],
           },

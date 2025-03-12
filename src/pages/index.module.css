@@ -21,3 +21,21 @@
   align-items: center;
   justify-content: center;
 }
+
+.centeredText {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  align-items: center; /* Center the images vertically */
+  gap: 20px; /* Add some space between the images */
+}
+
+.imageRow img {
+  max-width: 200px;
+  height: auto;
+}
