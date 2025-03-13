@@ -18,14 +18,17 @@ To develop our solution, we conducted extensive research in four key technologic
 To inform our project development, we reviewed existing AR educational tools and AI-assisted learning platforms, as well as notable games that emphasize personalization and interactivity. Our findings highlight how these elements enhance engagement and accessibility for SEND students.
 
 ## Section 1.1 - Osmo
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVL69ch9UFWqBKi1NHw7Hd4Iys7f6Za8qRQ&s" alt="Osmo Logo" width="200" />
 
 Osmo is an AR learning system that uses physical objects alongside digital interactions to create an immersive learning experience. By integrating physical play with digital feedback, Osmo provides an interactive way for students to engage with educational content. This hybrid approach inspired our AR board game, particularly in how we integrate real-world components into the digital experience to enhance accessibility and engagement for SEND students.
 
 ## Section 1.2 - Pokémon GO
+<img src="https://lh3.googleusercontent.com/3TSaKxXGo2wT0lu0AyNUBnkk6wkCC2AzOhJyy3JXIPm-AmZ1k9DSAroWeBUyePswCZSs5lVp3mPF7HzUpY9VPlyOV5eddITONINr3WSqLNLm=s0" alt="Pokémon GO Logo" width="200" />
 
 Pokémon GO is an AR-based mobile game that encourages players to explore their environment while capturing virtual creatures. The game's success in using AR to create a deeply engaging and interactive experience provided valuable insights for our project. We aim to incorporate similar real-world interactions and engagement in our board game, allowing players to connect with their environment while participating in educational activities.
 
 ## Section 1.3 - Risk
+<img src="https://www.anbmedia.com/wp-content/uploads/2022/11/Risk-Logo-infinity-Game-Table.png" alt="risk logo" width="200"/>
 
 Risk is a classic strategy board game known for its engaging gameplay that involves decision-making, risk management, and territorial control. We researched Risk to inspire ideas for strategic elements and game mechanics, particularly focusing on how we could adapt these concepts into an AR-based, AI-driven environment that offers dynamic, interactive learning experiences for SEND students.
 
