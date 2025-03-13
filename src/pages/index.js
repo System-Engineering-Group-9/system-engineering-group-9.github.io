@@ -111,6 +111,23 @@ export default function Home() {
           </div>
         </div>
         <br></br>
+        <div className={styles.centeredText}>
+          <h2>Project Timeline</h2>
+          <p>We have managed our development process using a Gantt chart</p>
+          <img src='https://students.cs.ucl.ac.uk/2023/group23/assets/images/gantt-17c3ac48eeab5938faa87ad0df3922d0.png'></img>
+        </div>
+        <br/>
+        <div className={styles.centeredText}>
+          <h2>Exposures</h2>
+          <h3>NAS school visit & Bett Conference</h3>
+          <div className={styles.imageGrid}>
+            <img src='/photos/nasQuiz.JPG' alt='Exposure'></img>
+            <img src='/photos/nas.JPG' alt='Exposure'></img>
+            <img src='/photos/nasGroup.png' alt='Exposure'></img>
+            <img src='/photos/bett.png' alt='Exposure'></img>
+          </div>
+        </div>
+        <br></br>
 
       </main>
     </Layout>

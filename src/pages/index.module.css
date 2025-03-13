@@ -4,7 +4,11 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  background-image: url('/static/img/boardScreenshot.png'); /* Update with the correct path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 8rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -23,7 +27,7 @@
 }
 
 .centeredText {
-  width: 50%;
+  width: 55%;
   margin: 0 auto;
   text-align: left;
 }
@@ -76,4 +80,17 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.imageGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.imageGrid img {
+  object-fit:cover;
+  max-width: 45%;
+  height: auto;
 }
