@@ -123,7 +123,7 @@ export default function Home() {
           <div className={styles.imageGrid}>
             <img src='/photos/nasQuiz.JPG' alt='Exposure'></img>
             <img src='/photos/nas.JPG' alt='Exposure'></img>
-            <img src='/photos/nasGroup.png' alt='Exposure'></img>
+            <img src='/photos/UCL Group photo 2.png' alt='Exposure'></img>
             <img src='/photos/bett.png' alt='Exposure'></img>
           </div>
         </div>
