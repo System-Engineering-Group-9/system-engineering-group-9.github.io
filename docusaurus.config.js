@@ -12,7 +12,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Classroom Explorers',
   tagline: 'Revolutionizing the way students learn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   // Set the production url of your site here
   url: 'https://system-engineering-group-9.github.io', // Turn this into https://students.cs.ucl.ac.uk, when hosting on UCL servers
