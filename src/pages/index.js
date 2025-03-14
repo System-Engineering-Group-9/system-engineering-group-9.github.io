@@ -2,10 +2,10 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
-import styles from './index.module.css';
+import styles from '../css/index.module.css';
+import TeamSection from "../components/HomepageFeatures/TeamSection";
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -25,46 +25,6 @@ function HomepageHeader() {
         </div>
       </div>
     </header>
-  );
-}
-
-function TeamSection() {
-  const teamMembers = [
-    {
-      name: 'Ryan Li',
-      role: 'team leader',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Jack Mok',
-      role: 'UI/UX Designer',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Jack Pan',
-      role: 'AI engineer',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-    {
-      name: 'Prantanil',
-      role: 'Network engineer',
-      imageUrl: 'https://via.placeholder.com/150',
-    },
-  ];
-
-  return (
-    <div className={styles.teamSection}>
-      <h2>Meet the Team</h2>
-      <div className={styles.teamGrid}>
-        {teamMembers.map((member, index) => (
-          <div key={index} className={styles.teamMember}>
-            <img src={member.imageUrl} alt={`${member.name}'s photo`} />
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -99,22 +59,23 @@ export default function Home() {
         <div className= {styles.centeredText}>
           <h2>Demo video</h2>
           <div className={styles.videoContainer}>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/Bo3ZEbmgZ4A" // change the link to demo video
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-          </iframe>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Bo3ZEbmgZ4A" // Change this to your demo video link
+                title="YouTube video player"
+                style={{border: "none"}}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
           </div>
         </div>
         <br></br>
         <div className={styles.centeredText}>
           <h2>Project Timeline</h2>
           <p>We have managed our development process using a Gantt chart</p>
-          <img src='https://students.cs.ucl.ac.uk/2023/group23/assets/images/gantt-17c3ac48eeab5938faa87ad0df3922d0.png'></img>
+          <img alt={"development process"}
+               src='https://students.cs.ucl.ac.uk/2023/group23/assets/images/gantt-17c3ac48eeab5938faa87ad0df3922d0.png'/>
         </div>
         <br/>
         <div className={styles.centeredText}>
