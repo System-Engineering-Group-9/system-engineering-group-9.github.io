@@ -62,8 +62,10 @@ After meeting all the requirements with NAS, we aim to further develop our game 
 ## Section 3 - Use Case Diagrams
 
 ### Section 3.1 - Teachers
+![image1](./useCaseDiagram/TeacherUseCaseDiagram.drawio.png)
 
 ### Section 3.2 - Students
+![image1](./useCaseDiagram/StudentUseCase.drawio.png)
 
 ## Section 4 - MoSCoW Requirements List
 
