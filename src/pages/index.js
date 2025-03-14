@@ -59,15 +59,15 @@ export default function Home() {
         <div className= {styles.centeredText}>
           <h2>Demo video</h2>
           <div className={styles.videoContainer}>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/Bo3ZEbmgZ4A" // change the link to demo video
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen>
-          </iframe>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Bo3ZEbmgZ4A" // Change this to your demo video link
+                title="YouTube video player"
+                style={{border: "none"}}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
           </div>
         </div>
         <br></br>
