@@ -1,4 +1,9 @@
-# Requirements
+---
+id: requirements
+title: Requirements for Classroom Explorers
+description: Requirements for our project Classroom Explorers, focusing on project overview, goals, target audiences, use case diagrams, and MoSCoW requirements list.
+sidebar_position: 1
+---
 
 ## Section 1 - Project Overview
 
@@ -69,26 +74,26 @@ After meeting all the requirements with NAS, we aim to further develop our game 
 
 ## Section 4 - MoSCoW Requirements List
 
-| Requirement Description | Priority | State |
-|-------------------------|----------|-------|
-| The application should run natively in Unity and be cross-platform for mobiles, tablets, and laptops. | MUST | DONE |
-| Make use of various AI models, all offline and embedded for use on devices. | MUST | DONE |
-| Using YOLO for Object Detection. | MUST | DONE |
-| The board game can host up to 6 players. | MUST | DONE |
-| Buzz question mode. | MUST | DONE |
-| The board needs to be AR placed on a table. | MUST | DONE |
-| Topic is presented to Granite to generate the questions on the topic, with a level of user indication (age group). | MUST | DONE |
-| Allow questions upload. | MUST | DONE |
-| At least 6 tile types for the board game. | MUST | DONE |
-| Teacher Dashboard Website for game setup. | MUST | DONE |
-| A Q&A sequence in-game to prompt players to answer questions. | MUST | DONE |
-| GenAI should be used to set the background image of the board. | SHOULD | DONE |
-| CO-OP Mode for players to work together instead of compete. | SHOULD | DONE |
-| Combat System which uses dice rolls. | SHOULD | DONE |
-| Customizable avatar with different colors and cosmetics. | SHOULD | DONE |
-| Allow remote play online. | SHOULD | DONE |
-| Game board is generated at runtime, customizable with JSON. | SHOULD | DONE |
-| Objects (such as toys and small figures) are to be image recognized using offline AI with Granite. They would then be the avatars of the player in their virtual round of the game. | SHOULD | NO |
-| Generate 3D meshes for the background. | COULD | NO |
-| Geography (linking questions to Google Earth opening), science (including scientific animations), and maths (with explainers in the center of the board). | WON’T DO | |
+| Requirement Description                                                                                                                                                             | Priority | State |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------|
+| The application should run natively in Unity and be cross-platform for mobiles, tablets, and laptops.                                                                               | MUST     | DONE  |
+| Make use of various AI models, all offline and embedded for use on devices.                                                                                                         | MUST     | DONE  |
+| Using YOLO for Object Detection.                                                                                                                                                    | MUST     | DONE  |
+| The board game can host up to 6 players.                                                                                                                                            | MUST     | DONE  |
+| Buzz question mode.                                                                                                                                                                 | MUST     | DONE  |
+| The board needs to be AR placed on a table.                                                                                                                                         | MUST     | DONE  |
+| Topic is presented to Granite to generate the questions on the topic, with a level of user indication (age group).                                                                  | MUST     | DONE  |
+| Allow questions upload.                                                                                                                                                             | MUST     | DONE  |
+| At least 6 tile types for the board game.                                                                                                                                           | MUST     | DONE  |
+| Teacher Dashboard Website for game setup.                                                                                                                                           | MUST     | DONE  |
+| A Q&A sequence in-game to prompt players to answer questions.                                                                                                                       | MUST     | DONE  |
+| GenAI should be used to set the background image of the board.                                                                                                                      | SHOULD   | DONE  |
+| CO-OP Mode for players to work together instead of compete.                                                                                                                         | SHOULD   | DONE  |
+| Combat System which uses dice rolls.                                                                                                                                                | SHOULD   | DONE  |
+| Customizable avatar with different colors and cosmetics.                                                                                                                            | SHOULD   | DONE  |
+| Allow remote play online.                                                                                                                                                           | SHOULD   | DONE  |
+| Game board is generated at runtime, customizable with JSON.                                                                                                                         | SHOULD   | DONE  |
+| Objects (such as toys and small figures) are to be image recognized using offline AI with Granite. They would then be the avatars of the player in their virtual round of the game. | SHOULD   | NO    |
+| Generate 3D meshes for the background.                                                                                                                                              | COULD    | NO    |
+| Geography (linking questions to Google Earth opening), science (including scientific animations), and maths (with explainers in the center of the board).                           | WON’T DO |       |
 

@@ -2,10 +2,8 @@
 id : HCI
 title: HCI Design for Classroom Explorers
 description: HCI design for our project Classroom Explorers, focusing on user requirements and design improvements.
-sidebar_position: 3
+sidebar_position: 2
 ---
-
-# HCI
 
 ## Section 1 - User Requirements for HCI
 

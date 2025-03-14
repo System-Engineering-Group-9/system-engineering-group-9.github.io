@@ -1,3 +1,10 @@
+---
+id: gameRules
+title: Game Rules
+description: Game rules for Classroom Explorers, a mixed reality board game designed for educational and family use.
+sidebar_position: 4
+---
+
 # Classroom Explorers – Board Game Introduction and Rules
 
 ## Introduction

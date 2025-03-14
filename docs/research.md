@@ -1,4 +1,9 @@
-# Research
+---
+id: research
+title: Research for Classroom Explorers
+description: Research areas and technological review for our project Classroom Explorers, focusing on AI, AR, and game development.
+sidebar_position: 3
+---
 
 Our project aims to create an augmented reality (AR) board game using IBM GenAI technology to support students with Special Educational Needs and Disabilities (SEND). The goal is to provide an innovative and engaging learning experience that differs from traditional educational methods. By integrating AR and AI technologies, we seek to enhance accessibility, interactivity, and personalized learning for students with diverse needs.
 

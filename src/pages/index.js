@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -33,22 +32,22 @@ function TeamSection() {
     {
       name: 'Ryan Li',
       role: 'team leader',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://github.com/Ryanli-BP.png',
     },
     {
       name: 'Jack Mok',
       role: 'UI/UX Designer',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://github.com/jackmok33.png',
     },
     {
       name: 'Jack Pan',
       role: 'AI engineer',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://github.com/dcloud347.png',
     },
     {
       name: 'Prantanil',
       role: 'Network engineer',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://github.com/Pran-bho.png',
     },
   ];
 
@@ -114,7 +113,8 @@ export default function Home() {
         <div className={styles.centeredText}>
           <h2>Project Timeline</h2>
           <p>We have managed our development process using a Gantt chart</p>
-          <img src='https://students.cs.ucl.ac.uk/2023/group23/assets/images/gantt-17c3ac48eeab5938faa87ad0df3922d0.png'></img>
+          <img alt={"development process"}
+               src='https://students.cs.ucl.ac.uk/2023/group23/assets/images/gantt-17c3ac48eeab5938faa87ad0df3922d0.png'/>
         </div>
         <br/>
         <div className={styles.centeredText}>
