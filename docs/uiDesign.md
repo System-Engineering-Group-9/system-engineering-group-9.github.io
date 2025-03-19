@@ -102,3 +102,5 @@ In our initial dashboard, page descriptions were vague and did not clearly expla
 
 **Improved Teacher Dashboard:**
 
+![image](./UIDesignMedia/NewTeacher.png)
+
