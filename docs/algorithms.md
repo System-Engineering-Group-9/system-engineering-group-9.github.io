@@ -14,11 +14,12 @@ step-by-step breakdowns, including principles behind each algorithm.
 
 ---
 
-## Question Generation Algorithm (IBM Granite-3.0-8b-instruct)
+## Question Generation Algorithm (4 Bits Quantized Version of IBM Granite-3.0-8b-instruct)
 
 ### Model Principle
 
-IBM Granite-3.0-8b-instruct is a quantized instruction-tuned large language model (LLM). It works based
+[4 bits quantized version of IBM Granite-3.0-8b-instruct](https://huggingface.co/QuantFactory/granite-3.0-8b-instruct-GGUF)
+is a quantized instruction-tuned large language model (LLM). It works based
 on [transformer architecture](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf),
 utilizing attention mechanisms to understand context and generate human-like textual responses.
 The [quantization](https://arxiv.org/pdf/2106.08295) reduces numerical precision, significantly optimizing computational
@@ -64,10 +65,19 @@ def get_prompt(number: int, subject: Subject, ageGroup: str, item: str = None) -
 The quantized IBM Granite model is initialized for inference.
 
 ```python
-self.llm = Llama.from_pretrained(
+if torch.cuda.is_available():
+    # Use GPU
+    self.llm = Llama.from_pretrained(
     repo_id="QuantFactory/granite-3.0-8b-instruct-GGUF",
-    filename="granite-3.0-8b-instruct-GGUF",
-)
+    filename="granite-3.0-8b-instruct.Q4_K_S.gguf",
+    n_gpu_layers=-1,  # Use all layers on GPU
+    )
+else:
+    # Use CPU
+    self.llm = Llama.from_pretrained(
+          repo_id="QuantFactory/granite-3.0-8b-instruct-GGUF",
+          filename="granite-3.0-8b-instruct.Q4_K_S.gguf"
+    )
 ```
 
 ### Step 3: Inference
@@ -148,7 +158,7 @@ Apply Non-Maximum Suppression (NMS) to refine detections by removing duplicate b
 
 ---
 
-## Background Image Generation Algorithm (DreamShaper)
+## Background Image Generation Algorithm ([DreamShaper](https://huggingface.co/Lykon/dreamshaper-8))
 
 ### Model Principle
 
