@@ -110,23 +110,14 @@ def client() -> Generator:
       Ensuring the components interact correctly (e.g., database calls, question generation logic).
     - **Negative Testing:**  
       Validates how the system handles incorrect inputs and exceptions.
-
----
-
-## 📊 Potential Improvements
-
-1. **Test Coverage Report:**
-    - Integrate coverage tools like `pytest-cov` to measure code coverage percentage.
-
-2. **Stress Testing:**
-    - Include load/stress tests to assess API performance under high request volumes.
-
-3. **Boundary Testing:**
-    - Add tests for boundary cases such as maximum/minimum values for question parameters.
-
-4. **CI/CD Integration:**
-    - Ensure tests are automatically executed using GitHub Actions or similar CI tools.
-
+- **Coverage Requirement:**
+    - We ensure that the code coverage consistently exceeds 90%. To check coverage, we use the following commands:
+      ```bash
+      coverage run --source=app -m pytest
+      coverage report --show-missing
+      coverage html --title "${@-coverage}"
+      ```
+      The tests are only considered passing if coverage is maintained above 90%.
 ---
 
 ## 🚀 Conclusion
