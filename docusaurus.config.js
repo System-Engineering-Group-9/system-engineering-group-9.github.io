@@ -42,7 +42,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: false,
+          sidebarPath: './sidebars.js',
+          
         },
         blog: {
           showReadingTime: true,
@@ -85,7 +86,7 @@ const config = {
           {to: '/docs/testing', label:'Testing', position: 'left'},
           {to: '/docs/evaluation', label:'Evaluation', position: 'left'},
 
-          {to: '/docs/gameRules', label:'Appendices', position: 'right'},
+          {to: '/docs/appendices', label:'Appendices', position: 'right'},
           {to: '/blog', label: 'Dev. Blog', position: 'right'},
           {
             href: 'https://github.com/System-Engineering-Group-9/',
@@ -108,7 +109,7 @@ const config = {
               {to: '/docs/implementation', label: 'Implementation'},
               {to: '/docs/testing', label: 'Testing'},
               {to: '/docs/evaluation', label: 'Evaluation'},
-              {to: '/docs/gameRules', label: 'Appendices'},
+              {to: '/docs/appendices', label: 'Appendices'},
               {to: '/blog', label: 'Dev. Blog'},
               {
                 href: 'https://github.com/System-Engineering-Group-9/',
