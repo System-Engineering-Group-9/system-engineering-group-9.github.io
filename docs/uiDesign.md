@@ -100,7 +100,14 @@ In our initial dashboard, page descriptions were vague and did not clearly expla
 **Improvements:**
 - We revised page descriptions to use clearer and more descriptive wording, reducing confusion and ensuring teachers could navigate the dashboard with ease.
 
-**Improved Teacher Dashboard:**
-
-![image](./UIDesignMedia/NewTeacher.png)
+<div class="row">
+  <div class="col">
+    **Initial Teacher Dashboard:**
+    ![image](./UIDesignMedia/OldTeacher.png)
+  </div>
+  <div class="col">
+    **Improved Teacher Dashboard:**
+    ![image](./UIDesignMedia/newTeacher.png)
+  </div>
+</div>
 
