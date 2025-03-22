@@ -1,6 +1,7 @@
 ---
 id: MonthlyVideo
 title: Monthly Video
+sidebar_position: 4
 ---
 # Monthly Videos
 ---
