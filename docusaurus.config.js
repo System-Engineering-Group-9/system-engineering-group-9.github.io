@@ -86,12 +86,16 @@ const config = {
           {to: '/docs/testing', label:'Testing', position: 'left'},
           {to: '/docs/evaluation', label:'Evaluation', position: 'left'},
 
-          {to: '/docs/appendices', label:'Appendices', position: 'right'},
-          {to: '/blog', label: 'Dev. Blog', position: 'right'},
+          {to: '/docs/appendices', label:'Appendices', position: 'left'},
+          {
+            href: 'https://spiritual-lobster-fd9.notion.site/Development-Blogs-18190ea108a48084a54ae05b5c2a8e6c?pvs=4',
+            label: 'Blog',
+            position: 'left',
+          },
           {
             href: 'https://github.com/System-Engineering-Group-9/',
             label: 'GitHub',
-            position: 'right',
+            position: 'left',
           },
         ],
       },
