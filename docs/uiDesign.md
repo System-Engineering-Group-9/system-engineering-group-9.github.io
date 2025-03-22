@@ -107,7 +107,7 @@ In our initial dashboard, page descriptions were vague and did not clearly expla
   </div>
   <div class="col">
     **Improved Teacher Dashboard:**
-    ![image](./UIDesignMedia/newTeacher.png)
+    ![image](./UIDesignMedia/NewTeacher.png)
   </div>
 </div>
 
