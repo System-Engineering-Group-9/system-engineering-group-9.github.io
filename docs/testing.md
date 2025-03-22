@@ -118,6 +118,58 @@ def client() -> Generator:
       coverage html --title "${@-coverage}"
       ```
       The tests are only considered passing if coverage is maintained above 90%.
+
+---
+
+## 📊 Performance Tests
+
+### **Purpose:**
+
+To ensure that the application performs efficiently under various workloads, particularly focusing on response time,
+memory usage, and stability during peak usage scenarios.
+
+### **Key Considerations:**
+
+- **Model Loading Strategy:**
+    - Our backend is specifically designed to **load only one model at a time**, which avoids the simultaneous loading
+      of multiple large models that could otherwise consume excessive GPU/CPU memory (VRAM/RAM).
+    - This approach guarantees controlled memory usage and prevents system crashes due to out-of-memory (OOM) errors.
+
+### **Performance Metrics:**
+
+1. **Response Time:**
+    - Measure the average and maximum response times for key endpoints, especially `/ai/generate/`, under both normal
+      and high-concurrency conditions.
+2. **Memory Usage:**
+    - Monitor system memory and GPU VRAM before, during, and after model loading to ensure that memory is released
+      appropriately after processing requests.
+3. **Stability:**
+    - Run long-duration stress tests to detect any memory leaks or gradual slowdowns.
+
+### **Tools and Techniques:**
+
+- **Apifox** for simulating concurrent API requests and measuring performance.
+- **Memory Profiling Tools** such as:
+    - `psutil` (for CPU/RAM usage monitoring)
+    - `nvidia-smi` (for GPU VRAM monitoring)
+- **Logging and Monitoring:**
+    - Leverage detailed logging of model loading/unloading times and system resource usage.
+
+![image](./testingImg/VRAM.jpeg)
+
+---
+
+### **Performance Benchmark Goal:**
+
+- **Response Time:**  
+  Maintain average response time **under 10s** for per standard quiz question
+
+- **Memory Usage:**  
+  Ensure VRAM and RAM usage remain stable, thanks to the **single model loading strategy**, even under peak loads.
+
+- **Error Rate:**  
+  Keep error rates (e.g., timeouts, OOM errors) **below 1%** during stress tests.
+
 ---
 
 ## 🚀 Conclusion
