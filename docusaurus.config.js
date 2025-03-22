@@ -43,22 +43,11 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
         },
+        blog: false
       }),
     ],
   ],
@@ -114,11 +103,15 @@ const config = {
               {to: '/docs/testing', label: 'Testing'},
               {to: '/docs/evaluation', label: 'Evaluation'},
               {to: '/docs/appendices', label: 'Appendices'},
-              {to: '/blog', label: 'Dev. Blog'},
               {
                 href: 'https://github.com/System-Engineering-Group-9/',
                 label: 'GitHub',
               },
+              {
+                href: 'https://spiritual-lobster-fd9.notion.site/Development-Blogs-18190ea108a48084a54ae05b5c2a8e6c?pvs=4',
+                label: 'Blog',
+                position: 'left',
+              }
             ],
           },
         ],
