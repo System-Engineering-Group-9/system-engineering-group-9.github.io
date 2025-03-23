@@ -27,6 +27,37 @@
   height: auto;
 }
 
+/* Add the wobble animation keyframes */
+@keyframes wobble {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Update the headerLogo class to include the animation */
+.headerLogo {
+  max-width: 350px;
+  height: auto;
+  animation: wobble 5s ease-in-out infinite;
+}
+
+/* Add a hover effect to pause the animation when users hover over the logo */
+.headerLogo:hover {
+  animation-play-state: paused;
+}
+
 .headerText {
   text-align: left;
 }
