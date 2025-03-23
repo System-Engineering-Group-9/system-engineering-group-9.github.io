@@ -11,16 +11,16 @@ We have undertaken a comprehensive testing approach to ensure our project meets 
 
 Below are the key testing methods we employed:
 
-**Unit Testing**
+#### Unit Testing
 - Implemented unit testing for Educational Question Generator API.
 
-**Performance Testing**
+#### Performance Testing
 - Evaluated performance for the Educational Question Generator API.
 
-**Compatibility Testing**
+#### Compatibility Testing
 - Tested the game on various devices with different hardware specifications to ensure broad accessibility.
 
-**User Acceptance Testing**
+#### User Acceptance Testing
 - Conducted real-world testing with various user groups, including:
   - Helen Allison School (NAS) visit
   - AI for Good showcase to clients
@@ -120,3 +120,69 @@ In terms of **memory usage**, the application performed efficiently with stable 
 For **stability**, we conducted long-duration stress tests by simulating increased concurrent requests over a 60-minute period. During this time, the application continued to perform well, with no noticeable memory leaks or gradual slowdowns. The error rate remained below 1%, indicating that the system could handle sustained usage without any major issues.
 One of the key considerations during our testing was the **model loading strategy**, which ensures that only one model is loaded at a time. This prevents the system from being overwhelmed by multiple large models, ensuring that memory is used efficiently and reducing the risk of out-of-memory (OOM) errors. As a result, the system's memory usage remained well-controlled throughout the tests, and the application performed stably even under peak loads.
 In **conclusion**, the tests confirmed that the application performs efficiently across a range of scenarios. The system was able to handle high-concurrency conditions with minimal resource consumption, and the overall performance remained stable even during extended usage. Although hardware differences (e.g., GPU and CPU capabilities) may affect performance slightly, the application should remain responsive and functional across a wide variety of devices, making it suitable for production deployment.
+
+---
+
+## Section 3 - Compatibility Testing
+
+We have tested our game on multiple devices across different platforms, including Android smartphones, tablets, iPads, Windows laptops, and Macs. Below is a list of devices and their specs. We have tried devices with low specs to ensure that our game can run smoothly, considering a classroom scenario with limited processing power and RAM.
+
+### Device Model and Specs
+
+| Device Model               | Specs                       |
+|----------------------------|-----------------------------|
+| **MacBook Pro (2021) M1 Pro** | CPU: M1 Pro, RAM: 16GB      |
+| **Samsung Galaxy S20 FE**   | CPU: Snapdragon 870, RAM: 8GB |
+
+With our extensive compatibility testing, we are confident that our game will have no issue running on the devices provided in a classroom setting.
+
+---
+
+## Section 4 - User Acceptance Testing
+
+The tests were conducted at the Helen Allison School (NAS) within the Hub, targeting students primarily aged 14 to 17. The purpose of the evaluation was to validate the effectiveness of our product for students with diverse needs. Specifically, we assessed whether:
+
+- The game’s mechanics can be easily understood in a single play session
+- Students demonstrate investment in the game and engage actively in answering questions
+- The game is appropriate for a learning environment
+
+Over the course of 30-minute sessions across three classes, we presented our CO-OP game mode and teacher dashboard using a single device, with gameplay projected for both students and teachers. Participants actively posed questions and engaged in collaborative discussions regarding the project. 
+
+Additionally, some classes, already familiar with games reminiscent of *Classroom Explorers* such as *Mario Party*, recognized similarities without explicit guidance. Nonetheless, all classes clearly understood the objectives of the game and participated actively in the quiz segments.
+
+### Section 4.1 - Test Feedback
+
+The feedback was mainly positive, with many expressing that the concept was interesting. However, many were concerned with the time length of the game. Below are the feedback we have collected:
+
+#### Game Feedback (CO-OP Mode)
+
+|Feedback|
+----------------------------------------|
+| Liked the visuals                                                         |                                        |
+| Concept quite good and creative                                           |                                        |
+| Good selection of Outcomes (Tiles)                                        |                                        |
+| It’s easy to play (controls)                                              |                                        |
+| It was really colorful                                                    |                                        |
+| Takes a lot of time to understand, symbols need explaining, etc.          |                                        |
+| It’s educational                                                          |                                        |
+| Liked that you can either play against each other (FFA) or part of the team (CO-OP) |                                |
+| Liked the idea of students being able to join remotely                    |                                        |
+| Maybe the game should show which questions were correct/wrong after the players answered |                          |
+| It is ideal if the game finishes quicker, around 25 minutes. Can be done by making the map/board smaller |               |
+
+#### Teacher Dashboard Feedback
+
+| Feedback                                                                 |
+----------------------------------------|
+| Great that it has different levels/difficulties for questions             |                                        |
+| It would be great if there were inclusion of more subjects like maths     |                                        |
+| The AI-generated questions are good                                        |                                        |
+| The questions take quite a bit of time to generate                        |                                        |
+
+### Section 4.2 - Conclusion
+
+The user evaluation produced predominantly positive feedback, with a minority of constructive criticisms that have informed our next steps. Key improvements include reducing overall game duration by leveraging the JSON Board Generator to create a smaller map and decreasing the number of quiz sections per round to streamline gameplay without compromising learning objectives.
+
+Certain limitations remain unavoidable under current constraints. For example, using Granite to auto‑generate mathematics questions yields inaccurate content that is unsuitable for our quiz format, necessitating alternative question‑generation methods.
+
+Overall, participants reported high satisfaction with both the board game experience and the teacher dashboard. Moving forward, our development priorities will focus on optimizing game length, ensuring content accuracy, and refining the user interface to further enhance engagement and educational value.
