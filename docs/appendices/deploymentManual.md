@@ -48,8 +48,8 @@ and game settings.
 
 The FastAPI Model Backend will handle data processing, storage, and AI model integrations for the Class Explorer system.
 
-- **Repository
-  **: [Educational Question Generator on GitHub](https://github.com/System-Engineering-Group-9/EducationalQuestionGenerator)
+- **Repository**:
+  - [Educational Question Generator on GitHub](https://github.com/System-Engineering-Group-9/EducationalQuestionGenerator)
 - **Features**:
   - AI model integration for question generation
   - Data processing and storage
