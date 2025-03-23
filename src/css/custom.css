@@ -23,10 +23,8 @@
 
   .footer__links {
     display: flex;
-    justify-content: center; /* Centers items */
+    justify-content: center;
     flex-wrap: wrap; /* Ensures items wrap if screen is too narrow */
-    gap: 20px; /* Adds spacing between links */
-    width: 70%;
     margin: 0 auto;
   }
   

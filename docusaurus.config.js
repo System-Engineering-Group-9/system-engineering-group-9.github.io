@@ -15,7 +15,7 @@ const config = {
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
-  url: 'https://system-engineering-group-9.github.io', // Turn this into https://students.cs.ucl.ac.uk, when hosting on UCL servers
+  url: ' https://system-engineering-group-9.github.io', // Turn this into https://students.cs.ucl.ac.uk, when hosting on UCL servers
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/', // Turn this into /2024/group9/, when hosting on UCL servers
@@ -71,7 +71,7 @@ const config = {
           {to: '/docs/algorithms', label:'Algorithms', position: 'left'},
           {to: '/docs/uiDesign', label:'UI Design', position: 'left'},
           {to: '/docs/systemDesign', label:'System Design', position: 'left'},
-          {to: '/docs/implementation', label:'Implementatioin', position: 'left'},
+          {to: '/docs/implementation', label:'Implementation', position: 'left'},
           {to: '/docs/testing', label:'Testing', position: 'left'},
           {to: '/docs/evaluation', label:'Evaluation', position: 'left'},
 

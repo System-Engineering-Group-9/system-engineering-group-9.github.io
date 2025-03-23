@@ -26,7 +26,7 @@ The **Backend Server** acts as the core communication bridge between the Teacher
 - **Generator Routes (/ai)**: Manage AI-powered features such as object recognition (YOLO), quiz question generation (Granite), and background image creation (DreamShaper).
 - **Configuration Routes (/config)**: Store and retrieve game settings, ensuring consistency across both the teacher and student interfaces.
 
-### AI-Powered Content Generation
+### Section 1.1 - AI-Powered Content Generation
 One of the primary features of the system is AI-powered content generation:
 - **Object Recognition**: Implemented using YOLO, it allows the game to analyze and respond to visual inputs.
 - **Quiz Generation**: AI-generated quiz questions are created based on predefined parameters, enabling personalized learning experiences.
@@ -85,6 +85,56 @@ Below is a diagram of how key components interact to managing the game state, UI
   - **Dynamic Updates**: Continuously updates UI components, including player stats, health, points, and turn indicators, ensuring real-time feedback during gameplay.
   - **User Prompts & Button Interactions**: Manages interactive prompts for decisions and handles button actions, such as dice rolls or combat choices, with smooth player input integration.
 
+### Section 2.2 - Multiplayer Integration
+
+A key feature that we wanted to include in our game was accessibility. This didn’t just mean accessibility for all
+skill levels and ages but also to make the game available to students who are currently missing the school
+experience due to any personal challenges or health issues. Due to this we wanted to incorporate a fully
+remote version of our game, allowing students to take part with their classmates not just for educational
+purposes but also for the social aspects of playing games with their peers.
+
+**Design Choices**
+- **Cloud-Based Services & Matchmaking:**  
+  Photon PUN2 provides integrated cloud services that include matchmaking, room management, and
+lobby systems. These features streamline the process of connecting players, reducing the overhead
+typically associated with building these systems from scratch.
+  
+- **Centralised Architecture:**  
+  Photon provides a robust client-server architecture with a master client that can do key authoritative
+decisions such as game startup. This provides a simpler flow of logic and a robust centralised network
+which minimises clients from being unsynchronised.
+
+- **Advantages Over Other Networking Solutions:**
+  While Unity has several strong contenders for networking, we found that other solutions such as Mirror
+to not be suitable as it is mainly optimised for client–client architectures, which makes integrating a
+cloud-based system more challenging
+
+**Multiplayer Startup Flow**
+
+![image](./SysDesImg/photon.jpg)
+
+- **Photon Custom Properties:**  
+  After initalisation and a verified connection to the server, character appearance preferences,
+as well as nickname and gameplay variables such as points and trophies are stored to each
+client's custom properties. This allows them to be called later so every remote client can view
+all other clients' preferences and progress throughout the game.
+
+- **Lobby System:**  
+  There is also an additional layer before game start up after character selection, we have
+introduced a lobby scene where players wait for all other players to finish connecting and
+choosing their avatar preferences. The master client can then load up the main game scene
+when the lobby has 2-6 players, allowing all clients to start the game at the same time, this is
+necessary to ensure state synchronisation of all clients from the very beginning.
+
+- **Master Client Logic:**  
+  The first client to join the lobby scene becomes the master client, they are the only client
+allowed to start the main game scene, preventing multiple clients from beginning the game at
+different times. The client remains the master client for the rest of the game unless there is a
+disconnect, in which case the master client is automatically reassigned to the next available
+client.
+
+--- 
+
 ## Section 3 - System Flow
 
 1. **Teacher UI Initialization**  
@@ -100,6 +150,8 @@ Below is a diagram of how key components interact to managing the game state, UI
 
 4. **Game Launch**  
    The teacher starts the game by creating a unique room code, which students use to join. Students enter the room code on the Student Board Game, customize their characters in **Scene: CharacterSelect**, and enter **Scene: BoardScene**. Players roll dice to move across the board, answer quiz questions, and collect points. The game progresses until a winner is determined based on accumulated points.
+
+---
 
 ## Section 4 - Design Pattern
 Here is a list of Design Patterns that we have used to develop our game:
