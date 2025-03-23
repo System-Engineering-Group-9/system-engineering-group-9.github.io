@@ -39,6 +39,8 @@ Classroom Explorers aims to provide an innovative and engaging learning experien
 
 To ensure these objectives are met, we have gathered insights from teachers at the National Autistic Society (NAS) and conducted online research on best practices for designing interactive and accessible educational tools.
 
+---
+
 ## Section 2 - Key Target Audiences
 
 Our game target audience includes students with SEND needs and teachers, specifically schools from the National Autistic Society but not limited to them. We hope to meet all their needs and then further expand our project to accommodate other schools' use cases. To get user feedback, we conducted a school visit to Helen Allison School, a school under NAS, to showcase and test our game with students and teachers who will be using our game as class materials. We gained many useful insights and understandings regarding interactivity and game design.
@@ -64,18 +66,22 @@ Our game target audience includes students with SEND needs and teachers, specifi
 
 After meeting all the requirements with NAS, we aim to further develop our game to be class material not only for students with SEND needs but also for any student around the world.
 
+---
+
 ## Section 3 - Use Case Diagrams
 
 ### Section 3.1 - Teachers
-![image1](./useCaseDiagram/TeacherUseCaseDiagram.drawio.png)
+![image1](./useCaseDiagram/teacherFlow.png)
 
 ### Section 3.2 - Students
 ![image1](./useCaseDiagram/StudentUseCase.drawio.png)
 
+---
+
 ## Section 4 - MoSCoW Requirements List
 
-| Requirement Description                                                                                                                                                             | Priority | State |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------|
+| Requirement Description                                                                                                                                                             | Priority  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
 | The application should run natively in Unity and be cross-platform for mobiles, tablets, and laptops.                                                                               | MUST     | DONE  |
 | Make use of various AI models, all offline and embedded for use on devices.                                                                                                         | MUST     | DONE  |
 | Using YOLO for Object Detection.                                                                                                                                                    | MUST     | DONE  |

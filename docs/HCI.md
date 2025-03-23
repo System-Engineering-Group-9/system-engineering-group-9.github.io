@@ -39,6 +39,8 @@ We have conducted interviews with various stakeholders to gather requirements an
 5. **Game Engagement**: Points, avatars, and rewards to maintain interest.
 6. **Clear Instructions**: Simple guidance for easy navigation and understanding.
 
+---
+
 ## Section 2 - HCI Presentation
 
 ### Section 2.1 - Gathering User Requirements
