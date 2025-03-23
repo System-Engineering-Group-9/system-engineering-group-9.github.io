@@ -162,13 +162,13 @@ memory usage, and stability during peak usage scenarios.
 ### **Performance Benchmark Goal:**
 
 - **Response Time:**  
-  Maintain average response time **under 10s** for per standard quiz question
+  Maintain average response time **under 10s** for per standard quiz question ✅
 
 - **Memory Usage:**  
-  Ensure VRAM and RAM usage remain stable, thanks to the **single model loading strategy**, even under peak loads.
+  Ensure VRAM and RAM usage remain stable, thanks to the **single model loading strategy**, even under peak loads. ✅
 
 - **Error Rate:**  
-  Keep error rates (e.g., timeouts, OOM errors) **below 1%** during stress tests.
+  Keep error rates (e.g., timeouts, OOM errors) **below 1%** during stress tests. ✅
 
 ---
 

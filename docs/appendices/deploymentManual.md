@@ -9,7 +9,7 @@ composed of the following components:
 
 1. **Unity Game**
 2. **React Teacher Dashboard**
-3. **FastAPI Model Backend** (coming soon)
+3. **FastAPI Model Backend**
 
 ---
 
