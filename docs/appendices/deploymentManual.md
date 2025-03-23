@@ -46,7 +46,33 @@ and game settings.
 
 ## 3. FastAPI Model Backend (Placeholder)
 
-The FastAPI Model Backend will handle data processing, storage, and integrations for the Class Explorer system. Details
-and instructions for setting up and using this backend will be available soon.
+The FastAPI Model Backend will handle data processing, storage, and AI model integrations for the Class Explorer system.
+
+- **Repository
+  **: [Educational Question Generator on GitHub](https://github.com/System-Engineering-Group-9/EducationalQuestionGenerator)
+- **Features**:
+  - AI model integration for question generation
+  - Data processing and storage
+  - API endpoints for game interactions
+- **Getting Started**:
+  1. Make sure you have a Nvidia GPU with CUDA support for AI model acceleration and python 3.8 or later.
+  2. Clone
+     the [Educational Question Generator](https://github.com/System-Engineering-Group-9/EducationalQuestionGenerator)
+  3. Install torch, torchvision for your CUDA
+     version [Click here for more information to install right torch](https://pytorch.org/).
+  4. Install
+     llama-cpp-python [Click here for more information to install llama-cpp-python](https://github.com/abetlen/llama-cpp-python)
+  5. Install dependencies by running `pip install -r requirements.txt`.
+  6. Run the desktop application for generating questions by running `python ./main.py`.
+  7. Start the FastAPI server by running `uvicorn app.main:app --reload` to launch the backend server.
+- **Docker Deployment**:
+  1. Build the Docker image by running `docker build -t educational-quiz-generator .`.
+  2. Run the Docker container by running `docker run --gpus all -p 8000:8000 educational-quiz-generator`.
+  3. This will start the FastAPI server inside a Docker container, and you can access the API at http://127.0.0.1:8000.
+- **Troubleshooting**:
+  - If your server is not using GPU, make sure you have installed the right version of CUDA and torch. And also make
+    sure you install with CUDA support (set the `GGML_CUDA=on` environment variable before installing).
+  - Check NVIDIA drivers are up to date
+  - For MacOS users, verify Metal support requirements
 
 **Stay tuned for updates!**
