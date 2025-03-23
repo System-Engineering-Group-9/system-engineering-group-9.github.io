@@ -71,7 +71,7 @@ const config = {
           {to: '/docs/algorithms', label:'Algorithms', position: 'left'},
           {to: '/docs/uiDesign', label:'UI Design', position: 'left'},
           {to: '/docs/systemDesign', label:'System Design', position: 'left'},
-          {to: '/docs/implementation', label:'Implementatioin', position: 'left'},
+          {to: '/docs/implementation', label:'Implementation', position: 'left'},
           {to: '/docs/testing', label:'Testing', position: 'left'},
           {to: '/docs/evaluation', label:'Evaluation', position: 'left'},
 
