@@ -1,6 +1,6 @@
 ---
 id: requirements
-title: Requirements for Classroom Explorers
+title: Requirements
 description: Requirements for our project Classroom Explorers, focusing on project overview, goals, target audiences, use case diagrams, and MoSCoW requirements list.
 sidebar_position: 1
 ---

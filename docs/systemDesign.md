@@ -1,11 +1,11 @@
 ---
 id: systemDesign
-title: System Design for Classroom Explorers
+title: System Design
 description: System design for our project Classroom Explorers, focusing on the architecture, components, and technologies used.
 sidebar_position: 6
 ---
 
-# System Architecture
+# System Design
 
 ## Overview
 Our system is designed to facilitate interactive learning by connecting a web-based Teacher Dashboard with a Student Board Game through a centralized backend server. The architecture enables real-time data exchange, ensuring a seamless user experience for both teachers and students. The following diagram provides a high-level view of our system design.

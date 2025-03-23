@@ -5,8 +5,6 @@ description: Game rules for Classroom Explorers, a mixed reality board game desi
 sidebar_position: 1
 ---
 
-# Classroom Explorers – Board Game Introduction and Rules
-
 ## Introduction
 
 Classroom Explorers is designed to be easy to learn, fun to play, and enjoyable with or without strategic thinking. Most importantly, it’s suited for a learning environment, integrating seamlessly with our AI quiz engine. The game's difficulty level is slightly lower than Monopoly.

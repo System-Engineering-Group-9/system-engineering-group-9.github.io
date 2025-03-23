@@ -1,6 +1,6 @@
 ---
 id: algorithms
-title: Algorithms for Classroom Explorers
+title: Algorithms
 description: Algorithms and data structures used in our project Classroom Explorers, focusing on AI, AR, and game development.
 sidebar_position: 4
 ---
