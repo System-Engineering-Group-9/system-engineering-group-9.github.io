@@ -4,14 +4,15 @@
  */
 
 .heroBanner {
-  background-image: url('/static/img/boardScreenshot.png'); /* Update with the correct path to your image */
-  background-size: cover;
+  background-color: rgb(66, 121, 223); /* Update with the correct path to your image */
+  background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   padding: 8rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  height: 70vh;
 }
 
 @media screen and (max-width: 996px) {

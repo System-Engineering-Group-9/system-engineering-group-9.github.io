@@ -16,13 +16,7 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/">
-              Showcase Video
-          </Link>
-        </div>
+        <img src="./img/logo.png"></img>
       </div>
     </header>
   );
