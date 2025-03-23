@@ -4,176 +4,100 @@ title: Testing for Classroom Explorers
 description: Testing for our project Classroom Explorers, focusing on the testing process and technologies used.
 sidebar_position: 8
 ---
+# Testing
 
-## 🧪 Overview
+## Overview
+We have undertaken a comprehensive testing approach to ensure our project meets the majority of the requirements while gathering sufficient user feedback to improve our product. Continuous testing was conducted throughout the project, allowing us to make iterative changes to the game. This ensured that we addressed all user needs, considering both design aspects and hardware compatibility across various use cases.
 
-The test suite focuses on ensuring the reliability and correctness of the **Educational Question Generator**
-application's core functionalities. The tests are structured primarily in two key areas:
+Below are the key testing methods we employed:
 
-1. **API Tests (`/api/` folder)**
-2. **Configuration and Fixtures (`conftest.py`)**
+**Unit Testing**
+- Implemented unit testing for Educational Question Generator API.
 
----
+**Performance Testing**
+- Evaluated performance for the Educational Question Generator API.
 
-## 📂 Test Structure Breakdown
+**Compatibility Testing**
+- Tested the game on various devices with different hardware specifications to ensure broad accessibility.
 
-### 1. **`api/` Folder**
+**User Acceptance Testing**
+- Conducted real-world testing with various user groups, including:
+  - Helen Allison School (NAS) visit
+  - AI for Good showcase to clients
+  - School outreach visits
 
-Contains unit and integration tests targeting the API endpoints of the application.
+## Section 1 - Unit Testing
 
-- **Purpose:**  
-  To verify that API endpoints respond correctly to valid and invalid requests, and that generated quiz questions meet
-  expected formats and logic.
-    - **Test Coverage:**
-        - **Question Generation Validity:**
-            - Test that generated questions conform to the input parameters.
-            - **API Response Status Codes:**
-                - Checks for HTTP 200 success codes and appropriate error handling (e.g., 400 Bad Request, 404 Not
-                  Found).
-            - **Edge Case Handling:**
-                - Ensures robustness when input parameters are missing or malformed.
-            - **Data Consistency:**
-                - Verifies if repeated calls with identical inputs yield consistent question formats.
-- **Example:**
+We employed a combination of unit and integration testing to validate the core functionality of our Educational Question Generator API. Given the nature of our system, which is primarily backend-focused and does not rely on Android-specific components, we used standard Python testing libraries. The key tools leveraged were `pytest`, Starlette's `TestClient`, and `coverage.py`.
 
-```python
-      # --- Test the question generation endpoint ---
-        def test_generate_questions(client: TestClient):
-            """
-            Test the /ai/generate/ the question generator.
-            """
-            # Prepare query parameters matching GenerateModel fields.
-            params = {
-            "number": 1,
-            "subject": "History",
-            "ageGroup": "10-12",
-            "item": "French Revolution"
-            }
-            response = client.get(f"{settings.BASE_URL}/ai/generate/", params=params)
-            assert response.status_code == 200
-                
-            resp_json = response.json()
-            logging.info(f"Generate questions response: {resp_json}")
-            assert resp_json.get("message") == "success"
-                
-            data = resp_json.get("data")
-            assert data is not None
-            assert "questions" in data
-            assert len(data["questions"]) == 1
-```
+The tests aim to ensure that each API endpoint behaves correctly under various scenarios. We simulate user interactions with our HTTP endpoints and assert that the expected business logic is applied consistently.
 
----
+**Purpose of API Testing**
 
-### 2. **`__init__.py`**
+API tests are a critical part of our backend validation. These tests ensure the correctness, robustness, and reliability of the API endpoints, which are responsible for generating educational quiz questions based on user-provided parameters such as subject, age group, and topic.
 
-Standard file to mark the directory as a Python package. No test logic here, but necessary for test discovery.
+API tests offer confidence that:
+- Valid requests return the appropriate HTTP 200 status and structured responses.
+- The question generation logic returns meaningful and parameter-compliant questions.
+- The system handles edge cases and invalid input gracefully by returning proper error codes like 400 or 404.
 
----
+**Testing Frameworks**
 
-### 3. **`conftest.py`**
+Our API tests are written using `pytest` for test orchestration and Starlette's `TestClient` for simulating HTTP requests. We use pytest fixtures to set up a shared client across test modules, simplifying the codebase and ensuring consistency in test environments.
 
-- **Purpose:**  
-  Provides shared fixtures and configurations for the test suite.
+The following tools were used:
+- **pytest**: Main testing framework for writing and running test cases.
+- **TestClient**: Simulates HTTP requests against the FastAPI application.
+- **coverage.py**: Measures code coverage across the API test suite.
 
-- **Features:**
-    - **Fixture Setup:**
-        - Sets up test clients and test environment configurations.
-    - **Reusable Components:**
-        - Simplifies test case writing by reusing pre-defined clients and data.
+A simplified version of the `conftest.py` fixture is shown below:
 
 ```python
-from typing import Generator
-
+# conftest.py
 import pytest
 from starlette.testclient import TestClient
-
 from app.main import app
 
-
 @pytest.fixture(scope='module')
-def client() -> Generator:
+def client():
     with TestClient(app) as c:
         yield c
 ```
 
----
+**Example Test**
 
-## ✅ Test Execution
+The following test ensures that the `/ai/generate/` endpoint returns a valid question based on user input:
 
-- **Framework Used:**  
-  Likely `pytest` based on standard Python testing practices.
+**api/test_generate_questions.py**
 
-- **Test Strategy:**
-    - **Unit Testing:**  
-      Focused on individual API endpoint correctness.
-    - **Integration Testing:**  
-      Ensuring the components interact correctly (e.g., database calls, question generation logic).
-    - **Negative Testing:**  
-      Validates how the system handles incorrect inputs and exceptions.
-- **Coverage Requirement:**
-    - We ensure that the code coverage consistently exceeds 90%. To check coverage, we use the following commands:
-      ```bash
-      coverage run --source=app -m pytest
-      coverage report --show-missing
-      coverage html --title "${@-coverage}"
-      ```
-      The tests are only considered passing if coverage is maintained above 90%.
+```python
+def test_generate_questions(client):
+    params = {
+        "number": 1,
+        "subject": "History",
+        "ageGroup": "10-12",
+        "item": "French Revolution"
+    }
+    response = client.get("/ai/generate/", params=params)
+    assert response.status_code == 200
+    
+    data = response.json()
+    assert data.get("message") == "success"
+    assert "questions" in data.get("data")
+    assert len(data["data"]["questions"]) == 1
+```
 
----
+### Testing Approach
 
-## 📊 Performance Tests
+- **Unit Testing**: Focused on the correctness of individual API endpoints, ensuring proper request handling and response formats.
+- **Integration Testing**: Verifies how the API integrates with internal components, such as the question generation logic and any external services.
+- **Negative Testing**: Tests the system's resilience by providing malformed or incomplete input to validate proper error responses.
 
-### **Purpose:**
-
-To ensure that the application performs efficiently under various workloads, particularly focusing on response time,
-memory usage, and stability during peak usage scenarios.
-
-### **Key Considerations:**
-
-- **Model Loading Strategy:**
-    - Our backend is specifically designed to **load only one model at a time**, which avoids the simultaneous loading
-      of multiple large models that could otherwise consume excessive GPU/CPU memory (VRAM/RAM).
-    - This approach guarantees controlled memory usage and prevents system crashes due to out-of-memory (OOM) errors.
-
-### **Performance Metrics:**
-
-1. **Response Time:**
-    - Measure the average and maximum response times for key endpoints, especially `/ai/generate/`, under both normal
-      and high-concurrency conditions.
-2. **Memory Usage:**
-    - Monitor system memory and GPU VRAM before, during, and after model loading to ensure that memory is released
-      appropriately after processing requests.
-3. **Stability:**
-    - Run long-duration stress tests to detect any memory leaks or gradual slowdowns.
-
-### **Tools and Techniques:**
-
-- **Apifox** for simulating concurrent API requests and measuring performance.
-- **Memory Profiling Tools** such as:
-    - `psutil` (for CPU/RAM usage monitoring)
-    - `nvidia-smi` (for GPU VRAM monitoring)
-- **Logging and Monitoring:**
-    - Leverage detailed logging of model loading/unloading times and system resource usage.
-
-![image](./testingImg/VRAM.jpeg)
-
----
-
-### **Performance Benchmark Goal:**
-
-- **Response Time:**  
-  Maintain average response time **under 10s** for per standard quiz question
-
-- **Memory Usage:**  
-  Ensure VRAM and RAM usage remain stable, thanks to the **single model loading strategy**, even under peak loads.
-
-- **Error Rate:**  
-  Keep error rates (e.g., timeouts, OOM errors) **below 1%** during stress tests.
-
----
-
-## 🚀 Conclusion
-
-The current test suite lays a solid foundation for verifying API functionality, with good modularization via
-`conftest.py` and logical structuring of API tests. Expanding test cases and incorporating automated reporting tools
-would further strengthen code reliability and maintainability.
+### Code Coverage
+Our team prioritizes maintaining a high level of test coverage. Using coverage.py, we achieved over 90% code coverage across the backend. To ensure this standard is met, we run:
+```
+coverage run --source=app -m pytest
+coverage report --show-missing
+coverage html --title "${@-coverage}"
+```
+Maintaining this threshold helps ensure that core functionality, including edge cases, is thoroughly validated and production-ready.
