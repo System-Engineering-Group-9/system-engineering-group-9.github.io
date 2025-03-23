@@ -155,8 +155,6 @@ memory usage, and stability during peak usage scenarios.
 - **Logging and Monitoring:**
     - Leverage detailed logging of model loading/unloading times and system resource usage.
 
-![image](./testingImg/VRAM.jpeg)
-
 ---
 
 ### **Performance Benchmark Goal:**
@@ -166,6 +164,8 @@ memory usage, and stability during peak usage scenarios.
 
 - **Memory Usage:**  
   Ensure VRAM and RAM usage remain stable, thanks to the **single model loading strategy**, even under peak loads. ✅
+
+![image](./testingImg/VRAM.jpeg)
 
 - **Error Rate:**  
   Keep error rates (e.g., timeouts, OOM errors) **below 1%** during stress tests. ✅
