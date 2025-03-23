@@ -12,7 +12,35 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: 70vh;
+  height: 60vh;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7rem;
+}
+
+.headerLogo {
+  max-width: 350px;
+  height: auto;
+}
+
+.headerText {
+  text-align: left;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .headerRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .headerText {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 996px) {
