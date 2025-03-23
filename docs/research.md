@@ -1,13 +1,14 @@
 ---
 id: research
-title: Research for Classroom Explorers
+title: Research
 description: Research areas and technological review for our project Classroom Explorers, focusing on AI, AR, and game development.
 sidebar_position: 3
 ---
 
+## Overview
 Our project aims to create an augmented reality (AR) board game using IBM GenAI technology to support students with Special Educational Needs and Disabilities (SEND). The goal is to provide an innovative and engaging learning experience that differs from traditional educational methods. By integrating AR and AI technologies, we seek to enhance accessibility, interactivity, and personalized learning for students with diverse needs.
 
-## Research Areas
+### Research Areas
 
 To develop our solution, we conducted extensive research in four key technological domains:
 
@@ -18,32 +19,32 @@ To develop our solution, we conducted extensive research in four key technologic
 
 ---
 
-# Section 1 - Related Project Review
+## Section 1 - Related Project Review
 
 To inform our project development, we reviewed existing AR educational tools and AI-assisted learning platforms, as well as notable games that emphasize personalization and interactivity. Our findings highlight how these elements enhance engagement and accessibility for SEND students.
 
-## Section 1.1 - Osmo
+### Section 1.1 - Osmo
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVL69ch9UFWqBKi1NHw7Hd4Iys7f6Za8qRQ&s" alt="Osmo Logo" width="200" />
 
 Osmo is an AR learning system that uses physical objects alongside digital interactions to create an immersive learning experience. By integrating physical play with digital feedback, Osmo provides an interactive way for students to engage with educational content. This hybrid approach inspired our AR board game, particularly in how we integrate real-world components into the digital experience to enhance accessibility and engagement for SEND students.
 
-## Section 1.2 - Pokémon GO
+### Section 1.2 - Pokémon GO
 <img src="https://lh3.googleusercontent.com/3TSaKxXGo2wT0lu0AyNUBnkk6wkCC2AzOhJyy3JXIPm-AmZ1k9DSAroWeBUyePswCZSs5lVp3mPF7HzUpY9VPlyOV5eddITONINr3WSqLNLm=s0" alt="Pokémon GO Logo" width="200" />
 
 Pokémon GO is an AR-based mobile game that encourages players to explore their environment while capturing virtual creatures. The game's success in using AR to create a deeply engaging and interactive experience provided valuable insights for our project. We aim to incorporate similar real-world interactions and engagement in our board game, allowing players to connect with their environment while participating in educational activities.
 
-## Section 1.3 - Risk
+### Section 1.3 - Risk
 <img src="https://www.anbmedia.com/wp-content/uploads/2022/11/Risk-Logo-infinity-Game-Table.png" alt="risk logo" width="200"/>
 
 Risk is a classic strategy board game known for its engaging gameplay that involves decision-making, risk management, and territorial control. We researched Risk to inspire ideas for strategic elements and game mechanics, particularly focusing on how we could adapt these concepts into an AR-based, AI-driven environment that offers dynamic, interactive learning experiences for SEND students.
 
 ---
 
-# Section 2 - Technology Review
+## Section 2 - Technology Review
 
 Based on our research, we evaluated multiple tools and frameworks to determine the most suitable technologies for our project. The criteria for selection included performance, scalability, ease of integration, and compatibility with AR and AI functionalities.
 
-## Section 2.1 - Augmented Reality (AR)
+### Section 2.1 - Augmented Reality (AR)
 
 For our AR development, we are using **Unity AR Foundation**, a powerful and flexible framework designed for building cross-platform AR applications. Unity AR Foundation supports a wide range of AR devices and integrates seamlessly with other Unity tools, making it a popular choice for AR development.
 
@@ -55,7 +56,7 @@ One significant advantage of Unity AR Foundation over Vuforia is its seamless in
 
 In contrast, Vuforia’s features come with additional licensing costs and often result in larger file sizes, which could be a limitation for projects aimed at accessibility and ease of use. Unity AR Foundation provides more flexibility and streamlined processes for handling 3D content, making it the preferred choice for developing our AR board game.
 
-## Section 2.2 - AI Model
+### Section 2.2 - AI Model
 
 For the AI component, we are utilizing the **IBM 4-bit quantized Granite 8B model**, a lightweight version of IBM’s Granite language model. This model was selected due to its optimized performance, allowing for powerful AI-driven interactions while maintaining low resource consumption.
 
@@ -73,7 +74,7 @@ The lightweight nature of IBM Granite 8B, coupled with its offline capabilities,
 
 ---
 
-# Section 3 - Technical Decisions
+## Section 3 - Technical Decisions
 
 After extensive research, we finalized the following technological stack for our AR board game:
 
