@@ -169,6 +169,7 @@ The feedback was mainly positive, with many expressing that the concept was inte
 | Liked the idea of students being able to join remotely                    |                                        |
 | Maybe the game should show which questions were correct/wrong after the players answered |                          |
 | It is ideal if the game finishes quicker, around 25 minutes. Can be done by making the map/board smaller |               |
+|it’s not clear what’s going on sometimes, there should be a zoom function|
 
 #### Teacher Dashboard Feedback
 
@@ -181,8 +182,15 @@ The feedback was mainly positive, with many expressing that the concept was inte
 
 ### Section 4.2 - Conclusion
 
-The user evaluation produced predominantly positive feedback, with a minority of constructive criticisms that have informed our next steps. Key improvements include reducing overall game duration by leveraging the JSON Board Generator to create a smaller map and decreasing the number of quiz sections per round to streamline gameplay without compromising learning objectives.
+The user evaluation yielded predominantly positive feedback alongside a small number of constructive criticisms that have directly informed our development roadmap. In response, we have implemented and planned the following enhancements:
 
-Certain limitations remain unavoidable under current constraints. For example, using Granite to auto‑generate mathematics questions yields inaccurate content that is unsuitable for our quiz format, necessitating alternative question‑generation methods.
+- **Optimized game duration:** Leveraged the JSON Board Generator to produce a smaller map and reduced the number of quiz sections per round, streamlining gameplay without sacrificing learning objectives.
 
-Overall, participants reported high satisfaction with both the board game experience and the teacher dashboard. Moving forward, our development priorities will focus on optimizing game length, ensuring content accuracy, and refining the user interface to further enhance engagement and educational value.
+
+- **Improved usability:** Added a zoom function to the desktop version in response to user requests, acknowledging that this feature is not applicable within the AR environment.
+
+
+- **Ensured content accuracy:** Identified Granite’s automatic question‑generation limitations and are pursuing alternative methods to deliver reliable and correct quiz content.
+
+
+Overall, participants reported high satisfaction with both the board game experience and the teacher dashboard. Should the project proceed to further development, we will keep in mind the importance of refining content accuracy, enhancing the user interface, and optimizing session length to maximize engagement and educational effectiveness.
