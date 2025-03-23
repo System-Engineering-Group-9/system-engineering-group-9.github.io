@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  background-color: rgb(66, 121, 223); /* Update with the correct path to your image */
+  background-color: rgb(78, 113, 113); /* Update with the correct path to your image */
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,6 +13,19 @@
   position: relative;
   overflow: hidden;
   height: 60vh;
+}
+
+/* Add this to increase the title size */
+.headerText h1 {
+  font-size: 4.5rem; /* Increase this value to make the title larger */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* You can also style the subtitle if needed */
+.headerText p {
+  font-size: 2rem;
 }
 
 .headerRow {
