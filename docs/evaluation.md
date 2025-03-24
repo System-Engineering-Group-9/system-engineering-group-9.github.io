@@ -11,58 +11,58 @@ sidebar_position: 9
 
 ### Section 1.1 - Final MosCow Requirements (Functional)
 
-| Requirement Description | Priority | State | Contributors |
-|-------------------------|----------|-------|--------------|
-| The application should run natively in Unity, and be cross-platform for mobiles, tablets, and laptops. | MUST | DONE | Ryan, Jack Mok, Prantanil |
-| Make use of various AI models all offline and embedded for use on devices. | MUST | DONE | Jack Pan |
-| Using YOLO for Object Detection. | MUST | DONE | Jack Pan |
-| The board game can host up to 6 players. | MUST | DONE | Jack Mok |
-| Buzz question mode. | MUST | DONE | Ryan |
-| The board needs to be AR placed on a table. | MUST | DONE | Ryan |
-| Topic is presented to Granite to generate the questions on the topic, with a level of user indicated (age group). | MUST | DONE | Jack Pan |
-| Allow questions upload. | MUST | DONE | Jack Mok, Jack Pan |
-| At least 6 tile types for the board game. | MUST | DONE | Ryan |
-| Teacher Dashboard Website for game setup. | MUST | DONE | Jack Mok |
-| A Q&A sequence in-game to prompt players to answer questions. | MUST | DONE | Ryan |
-| GenAI should be used to set the background image of the board. | SHOULD | DONE | Jack Pan |
-| CO-OP Mode for players to work together instead of compete. | SHOULD | DONE | Ryan |
-| Combat System which uses dice rolls. | SHOULD | DONE | Ryan |
-| Customizable avatar with different colors and cosmetics. | SHOULD | DONE | Jack Mok |
-| Game board is generated at runtime, customizable with JSON. | SHOULD | DONE | Ryan |
-| Allow remote play online. | SHOULD | NO | - |
-| Objects (such as toys and small figures) are to be image recognized using offline AI with Granite. They would then be the avatars of the player in their virtual round of the game. | SHOULD | NO | - |
-| Generate 3D meshes for the background. | COULD | NO | - |
-| Geography (linking questions to Google Earth opening), science (including scientific animations), and maths (with explainers in the center of the board). | WON’T DO | - |
+| Requirement Description                                                                                                                                                             | Priority | State | Contributors              |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|-------|---------------------------|
+| The application should run natively in Unity, and be cross-platform for mobiles, tablets, and laptops.                                                                              | MUST     | DONE  | Ryan, Jack Mok, Prantanil |
+| Make use of various AI models all offline and embedded for use on devices.                                                                                                          | MUST     | DONE  | Jack Pan                  |
+| Using YOLO for Object Detection.                                                                                                                                                    | MUST     | DONE  | Jack Pan                  |
+| The board game can host up to 6 players.                                                                                                                                            | MUST     | DONE  | Jack Mok                  |
+| Buzz question mode.                                                                                                                                                                 | MUST     | DONE  | Ryan                      |
+| The board needs to be AR placed on a table.                                                                                                                                         | MUST     | DONE  | Ryan                      |
+| Topic is presented to Granite to generate the questions on the topic, with a level of user indicated (age group).                                                                   | MUST     | DONE  | Jack Pan                  |
+| Allow questions upload.                                                                                                                                                             | MUST     | DONE  | Jack Mok, Jack Pan        |
+| At least 6 tile types for the board game.                                                                                                                                           | MUST     | DONE  | Ryan                      |
+| Teacher Dashboard Website for game setup.                                                                                                                                           | MUST     | DONE  | Jack Mok                  |
+| A Q&A sequence in-game to prompt players to answer questions.                                                                                                                       | MUST     | DONE  | Ryan                      |
+| GenAI should be used to set the background image of the board.                                                                                                                      | SHOULD   | DONE  | Jack Pan                  |
+| CO-OP Mode for players to work together instead of compete.                                                                                                                         | SHOULD   | DONE  | Ryan                      |
+| Combat System which uses dice rolls.                                                                                                                                                | SHOULD   | DONE  | Ryan                      |
+| Customizable avatar with different colors and cosmetics.                                                                                                                            | SHOULD   | DONE  | Jack Mok                  |
+| Game board is generated at runtime, customizable with JSON.                                                                                                                         | SHOULD   | DONE  | Ryan                      |
+| Allow remote play online.                                                                                                                                                           | SHOULD   | NO    | -                         |
+| Objects (such as toys and small figures) are to be image recognized using offline AI with Granite. They would then be the avatars of the player in their virtual round of the game. | SHOULD   | NO    | -                         |
+| Generate 3D meshes for the background.                                                                                                                                              | COULD    | NO    | -                         |
+| Geography (linking questions to Google Earth opening), science (including scientific animations), and maths (with explainers in the center of the board).                           | WON’T DO | -     |
 
 ### Section 1.2 - Final MosCow Requirements (Non-Functional)
 
-| Requirement Description | Priority | State | Contributors |
-|-------------------------|----------|-------|--------------|
-| Minimize errors and bugs within the game. | MUST | DONE | Ryan, Jack Mok |
-| Using lightweight local GenAI model to support devices with low specs. | MUST | DONE | Jack Pan |
-| Documents and codebase are organized and easy to understand. | MUST | DONE | Ryan, Jack Mok, Jack Pan |
-| Ensure application can be run on different devices and environments. | MUST | DONE | Ryan, Jack Mok, Jack Pan, Prantanil |
-| Design a simple and easy to understand user interface. | MUST | DONE | Jack Mok |
-| Carry out user testing to ensure the playability and user experience of the game. | MUST | DONE | Ryan, Jack Pan, Jack Mok, Prantanil |
+| Requirement Description                                                           | Priority | State | Contributors                        |
+|-----------------------------------------------------------------------------------|----------|-------|-------------------------------------|
+| Minimize errors and bugs within the game.                                         | MUST     | DONE  | Ryan, Jack Mok                      |
+| Using lightweight local GenAI model to support devices with low specs.            | MUST     | DONE  | Jack Pan                            |
+| Documents and codebase are organized and easy to understand.                      | MUST     | DONE  | Ryan, Jack Mok, Jack Pan            |
+| Ensure application can be run on different devices and environments.              | MUST     | DONE  | Ryan, Jack Mok, Jack Pan, Prantanil |
+| Design a simple and easy to understand user interface.                            | MUST     | DONE  | Jack Mok                            |
+| Carry out user testing to ensure the playability and user experience of the game. | MUST     | DONE  | Ryan, Jack Pan, Jack Mok, Prantanil |
 
 ### Section 1.3 - Individual Contribution
 
-| Work Type | Ryan Li | Jack Mok | Jack Pan | Prantanil |
-|-----------|---------|----------|----------|-----------|
-| Client Liaison | | | | |
-| Liaison with Users | | | | |
-| BETT Conference | | | | |
-| HCI | | | | |
-| Requirement analysis | | | | |
-| Research | | | | |
-| Pitch Presentation | | | | |
-| Coding | | | | |
-| Testing | | | | |
-| Development blog | | | | |
-| Website Editing | | | | |
-| Video Editing | | | | |
-| Overall Contribution | | | | |
-| Roles | Team Leader, Game Developer, Client Liaison | UI/UX Designer, Frontend Developer, Game Developer | Researcher, Backend Developer, Tester | Game Developer, Network Developer |
+| Work Type            | Ryan Li                                     | Jack Mok                                           | Jack Pan                              | Prantanil                         |
+|----------------------|---------------------------------------------|----------------------------------------------------|---------------------------------------|-----------------------------------|
+| Client Liaison       |                                             |                                                    |                                       |                                   |
+| Liaison with Users   |                                             |                                                    |                                       |                                   |
+| BETT Conference      |                                             |                                                    |                                       |                                   |
+| HCI                  |                                             |                                                    |                                       |                                   |
+| Requirement analysis |                                             |                                                    |                                       |                                   |
+| Research             |                                             |                                                    |                                       |                                   |
+| Pitch Presentation   |                                             |                                                    |                                       |                                   |
+| Coding               |                                             |                                                    |                                       |                                   |
+| Testing              |                                             |                                                    |                                       |                                   |
+| Development blog     |                                             |                                                    |                                       |                                   |
+| Website Editing      |                                             |                                                    |                                       |                                   |
+| Video Editing        |                                             |                                                    |                                       |                                   |
+| Overall Contribution |                                             |                                                    |                                       |                                   |
+| Roles                | Team Leader, Game Developer, Client Liaison | UI/UX Designer, Frontend Developer, Game Developer | Researcher, Backend Developer, Tester | Game Developer, Network Developer |
 
 ---
 
