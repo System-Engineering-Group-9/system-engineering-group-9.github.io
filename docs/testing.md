@@ -30,7 +30,9 @@ Below are the key testing methods we employed:
 
 ## Section 1 - Unit Testing
 
-We employed a combination of unit and integration testing to validate the core functionality of our Educational Question Generator API. Given the nature of our system, which is primarily backend-focused and does not rely on Android-specific components, we used standard Python testing libraries. The key tools leveraged were `pytest`, Starlette's `TestClient`, and `coverage.py`.
+We employed a combination of unit and integration testing to validate the core functionality of our Educational Question
+Generator API. Given the nature of our system, which is primarily backend-focused, we used standard Python testing
+libraries. The key tools leveraged were `pytest`, Starlette's `TestClient`, and `coverage.py`.
 
 The tests aim to ensure that each API endpoint behaves correctly under various scenarios. We simulate user interactions with our HTTP endpoints and assert that the expected business logic is applied consistently.
 
@@ -70,7 +72,7 @@ def client():
 
 The following test ensures that the `/ai/generate/` endpoint returns a valid question based on user input:
 
-**api/test_generate_questions.py**
+**api/ai.py**
 
 ```python
 def test_generate_questions(client):
@@ -96,7 +98,9 @@ def test_generate_questions(client):
 - **Negative Testing**: Tests the system's resilience by providing malformed or incomplete input to validate proper error responses.
 
 ### Section 1.5 - Code Coverage
-Our team prioritizes maintaining a high level of test coverage. Using coverage.py, we achieved over 90% code coverage across the backend. To ensure this standard is met, we run:
+
+Our team prioritizes maintaining a high level of test coverage. Using **pytest-cov**, we achieved over 90% code coverage
+across the backend. To ensure this standard is met, we run:
 ```
 coverage run --source=app -m pytest
 coverage report --show-missing
@@ -107,19 +111,39 @@ Maintaining this threshold helps ensure that core functionality, including edge 
 --- 
 
 ## Section 2 - Performance testing
-We tested the performance of the Educational Question Generator application to ensure it runs efficiently under various conditions, particularly focusing on CPU usage, memory usage, and response times. The goal was to identify any potential bottlenecks and gain a deeper understanding of the application's overall efficiency.
 
-The tests were conducted on a server that aligns with the expected production environment, equipped with a multi-core processor, 16GB of RAM, and GPU support for model loading. We simulated real-world usage by performing the tests over extended periods and under varying load conditions, including both normal and high-concurrency scenarios. To measure the performance, we used **Apifox** to simulate concurrent API requests and measure response times. Additionally, we used **psutil** for monitoring CPU and RAM usage and **nvidia**-smi to track GPU VRAM usage during model loading and question generation.
+We tested the performance of the Educational Question Generator application to ensure it runs efficiently under various
+conditions, particularly focusing on GPU usage, memory usage, and response times. The goal was to identify any potential
+bottlenecks and gain a deeper understanding of the application's overall efficiency.
+
+The tests were conducted on a server that aligns with the expected production environment, equipped with a multicore
+processor, 16GB of RAM, and **Nvidia 4070 GPU** with 8GB VRAM support for model loading. We simulated real-world usage
+by performing the tests over extended periods and under varying load conditions, including both normal and
+high-concurrency scenarios. To measure the performance, we used **Apifox** to simulate concurrent API requests and
+measure response times. Additionally, we used **psutil** for monitoring CPU and RAM usage and **nvidia-smi** to track
+GPU VRAM usage during model loading and question generation.
 
 ![image](./testingImg/VRAM.jpeg)
 
-The results were promising. For **response time**, the application consistently handled requests with an average time of under 10 seconds for generating a standard quiz question, even under high-concurrency conditions. The maximum response time was recorded to be below 15 seconds, which is well within the acceptable range for real-time interactions. This demonstrates that the application is responsive and capable of handling multiple simultaneous requests without significant delays.
+The results were promising. For **response time**, the application consistently handled requests with an average time of
+under **10 seconds** for generating a standard quiz question, even under high-concurrency conditions. The maximum
+response time was recorded to be below **15 seconds**, which is well within the acceptable range for real-time
+interactions. This demonstrates that the application is responsive and capable of handling multiple simultaneous
+requests without significant delays.
 
-In terms of **memory usage**, the application performed efficiently with stable memory consumption throughout the tests. The system’s GPU VRAM and RAM usage were continuously monitored, and we observed no significant spikes during model loading or question generation. The total VRAM usage remained within a stable range of 2GB, while the system’s RAM usage remained below 8GB, even during stress tests. This suggests that the single model loading strategy is highly effective in managing memory usage and avoiding excessive resource consumption.
+In terms of **memory usage**, the application performed efficiently with stable memory consumption throughout the tests.
+The system’s GPU VRAM and RAM usage were continuously monitored, and we observed no significant spikes during model
+loading or question generation. The total **VRAM usage** remained within a stable range of 5GB, while the system’s RAM
+usage remained below 1GB, even during stress tests. This suggests that the **single model loading strategy** is highly
+effective in managing memory usage and avoiding excessive resource consumption.
 
 For **stability**, we conducted long-duration stress tests by simulating increased concurrent requests over a 60-minute period. During this time, the application continued to perform well, with no noticeable memory leaks or gradual slowdowns. The error rate remained below 1%, indicating that the system could handle sustained usage without any major issues.
 One of the key considerations during our testing was the **model loading strategy**, which ensures that only one model is loaded at a time. This prevents the system from being overwhelmed by multiple large models, ensuring that memory is used efficiently and reducing the risk of out-of-memory (OOM) errors. As a result, the system's memory usage remained well-controlled throughout the tests, and the application performed stably even under peak loads.
-In **conclusion**, the tests confirmed that the application performs efficiently across a range of scenarios. The system was able to handle high-concurrency conditions with minimal resource consumption, and the overall performance remained stable even during extended usage. Although hardware differences (e.g., GPU and CPU capabilities) may affect performance slightly, the application should remain responsive and functional across a wide variety of devices, making it suitable for production deployment.
+In **conclusion**, the tests confirmed that the application performs efficiently across a range of scenarios. The system
+was able to handle high-concurrency conditions with minimal resource consumption, and the overall performance remained
+stable even during extended usage. Although hardware differences (e.g., GPU and CPU capabilities) may affect
+performance, the application should remain responsive and functional across a wide variety of devices, making it
+suitable for production deployment.
 
 ---
 
@@ -129,10 +153,11 @@ We have tested our game on multiple devices across different platforms, includin
 
 ### Device Model and Specs
 
-| Device Model               | Specs                       |
-|----------------------------|-----------------------------|
-| **MacBook Pro (2021) M1 Pro** | CPU: M1 Pro, RAM: 16GB      |
-| **Samsung Galaxy S20 FE**   | CPU: Snapdragon 870, RAM: 8GB |
+| Device Model                  | Specs                                                    |
+|-------------------------------|----------------------------------------------------------|
+| **MacBook Pro (2021) M1 Pro** | CPU: M1 Pro, RAM: 16GB                                   |
+| **Samsung Galaxy S20 FE**     | CPU: Snapdragon 870, RAM: 8GB                            |
+| **ASUS TUF Gaming f16 2024**  | CPU: i9 14900HX, RAM: 16GM, GPU: Nvidia GeForce RTX 4070 |
 
 With our extensive compatibility testing, we are confident that our game will have no issue running on the devices provided in a classroom setting.
 
@@ -156,29 +181,29 @@ The feedback was mainly positive, with many expressing that the concept was inte
 
 #### Game Feedback (CO-OP Mode)
 
-|Feedback|
-----------------------------------------|
-| Liked the visuals                                                         |                                        |
-| Concept quite good and creative                                           |                                        |
-| Good selection of Outcomes (Tiles)                                        |                                        |
-| It’s easy to play (controls)                                              |                                        |
-| It was really colorful                                                    |                                        |
-| Takes a lot of time to understand, symbols need explaining, etc.          |                                        |
-| It’s educational                                                          |                                        |
-| Liked that you can either play against each other (FFA) or part of the team (CO-OP) |                                |
-| Liked the idea of students being able to join remotely                    |                                        |
-| Maybe the game should show which questions were correct/wrong after the players answered |                          |
+| Feedback                                                                                                 |
+|----------------------------------------------------------------------------------------------------------|
+| Liked the visuals                                                                                        |                                        |
+| Concept quite good and creative                                                                          |                                        |
+| Good selection of Outcomes (Tiles)                                                                       |                                        |
+| It’s easy to play (controls)                                                                             |                                        |
+| It was really colorful                                                                                   |                                        |
+| Takes a lot of time to understand, symbols need explaining, etc.                                         |                                        |
+| It’s educational                                                                                         |                                        |
+| Liked that you can either play against each other (FFA) or part of the team (CO-OP)                      |                                |
+| Liked the idea of students being able to join remotely                                                   |                                        |
+| Maybe the game should show which questions were correct/wrong after the players answered                 |                          |
 | It is ideal if the game finishes quicker, around 25 minutes. Can be done by making the map/board smaller |               |
-|it’s not clear what’s going on sometimes, there should be a zoom function|
+| it’s not clear what’s going on sometimes, there should be a zoom function                                |
 
 #### Teacher Dashboard Feedback
 
-| Feedback                                                                 |
-----------------------------------------|
-| Great that it has different levels/difficulties for questions             |                                        |
-| It would be great if there were inclusion of more subjects like maths     |                                        |
-| The AI-generated questions are good                                        |                                        |
-| The questions take quite a bit of time to generate                        |                                        |
+| Feedback                                                              |
+|-----------------------------------------------------------------------|
+| Great that it has different levels/difficulties for questions         |                                        |
+| It would be great if there were inclusion of more subjects like maths |                                        |
+| The AI-generated questions are good                                   |                                        |
+| The questions take quite a bit of time to generate                    |                                        |
 
 ### Section 4.2 - Conclusion
 
