@@ -8,7 +8,7 @@ sidebar_position: 6
 # System Design
 
 ## Overview
-Our system is designed to facilitate interactive learning by connecting a web-based Teacher Dashboard with a Student Board Game through a centralized backend server. The architecture enables real-time data exchange, ensuring a seamless user experience for both teachers and students. The following diagram provides a high-level view of our system design.
+Our system integrates a **web-based Teacher Dashboard**, a **Student Board Game interface**, and a **centralized backend server** to deliver personalized learning experiences while optimizing teacher workflows by using GenAI technologies. The following diagram provides a high-level view of our system design.
 
 ![image](./SysDesImg/SysDesOverview.drawio.png)
 
@@ -32,7 +32,7 @@ One of the primary features of the system is AI-powered content generation:
 - **Quiz Generation**: AI-generated quiz questions are created based on predefined parameters, enabling personalized learning experiences.
 - **Background Images**: Backgrounds and quiz panel images are dynamically generated using DreamShaper, allowing for customization based on different themes.
 
-This architecture integrates AI-driven functionality with a data exchange system. The combination of web and game-based interfaces, supported by a robust backend, ensures that teachers can easily manage content while students receive an adaptive and immersive educational experience.
+This architecture integrates AI-driven functionality with a data exchange system. The combination of web and game-based interfaces, supported by a robust backend, ensures that teachers can easily manage content while students receive an adaptive and personalised educational experience.
 
 ---
 
@@ -40,7 +40,7 @@ This architecture integrates AI-driven functionality with a data exchange system
 
 ![image](./SysDesImg/SysArchStudent.drawio.png)
 
-The **Student Board Game** is developed using the Unity Engine. It is a round-based game where students interact by pressing buttons to perform actions. The game logic is organized and managed through various components, ensuring seamless gameplay and a consistent user experience. Several game objects, including players and interactive elements, are controlled by dedicated managers to maintain the integrity of the game flow.
+The **Student Board Game** is developed using the **Unity Engine**. It is a round-based game where students interact by pressing buttons to perform actions. The game logic is organized and managed through various components. All game objects, including players and interactive elements, are controlled by dedicated managers to maintain the integrity of the game flow. Our game design is mainly based on a **reward cycle**. The cycle begins with RoundManger managing the players turn, followed by QuizManger’s quiz component, then students will be rewarded accordingly by the RewardManager. This close-loop architecture provides immediate achievement feedback that reinforces learning objectives while sustaining student engagement through progressively scaled difficulty levels, all implemented within an event-driven Unity framework.
 
 Below is a diagram of how key components interact to managing the game state, UI, and game logic:
 
@@ -61,8 +61,9 @@ Below is a diagram of how key components interact to managing the game state, UI
   - **Random Reward Selection**: Randomly selects a reward from the appropriate tier.
   - **Buff Application & Notification**: Applies the selected buff to the player and triggers UI notifications.
   
-- **Combat System**: Manages combat interactions, including handling health reduction and status changes.
-
+- **CombatManager**: handles combat encounters between players and bosses.
+  - **Combat Flow**: Manages combat setup, alternating attack/defense phases, dice rolls, and animations.
+  - **Damage & Transitions**: Calculates damage, applies effects, resets UI, and transitions between board and combat areas.
 - **Quiz System**: Handles quiz popups for players.
   - **Quiz Management**: Handles question loading, quiz flow, and performance evaluation, tracking user answers and calculating rewards.
   - **Quiz Flow Control**: Manages the quiz session, transitions between questions, and timing, including evaluating correct answers and streaks.
@@ -136,19 +137,18 @@ client.
 --- 
 
 ## Section 3 - System Flow
+  
+   The system starts with the Teacher UI, a React web application that allows teachers to configure and launch the game. The teacher logs into the dashboard, where they can manage game configurations, upload quiz questions, and customize the game environment. Then students will be able to join the game room create by teacher to start playing.
 
-1. **Teacher UI Initialization**  
-   The system starts with the Teacher UI, a React web application that allows teachers to configure and launch the game. The teacher logs into the dashboard, where they can manage game configurations, upload quiz questions, and customize the game environment.
-
-2. **Quiz Question Generation**  
+1. **Quiz Question Generation**  
    The teacher can generate quiz questions through two methods:
    - **Method 1:** Uploading a JSON spreadsheet containing predefined quiz questions.
    - **Method 2:** Using AI-based object recognition, where images are processed with `detection.py` to detect objects. The detected objects are then converted into prompts for `questionGenerator.py`, which dynamically generates quiz questions.
 
-3. **Themed Image Creation**  
+2. **Themed Image Creation**  
    The teacher can create themed background images and quiz images using `dreamShaper.py`. By providing a text prompt, the system generates visuals that align with the desired theme. The teacher then configures various game settings such as age group, theme, difficulty level, and game mode.
 
-4. **Game Launch**  
+3. **Game Launch**  
    The teacher starts the game by creating a unique room code, which students use to join. Students enter the room code on the Student Board Game, customize their characters in **Scene: CharacterSelect**, and enter **Scene: BoardScene**. Players roll dice to move across the board, answer quiz questions, and collect points. The game progresses until a winner is determined based on accumulated points.
 
 ---

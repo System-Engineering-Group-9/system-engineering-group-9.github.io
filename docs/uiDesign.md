@@ -22,13 +22,13 @@ The game is designed to be adaptable for students across various age groups and 
 ---
 ## Section 2 - Prototypes and Final Designs
 
-The user interface is a crucial part of our project, and we have continuously improved it throughout development by actively seeking and incorporating feedback from both teachers and students. By adopting an iterative, user-centered design approach, we refined the interface to ensure it is accessible, engaging, and functional.
+The user interface is a crucial part of our project, and we have continuously improved it throughout development by actively seeking and incorporating feedback from both teachers and students. By adopting an iterative, user-centered design approach, we refined the interface to ensure it is Simple, Engaging and Inclusive.
 
-For the **Game app**, we prioritized simplicity and clarity in the game app to ensure a smooth experience, especially for students with SEND (Special Educational Needs and Disabilities). The app’s main components include: board layout, quiz popup, and combat scene.
+For the **Game app**, we prioritized simplicity and clarity in the game app to ensure a smooth experience, especially for students with SEND (Special Educational Needs and Disabilities). The app’s main components include: **board layout**, **quiz popup**, and **combat scene**.
 
 To streamline development, we incorporated assets from the UltimateCleanUI pack from the Unity Asset Store, which provided us with professionally designed UI elements such as buttons and fonts, saving us time while maintaining a polished aesthetic.
 
-To reduce complexity, the interface relies primarily on button interactions to minimize the learning curve. Additionally, based on feedback from NAS (National Autistic Society) teachers, we adopted a mild color palette to create a comfortable and inclusive visual environment.
+To reduce complexity, the interface relies primarily on button interactions to minimize the learning curve. Additionally, based on feedback from NAS (National Autistic Society) teachers, we adopted a colorful palette to create an engaging and appealing visual environment.
 
 For the **Teacher Dashboard**, simplicity and functionality were the primary goals. The dashboard is designed to streamline teachers’ workflow by providing them with an intuitive interface for managing and monitoring the game effectively.
 
@@ -98,7 +98,10 @@ The original combat scene lacked animations and had unclear combat logic. Feedba
 In our initial dashboard, page descriptions were vague and did not clearly explain their functionality. During demos with teachers from NAS during “AI for Good Showcase”, several questions arose about the meaning of different pages, highlighting this issue.
 
 **Improvements:**
+- We have added a step guide on the homepage to guide through the setup process.
 - We revised page descriptions to use clearer and more descriptive wording, reducing confusion and ensuring teachers could navigate the dashboard with ease.
+- Redesign the frontend for a better user experience
+
 
 <div class="row">
   <div class="col">
@@ -107,7 +110,7 @@ In our initial dashboard, page descriptions were vague and did not clearly expla
   </div>
   <div class="col">
     **Improved Teacher Dashboard:**
-    ![image](./UIDesignMedia/NewTeacher.png)
+    ![image](./UIDesignMedia/NewTeacher.jpeg)
   </div>
 </div>
 
