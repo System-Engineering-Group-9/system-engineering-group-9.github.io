@@ -106,7 +106,16 @@ Our project was effectively managed through regular team meetings during lab ses
 
 ---
 
-## Section 3 - Future Work/Plan
+## Section 3 - Known Issues
+
+1. **Object Recognition**: The object recognition model we are using, YOLO, is not perfect and may sometimes fail to
+   detect objects accurately. This can lead to incorrect or missing avatars in the game.
+2. **Memory management**: Due to the number of AI model loaded, memory management can be an issue, especially on
+   lower-end devices. This can lead to performance issues and crashes.
+
+---
+
+## Section 4 - Future Work/Plan
 
 In this project, our team tried our best to complete as many features as possible, but due to the project’s timeframe, some features remain unfinished. These are the features we would like to implement in the future:
 

@@ -183,27 +183,27 @@ The feedback was mainly positive, with many expressing that the concept was inte
 
 | Feedback                                                                                                 |
 |----------------------------------------------------------------------------------------------------------|
-| Liked the visuals                                                                                        |                                        |
-| Concept quite good and creative                                                                          |                                        |
-| Good selection of Outcomes (Tiles)                                                                       |                                        |
-| It’s easy to play (controls)                                                                             |                                        |
-| It was really colorful                                                                                   |                                        |
-| Takes a lot of time to understand, symbols need explaining, etc.                                         |                                        |
-| It’s educational                                                                                         |                                        |
-| Liked that you can either play against each other (FFA) or part of the team (CO-OP)                      |                                |
-| Liked the idea of students being able to join remotely                                                   |                                        |
-| Maybe the game should show which questions were correct/wrong after the players answered                 |                          |
-| It is ideal if the game finishes quicker, around 25 minutes. Can be done by making the map/board smaller |               |
+| Liked the visuals                                                                                        |                                        
+| Concept quite good and creative                                                                          |                                        
+| Good selection of Outcomes (Tiles)                                                                       |                                        
+| It’s easy to play (controls)                                                                             |                                        
+| It was really colorful                                                                                   |                                        
+| Takes a lot of time to understand, symbols need explaining, etc.                                         |                                        
+| It’s educational                                                                                         |                                        
+| Liked that you can either play against each other (FFA) or part of the team (CO-OP)                      |                                
+| Liked the idea of students being able to join remotely                                                   |                                        
+| Maybe the game should show which questions were correct/wrong after the players answered                 |                          
+| It is ideal if the game finishes quicker, around 25 minutes. Can be done by making the map/board smaller |               
 | it’s not clear what’s going on sometimes, there should be a zoom function                                |
 
 #### Teacher Dashboard Feedback
 
 | Feedback                                                              |
 |-----------------------------------------------------------------------|
-| Great that it has different levels/difficulties for questions         |                                        |
-| It would be great if there were inclusion of more subjects like maths |                                        |
-| The AI-generated questions are good                                   |                                        |
-| The questions take quite a bit of time to generate                    |                                        |
+| Great that it has different levels/difficulties for questions         |                                        
+| It would be great if there were inclusion of more subjects like maths |                                        
+| The AI-generated questions are good                                   |                                       
+| The questions take quite a bit of time to generate                    |                                        
 
 ### Section 4.2 - Conclusion
 
