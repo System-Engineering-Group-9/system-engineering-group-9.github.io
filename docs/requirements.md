@@ -17,7 +17,7 @@ Classroom Explorers also enhances accessibility by enabling remote learners, suc
 
 ### Section 1.2 - Project Goals
 
-#### Educational, Interactive, and Design
+#### Educational, Interactive and Design
 
 Classroom Explorers aims to provide an innovative and engaging learning experience for students with SEND needs across borders through a mixed reality board game. By integrating interactive gameplay, AI-generated content, and a well-structured teacher interface, our game seeks to support both students and educators. Our objectives align with three key pillars: Educational Value, Interactivity, and Design Quality.
 
