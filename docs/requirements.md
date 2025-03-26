@@ -26,7 +26,7 @@ Below are the major goals we have to complete:
 - AI-Powered Backend which integrates Object Recognition, the IBM Granite model, and an Image Generation model, serving as a bridge between student and teacher applications.
 - Lightweight, Locally Run IBM Granite GenAI model is compiled into an executable, ensuring efficient offline operation.
 
-Our goal is to deliver a fully functional game with rooom for future expansion, allowing students to benefit from GenAI-driven learning. The solution will be designed with minimal technical dependencies and setup requirements, making it practical for school environments.
+Our goal is to deliver a fully functional game with room for future expansion, allowing students to benefit from GenAI-driven learning. The solution will be designed with minimal technical dependencies and setup requirements, making it practical for school environments.
 
 ---
 
