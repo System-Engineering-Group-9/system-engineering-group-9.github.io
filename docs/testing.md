@@ -11,20 +11,13 @@ We have undertaken a comprehensive testing approach to ensure our project meets 
 
 Below are the key testing methods we employed:
 
-#### Unit Testing
-- Implemented unit testing for Educational Question Generator API.
+- **Unit Testing**: Implemented unit testing for Educational Question Generator API.
 
-#### Performance Testing
-- Evaluated performance for the Educational Question Generator API.
+- **Performance Testing**: Evaluated performance for the Educational Question Generator API.
 
-#### Compatibility Testing
-- Tested the game on various devices with different hardware specifications to ensure broad accessibility.
+- **Compatibility Testing**:Tested the game on various devices with different hardware specifications to ensure broad accessibility.
 
-#### User Acceptance Testing
-- Conducted real-world testing with various user groups, including:
-  - Helen Allison School (NAS) visit
-  - AI for Good showcase to clients
-  - School outreach visits
+- **User Acceptance Testing**: Conducted real-world testing with various user groups, including: Helen Allison School (NAS) visit, AI for Good showcase to clients, School outreach visits
 
 ---
 
@@ -139,6 +132,7 @@ effective in managing memory usage and avoiding excessive resource consumption.
 
 For **stability**, we conducted long-duration stress tests by simulating increased concurrent requests over a 60-minute period. During this time, the application continued to perform well, with no noticeable memory leaks or gradual slowdowns. The error rate remained below 1%, indicating that the system could handle sustained usage without any major issues.
 One of the key considerations during our testing was the **model loading strategy**, which ensures that only one model is loaded at a time. This prevents the system from being overwhelmed by multiple large models, ensuring that memory is used efficiently and reducing the risk of out-of-memory (OOM) errors. As a result, the system's memory usage remained well-controlled throughout the tests, and the application performed stably even under peak loads.
+
 In **conclusion**, the tests confirmed that the application performs efficiently across a range of scenarios. The system
 was able to handle high-concurrency conditions with minimal resource consumption, and the overall performance remained
 stable even during extended usage. Although hardware differences (e.g., GPU and CPU capabilities) may affect
@@ -149,7 +143,7 @@ suitable for production deployment.
 
 ## Section 3 - Compatibility Testing
 
-We have tested our game on multiple devices across different platforms, including Android smartphones, tablets, iPads, Windows laptops, and Macs. Below is a list of devices and their specs. We have tried devices with low specs to ensure that our game can run smoothly, considering a classroom scenario with limited processing power and RAM.
+We have tested our game on multiple devices across different platforms, including Android smartphones, Android tablets, Windows machine, and Macs. Below is a list of devices and their specs. We have tried devices with low specs to ensure that our game can run smoothly, considering a classroom scenario with limited processing power and RAM.
 
 ### Device Model and Specs
 
@@ -157,7 +151,13 @@ We have tested our game on multiple devices across different platforms, includin
 |-------------------------------|----------------------------------------------------------|
 | **MacBook Pro (2021) M1 Pro** | CPU: M1 Pro, RAM: 16GB                                   |
 | **Samsung Galaxy S20 FE**     | CPU: Snapdragon 870, RAM: 8GB                            |
-| **ASUS TUF Gaming f16 2024**  | CPU: i9 14900HX, RAM: 16GM, GPU: Nvidia GeForce RTX 4070 |
+| **ASUS TUF Gaming f16 2024**  | CPU: i9 14900HX, RAM: 16GB, GPU: Nvidia GeForce RTX 4070 |
+| **Samsung Tab S8+** |CPU: Snapdragon 8 Gen 1, RAM: 8GB|
+| **MacBook Pro M3 Pro**|CPU: M3 Pro, RAM: 16GB|
+| **Motorola Razr 50 Foldable**|CPU: MediaTek Dimensity 7300X, RAM: 8GB|
+| **Xiaomi Pad 5**| CPU: Snapdragon 860, RAM: 6GB|
+| **Samsung Tab S7FE**| CPU: Snapdragon 750G, RAM: 6GB|
+| **MacBook Air M1**|CPU: M1, RAM:8GB|
 
 With our extensive compatibility testing, we are confident that our game will have no issue running on the devices provided in a classroom setting.
 
@@ -165,15 +165,13 @@ With our extensive compatibility testing, we are confident that our game will ha
 
 ## Section 4 - User Acceptance Testing
 
-The tests were conducted at the Helen Allison School (NAS) within the Hub, targeting students primarily aged 14 to 17. The purpose of the evaluation was to validate the effectiveness of our product for students with diverse needs. Specifically, we assessed whether:
-
+The tests were conducted at the Helen Allison School (NAS) within the Hub cas well as on students from school outreach visits to UCL, targeting students primarily aged 14 to 17. The purpose of the evaluation was to validate the effectiveness of our product for students with diverse needs. Specifically, we assessed whether:
 - The game’s mechanics can be easily understood in a single play session
 - Students demonstrate investment in the game and engage actively in answering questions
 - The game is appropriate for a learning environment
 
-Over the course of 30-minute sessions across three classes, we presented our CO-OP game mode and teacher dashboard using a single device, with gameplay projected for both students and teachers. Participants actively posed questions and engaged in collaborative discussions regarding the project. 
-
-Additionally, some classes, already familiar with games reminiscent of *Classroom Explorers* such as *Mario Party*, recognized similarities without explicit guidance. Nonetheless, all classes clearly understood the objectives of the game and participated actively in the quiz segments.
+Over the course of 30-minute sessions across three classes, we presented our CO-OP gamemode and teacher dashboard using a single device, with gameplay projected for both students and teachers. Participants actively posed questions and engaged in collaborative discussions regarding the project.
+Additionally, some classes, already familiar with games reminiscent of Classroom Explorers such as Mario Party, recognized similarities without explicit guidance. Nonetheless, all classes clearly understood the objectives of the game and participated actively in the quiz segments.
 
 ### Section 4.1 - Test Feedback
 
