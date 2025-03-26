@@ -8,13 +8,17 @@ sidebar_position: 5
 # UI Design
 
 ## Section 1 - Design Principles
-> Simple, Engaging, and Inclusive
+> Simple, Engaging, Visible and Inclusive
 
 ### Simple
-Our game is intuitive and easy to pick up, requiring minimal effort to understand. The game logic is straightforward—users only have two primary actions: answering a quiz or rolling a dice. Both actions are performed by pressing clearly marked buttons, ensuring accessibility and ease of use for all players.
+ Our game is intuitive and easy to pick up, requiring minimal effort to understand. The game logic is straightforward—users only have two primary actions: answering a quiz or rolling a dice. Both actions are performed by pressing clearly marked buttons, ensuring accessibility and ease of use for all players. The teacher dashboard design allows teachers to quickly set up lessons, configure game settings, and manage content with minimal complexity. This ensures a smooth and efficient classroom experience.
 
 ### Engaging
-To enhance motivation and participation, we implemented a scoring system. Students can earn points by engaging with the game, which can be exchanged for trophies or used to compete with their peers, adding a fun and competitive element to the learning process.
+To enhance motivation and participation, we implemented a scoring system. Students can earn points by engaging with the game, which can be exchanged for trophies or used to compete with their peers, adding a fun and competitive element to the learning process. Additionally, the game integrates mixed reality elements, including interactive 3D models, allowing students to immerse themselves in the game within the classroom environment. This creates a unique and engaging learning experience, making lessons more interactive and enjoyable.
+
+### Visible
+Our game is designed with high visibility to ensure players can easily follow the gameplay. Large, clearly labeled buttons make interactions intuitive, regular notification popups as announcements when a player gets rewarded, while a player indicator with camera tracking highlights the current turn, ensuring everyone knows who is playing. These features enhance clarity and accessibility, making the game easier to navigate for all users.
+
 
 ### Inclusive
 The game is designed to be adaptable for students across various age groups and learning abilities. It also supports remote play, allowing students from different locations, including those learning from home or abroad, to participate seamlessly alongside their peers in school.
@@ -22,7 +26,7 @@ The game is designed to be adaptable for students across various age groups and 
 ---
 ## Section 2 - Prototypes and Final Designs
 
-The user interface is a crucial part of our project, and we have continuously improved it throughout development by actively seeking and incorporating feedback from both teachers and students. By adopting an iterative, user-centered design approach, we refined the interface to ensure it is Simple, Engaging and Inclusive.
+The user interface is a crucial part of our project, and we have continuously improved it throughout development by actively seeking and incorporating feedback from both teachers and students. By adopting an iterative, user-centered design approach, we refined the interface to ensure it is Simple, Engaging, Visible and Inclusive.
 
 For the **Game app**, we prioritized simplicity and clarity in the game app to ensure a smooth experience, especially for students with SEND (Special Educational Needs and Disabilities). The app’s main components include: **board layout**, **quiz popup**, and **combat scene**.
 
@@ -110,7 +114,7 @@ In our initial dashboard, page descriptions were vague and did not clearly expla
   </div>
   <div class="col">
     **Improved Teacher Dashboard:**
-    ![image](./UIDesignMedia/NewTeacher.jpeg)
+    ![image](./UIDesignMedia/NewTeacher.png)
   </div>
 </div>
 
