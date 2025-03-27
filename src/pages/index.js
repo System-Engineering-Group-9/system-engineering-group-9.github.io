@@ -42,7 +42,7 @@ export default function Home() {
             <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/IBM_granite_2_cubes_logo.svg/1200px-IBM_granite_2_cubes_logo.svg.png' alt='IBM Granite Logo'></img>
           </div>
           <br></br>
-          <h2>Abstract</h2>
+          <h1>Abstract</h1>
           <p>
             Education should be an engaging and inclusive experience for all students, yet those who are unable to attend school due to hospitalization or other circumstances often face isolation and disengagement. Traditional teaching methods, heavily reliant on textbooks and exercises, can make remote learning feel uninspiring and detached from the classroom environment. Additionally, teachers face increasing workloads, making it challenging to provide personalized support for absent students.
           </p>
@@ -53,13 +53,13 @@ export default function Home() {
             At its core, our system combines an engaging board game with an advanced AI-powered quiz engine, ensuring that learning remains fun and effective. Hospitalized children can join their peers via video call, actively participating in lessons as if they were physically present. By bridging the gap between remote and in-person learners, our platform fosters a more inclusive and collaborative educational experience, setting a new standard for accessible and engaging learning.
           </p>
         </div>
-        <TeamSection />
+        <br></br>
         <div className= {styles.centeredText}>
-          <h2>Demo video</h2>
+          <h1>Demo video</h1>
           <div className={styles.videoContainer}>
             <iframe
-                width="560"
-                height="315"
+                width="100%"
+                height="500px"
                 src="https://www.youtube.com/embed/Bo3ZEbmgZ4A" // Change this to your demo video link
                 title="YouTube video player"
                 style={{border: "none"}}
@@ -69,16 +69,17 @@ export default function Home() {
           </div>
         </div>
         <br></br>
+        <TeamSection />
         <div className={styles.centeredText}>
-          <h2>Project Timeline</h2>
-          <p>We have managed our development process using a Gantt chart</p>
+          <h1>Project Timeline</h1>
+          <p>We have managed our development process using a Gantt chart.</p>
           <img alt={"development process"}
                src='/photos/gantt chart.png'/>
         </div>
         <br/>
         <div className={styles.centeredText}>
-          <h2>Exposures</h2>
-          <h3>NAS school visit & Bett Conference</h3>
+          <h1>Exposures</h1>
+          <h2>NAS school visit & Bett Conference</h2>
           <div className={styles.imageGrid}>
             <img src='/photos/nasQuiz.JPG' alt='Exposure'></img>
             <img src='/photos/nas.JPG' alt='Exposure'></img>
