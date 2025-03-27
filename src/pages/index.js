@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
@@ -81,10 +80,10 @@ export default function Home() {
           <h1>Exposures</h1>
           <h2>NAS school visit & Bett Conference</h2>
           <div className={styles.imageGrid}>
-            <img src='/photos/nasQuiz.JPG' alt='Exposure'></img>
-            <img src='/photos/nas.JPG' alt='Exposure'></img>
-            <img src='/photos/UCL Group photo 2.png' alt='Exposure'></img>
-            <img src='/photos/bett.png' alt='Exposure'></img>
+            <img src='photos/nasQuiz.JPG' alt='Exposure'></img>
+            <img src='photos/nas.JPG' alt='Exposure'></img>
+            <img src='photos/UCL Group photo 2.png' alt='Exposure'></img>
+            <img src='photos/bett.png' alt='Exposure'></img>
           </div>
         </div>
         <br></br>

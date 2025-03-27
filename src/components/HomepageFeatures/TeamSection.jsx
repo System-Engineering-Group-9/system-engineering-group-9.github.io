@@ -13,7 +13,7 @@ export default function TeamSection() {
         {
             name: 'Jack Mok',
             role: 'UI/UX Designer, Frontend Developer, Game Developer',
-            imageUrl: '/teamImg/jackM.jpeg',
+            imageUrl: 'teamImg/jackM.jpeg',
             githubUrl: 'https://github.com/jackmok33',
             linkedinUrl: 'https://www.linkedin.com/in/jackmok33/'
         },
