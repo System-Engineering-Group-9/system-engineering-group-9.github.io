@@ -48,6 +48,16 @@ Below is a diagram of how key components interact to managing the game state, UI
 
 ### Section 2.1 - Key Components
 
+- **Game Manager**: manages the core game flow and state transitions in a turn-based board game with player and boss turns. It handles game setup, round progression, player/boss movement, combat, tile actions, and win/lose conditions. Which is the controller in the MVC pattern.
+  - **State Management:** Controls game progression through different `GameState` phases using events and coroutines.  
+  - **Turn Handling:** Manages player and boss turns, including dice rolls, movement, and turn transitions.  
+  - **Event-Driven Actions:** Uses `Action` delegates and events to coordinate UI updates, combat resolution, and tile interactions.
+
+- **GameConfigManager**: manages game configuration settings, including game modes, quiz modes, player count, time limits, and board selection. It fetches settings from backend API call and applies them.
+  - **Game & Quiz Modes:** Defines and manages different gameplay styles (`GameMode`, `QuizMode`) with associated rules (`ModeRules`).  
+  - **API Configuration Fetching:** Retrieves settings (time limits, player count, etc.) from a backend API and applies them to the game.  
+  - **Platform Detection:** Includes a utility method (`PlatformUtils.IsRunningOnPC()`) to check if the game is running on PC or in the editor.
+
 - **Entity (Abstract Class)**: Serves as the foundational class for both players and bosses, encapsulating common properties such as health, status (alive/dead), and key behaviors like losing health, dying, teleporting, and managing buffs.
     - **Buff System**: Allows entities to receive temporary attribute modifications, such as attack boosts or special abilities (e.g., DoublePoints or ExtraDice), and tracks the duration of these buffs. 
     - **EntityBuffs**: Manages active buffs on entities, providing bonus stats like attack or defense and handling the lifecycle of buffs, including expiration and reset.
@@ -149,7 +159,7 @@ client.
    The teacher can create themed background images and quiz images using `dreamShaper.py`. By providing a text prompt, the system generates visuals that align with the desired theme. The teacher then configures various game settings such as age group, theme, difficulty level, and game mode.
 
 3. **Game Launch**  
-   The teacher starts the game by creating a unique room code, which students use to join. Students enter the room code on the Student Board Game, customize their characters in **Scene: CharacterSelect**, and enter **Scene: BoardScene**. Players roll dice to move across the board, answer quiz questions, and collect points. The game progresses until a winner is determined based on accumulated points.
+   The teacher starts the game by creating a unique room code, which students use to join. Students enter the room code on the Student Board Game, customize their characters in **Scene: CharacterSelect**, and enter **Scene: BoardScene**. Players roll dice to move across the board, answer quiz questions, and collect points and level up. The game progresses until a a player has reached the max level in FFA and team mode, or defeating the boss in COOP mode.
 
 ---
 
