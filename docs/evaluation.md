@@ -107,11 +107,14 @@ Our project was effectively managed through regular team meetings during lab ses
 ---
 
 ## Section 3 - Known Issues
-
+#### Teacher Dashboard and backend server
 1. **Object Recognition**: The object recognition model we are using, YOLO, is not perfect and may sometimes fail to
    detect objects accurately. This can lead to incorrect or missing avatars in the game.
 2. **Memory management**: Due to the number of AI model loaded, memory management can be an issue, especially on
    lower-end devices. This can lead to performance issues and crashes.
+
+#### Unity Game
+1. **Avatar sprite generation(mobile)**: Our Avatar sprite generation has a bug on the mobile version, which the camera cannot track the avatar in the AR plane which lead to a failure in generating the avatar, but it works on pc version.
 
 ---
 
