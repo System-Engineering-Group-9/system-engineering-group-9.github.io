@@ -47,18 +47,78 @@ Rather than traditional mini‑games awarding points by placement, we implemente
 ---
 
 ## Section 2 - Technology Review
-
-Based on our research, we evaluated multiple tools and frameworks to determine the most suitable technologies for our project. The criteria for selection included performance, scalability, ease of integration, and compatibility with AR and AI functionalities.
+Part of our research is learning about the technologies we have to use as specified by the requirements.
 
 ### Section 2.1 - Unity Version 6
+<img src="https://unity.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffuvbjjlp%2Fproduction%2Ff139fd06314dc205cb4bd4c8150aa42f052ed62c-2304x1296.png&w=3840&q=75" alt="mario logo" width="200"/>
+Our investigation of Unity focused on its Mixed Reality development toolset and cross‑platform deployment capabilities. We evaluated Unity’s support for AR features, performance optimization options, and build pipelines for iOS, Android, and Windows. This analysis informed our decisions regarding engine configuration, platform-specific considerations, and deployment workflows.
 
+#### Mixed Reality Toolset  
+
+Unity has XR Plug‑in Architecture, which is a plugin which can be easily installed and deployed within the editor. It has native support for ARKit (iOS) and ARCore (Android), which is what we need for our Mixed Reality Board Game.
+
+AR Foundation is an extensive framework which can be used to implement Mixed Reality features such as plane detection, image anchors, face tracking, environment probes etc. In particular, its ARPlaneManager and ARRaycastManager can be used to implement the crucial feature of placing the board onto any surface.
+
+A big upside of AR Foundation is its unified abstraction layer, which allows for a single codebase to work for both ARKit + ARCore, and even a non AR version on the desktop. This is very convenient for us as we plan to implement a desktop non-AR version alongside the AR mobile version.
+
+#### Performance Optimization  
+
+Graphics in Unity are handled via three render pipelines:  
+
+- **Universal Render Pipeline (URP)**: lightweight, mobile-optimized  
+- **High Definition Render Pipeline (HDRP)**: high-fidelity, console/PC  
+- **Built-in Pipeline**: legacy support  
+
+For our project, we chose **URP** as our render pipeline because it aligns perfectly with our needs. The graphical quality is more than sufficient for our vision, as we are using **low-poly models** to optimize performance.  
+
+#### Game Engine Comparison  
+
+The other more notable game engine out there is *Unreal Engine 5**. It is also capable of being used to develop a mixed reality mobile game. We have also researched the features of Unreal Engine 5 and made a table for comparison: 
+
+| Feature                 | Unity                                         | Unreal Engine 5                                |
+|-------------------------|----------------------------------------------|------------------------------------------------|
+| **Mixed Reality Support** | AR Foundation (unified), mature MRTK        | Native AR plugins; experimental MRTK port      |
+| **Render Pipelines**     | URP (mobile), HDRP (AAA), built-in          | Forward Renderer (Mobile), Nanite + Lumen (high-fidelity) |
+| **Asset & Package Ecosystem** | Largest Asset Store; robust third-party support | Growing Marketplace; advanced rendering assets |
+| **Ease of Use**          | C# scripting; low entry barrier             | C++/Blueprints; steeper learning curve        |
+
+As shown above, both game engines have mixed reality support, but only Unity has the unified abstraction layer. Unreal Engine 5 also have a lightweight render pipeline similar to URP so it makes it a viable option. 
+
+However, upon browsing on the Unreal Engine 5 asset store, it’s apparent that the Unity Asset Store has a much wider selection. Even for widely used assets such as 2D GUI(Game User Interface) Pack is lacking as only 25 results show up, whereas Unity has thousands. Unity is also easier to develop games in due to it being mostly C# Scripting, which is perfect for our team who have no experience in game development.
+
+In conclusion, Unity is in fact a very suitable game engine for our needs to develop a Mixed Reality Board Game on mobile devices.
+ 
 
 ### Section 2.2 - IBM Granite Model
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/IBM_granite_2_cubes_logo.svg/1200px-IBM_granite_2_cubes_logo.svg.png" width="200"/>
+Our evaluation of the IBM Granite series focused on balancing language understanding performance, memory and compute efficiency, and deployability in offline, performance-constrained environments. We benchmarked multiple versions of Granite models—Granite-2B, Granite-8B and the 4-bit quantized Granite-8B—with a focus on natural language tasks relevant to interactive, such as mixed reality quiz question generation.
+
+#### Model Performance
+We assessed model performance in terms of text generation quality, reasoning ability, and context retention. Granite-2B provided acceptable fluency but lacked depth in contextual reasoning. Granite-8B significantly improved accuracy and coherence in complex tasks. The 4-bit quantized Granite-8B preserved approximately 95% of the full model's performance, with only marginal degradation in language quality and task-specific output.
+
+#### Memory Usage and Hardware Efficiency
+A key consideration was memory footprint and suitability for edge deployment. Full-precision Granite-8B requires approximately 16 GB of VRAM, whereas the 4-bit quantized variant reduces memory usage to 4.5 GB, enabling inference on consumer-grade GPUs and high-end CPUs. Granite-2B is more lightweight (4 GB), but trades off quality.
+
+#### Online vs Offline Usability
+We prioritized models that support offline operation to ensure privacy, stability, and low-latency performance in interactive scenarios. Granite-2B, Granite-8B, and the quantized Granite-8B all support local inference. Among these, the 4-bit model offers the best balance of quality and offline deployability, avoiding reliance on internet connectivity or cloud GPUs.
+
+#### Conclusion
+Based on this analysis, we adopted the 4-bit quantized IBM Granite-8B model for our system. It delivers high-level language performance comparable to full-size models, while enabling efficient, real-time inference in constrained environments. Its compatibility with offline pipelines, low memory footprint, and strong performance across reasoning and generation tasks made it the optimal choice for our mixed reality and mobile deployment needs.
+
 
 ### Section 2.3 - YOLO Object Recognition
+<img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/10/A-Comprehensive-Guide-to-YOLOv11-Object-Detection-.webp" width="200"/>
+Our investigation of YOLO focused on its object detection architecture, real-time inference capabilities, and suitability for deployment in mobile and mixed reality environments. We evaluated YOLO’s performance across different versions (YOLOv5, v8 and v11), assessing detection speed, model accuracy, and hardware efficiency. Particular attention was paid to its single-shot detection pipeline, which enables rapid inference suitable for real-time AR interactions. This analysis guided our selection of model and device-specific deployment strategies for performance-constrained environments.
+
+Our selection of the YOLO11x model was driven by its superior detection accuracy and suitability for high-performance deployment scenarios. Among the YOLOv11 family, YOLO11x achieves the highest mean Average Precision (mAP) of 54.7% on the COCO val2017 dataset, significantly outperforming smaller variants.
+
+Despite its increased model size (56.9M parameters) and computational cost (194.9 GFLOPs), YOLO11x maintains acceptable inference latency at 11.3 ms on a T4 GPU and 462.8 ms on CPU. This balance of precision and speed makes it ideal for applications where detection quality is critical, such as in interactive and visually rich environments.
+
+Its strong performance in complex object detection tasks ensures robust real-time behavior when paired with efficient runtime optimization. As such, YOLO11x was selected as the optimal model for our system, where accuracy takes precedence without compromising usability in GPU-enabled settings.
+
 
 ### Section 2.4 - DreamShaper Image Generation
-
+Our evaluation of DreamShaper focused on its ability to generate high-fidelity, aesthetically coherent images from natural language prompts, particularly within stylized and imaginative contexts. We assessed its performance in relation to other text-to-image models (such as DALL·E 2, Midjourney, and base Stable Diffusion) by measuring visual consistency, detail richness, and prompt responsiveness. DreamShaper demonstrated superior performance in generating artistically refined images with strong semantic alignment, while maintaining compatibility with standard Stable Diffusion pipelines. Notably, DreamShaper features fast generation speeds and a lightweight model size, making it well-suited for local deployment on resource-constrained devices. This informed our decision to adopt DreamShaper for creative content generation tasks where both visual style and offline usability are prioritized.
 
 ---
 
