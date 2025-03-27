@@ -6,7 +6,7 @@ export default function TeamSection() {
         {
             name: 'Ryan Li',
             role: 'Team Leader, Game Developer, Client Liaison',
-            imageUrl: '/teamImg/ryan.jpeg',
+            imageUrl: 'teamImg/ryan.jpeg',
             githubUrl: 'https://github.com/Ryanli-BP',
             linkedinUrl: 'https://www.linkedin.com/in/man-hui-li'
         },
@@ -20,7 +20,7 @@ export default function TeamSection() {
         {
             name: 'Jack Pan',
             role: 'Researcher, Backend Developer, Tester',
-            imageUrl: '/teamImg/jackP.jpeg',
+            imageUrl: 'teamImg/jackP.jpeg',
             githubUrl: 'https://github.com/dcloud347',
             linkedinUrl: 'https://www.linkedin.com/in/yue-pan-b35aa1322'
         },
