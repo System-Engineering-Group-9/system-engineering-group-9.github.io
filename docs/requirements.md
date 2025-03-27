@@ -24,7 +24,7 @@ Below are the major goals we have to complete:
 - Mixed Reality Board Game built within Unity Engine with a range of game modes and game components.
 - Web based Teacher Dashboard for class material preparation and game configuration.
 - AI-Powered Backend which integrates Object Recognition, the IBM Granite model, and an Image Generation model, serving as a bridge between student and teacher applications.
-- Lightweight, Locally Run IBM Granite GenAI model is compiled into an executable, ensuring efficient offline operation.
+- All AI and object recognition model are lightweight, Locally Run and compiled into an executable, ensuring efficient offline operation.
 
 Our goal is to deliver a fully functional game with room for future expansion, allowing students to benefit from GenAI-driven learning. The solution will be designed with minimal technical dependencies and setup requirements, making it practical for school environments.
 
