@@ -91,7 +91,7 @@ In conclusion, Unity is in fact a very suitable game engine for our needs to dev
 
 ### Section 2.2 - IBM Granite Model
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/IBM_granite_2_cubes_logo.svg/1200px-IBM_granite_2_cubes_logo.svg.png" width="200"/>
-Our evaluation of the IBM Granite series focused on balancing language understanding performance, memory and compute efficiency, and deployability in offline, performance-constrained environments. We benchmarked multiple versions of Granite models—Granite-2B, Granite-8B and the 4-bit quantized Granite-8B—with a focus on natural language tasks relevant to interactive, such as mixed reality quiz question generation.
+Our evaluation of the IBM Granite series focused on balancing language understanding performance, memory and compute efficiency, and deployability in offline, performance-constrained environments. We benchmarked multiple versions of Granite models—Granite-2B, Granite-8B and the 4-bit quantized Granite-8B—with a focus on natural language tasks relevant to interactive, such as mixed reality quiz question generation.[1,2,3,4]
 
 #### Model Performance
 We assessed model performance in terms of text generation quality, reasoning ability, and context retention. Granite-2B provided acceptable fluency but lacked depth in contextual reasoning. Granite-8B significantly improved accuracy and coherence in complex tasks. The 4-bit quantized Granite-8B preserved approximately 95% of the full model's performance, with only marginal degradation in language quality and task-specific output.
@@ -110,7 +110,7 @@ Based on this analysis, we adopted the 4-bit quantized IBM Granite-8B model for 
 <img src="https://cdn.analyticsvidhya.com/wp-content/uploads/2024/10/A-Comprehensive-Guide-to-YOLOv11-Object-Detection-.webp" width="200"/>
 Our investigation of YOLO focused on its object detection architecture, real-time inference capabilities, and suitability for deployment in mobile and mixed reality environments. We evaluated YOLO’s performance across different versions (YOLOv5, v8 and v11), assessing detection speed, model accuracy, and hardware efficiency. Particular attention was paid to its single-shot detection pipeline, which enables rapid inference suitable for real-time AR interactions. This analysis guided our selection of model and device-specific deployment strategies for performance-constrained environments.
 
-Our selection of the YOLO11x model was driven by its superior detection accuracy and suitability for high-performance deployment scenarios. Among the YOLOv11 family, YOLO11x achieves the highest mean Average Precision (mAP) of 54.7% on the COCO val2017 dataset, significantly outperforming smaller variants.
+Our selection of the YOLO11x model was driven by its superior detection accuracy and suitability for high-performance deployment scenarios. Among the YOLOv11 family, YOLO11x achieves the highest mean Average Precision (mAP) of 54.7% on the COCO val2017 dataset, significantly outperforming smaller variants.[5]
 
 Despite its increased model size (56.9M parameters) and computational cost (194.9 GFLOPs), YOLO11x maintains acceptable inference latency at 11.3 ms on a T4 GPU and 462.8 ms on CPU. This balance of precision and speed makes it ideal for applications where detection quality is critical, such as in interactive and visually rich environments.
 
@@ -169,17 +169,29 @@ These technologies were selected based on their ability to support real-time AR 
 ---
 
 ## Section 5 - References
-[1] Ross, J. et al. (2024) Using games in teaching ‘boosts grades and student satisfaction’, Times Higher Education (THE). Available at: https://www.timeshighereducation.com/news/using-games-teaching-boosts-grades-and-student-satisfaction#:~:text=The%20study%20found%20that%20the,cent%20in%20the%20control%20group. (Accessed: 27 March 2025). 
 
-[2] Lisa-Maria Putz. (2020) Can gamification help to improve education? findings from a longitudinal study, Computers in Human Behavior. Available at: https://www.sciencedirect.com/science/article/abs/pii/S074756322030145X (Accessed: 27 March 2025). 
+[1] ibm-granite, “granite-3.0-language-models/paper.pdf at main · ibm-granite/granite-3.0-language-models,” GitHub, 2024. https://github.com/ibm-granite/granite-3.0-language-models/blob/main/paper.pdf (accessed Mar. 27, 2025).
 
-[3] Hickman, C. (2023) How gamification can support autistic learners, Organization for Autism Research. Available at: https://researchautism.org/blog/how-gamification-can-support-autistic-learners/ (Accessed: 27 March 2025). 
+‌[2] “ibm-granite/granite-3.0-8b-instruct · Hugging Face,” Huggingface.co, Feb. 24, 2025. https://huggingface.co/ibm-granite/granite-3.0-8b-instruct (accessed Mar. 27, 2025).
+‌
+[3] “QuantFactory/granite-3.0-8b-instruct-GGUF · Hugging Face,” Huggingface.co, Oct. 21, 2024. https://huggingface.co/QuantFactory/granite-3.0-8b-instruct-GGUF (accessed Mar. 27, 2025).
 
-[4] Atherton, G. and Cross, L. (2021) The use of analog and digital games for autism interventions, Frontiers in psychology. Available at: https://pmc.ncbi.nlm.nih.gov/articles/PMC8384560/ (Accessed: 27 March 2025). 
+[4] Huggingface.co, 2025. https://huggingface.co/QuantFactory/granite-3.0-8b-instruct-GGUF?show_file_info=granite-3.0-8b-instruct.Q4_K_S.gguf (accessed Mar. 27, 2025).
 
-[5] Garaialde, D. (2021) Designing gamified rewards to encourage repeated app selection: Effect of reward placement , Designing gamified rewards to encourage repeated app selection: Effect of reward placement. Available at: https://discovery.ucl.ac.uk/id/eprint/10131140/1/1-s2.0-S1071581921000793-main.pdf (Accessed: 27 March 2025). 
+[5] “Ultralytics/YOLO11 · Hugging Face,” Huggingface.co, 2017. https://huggingface.co/Ultralytics/YOLO11
+‌
 
-[6] Kendra Cherry, Mse. (2023) Why does the overjustification effect reduce intrinsic motivation?, Verywell Mind. Available at: https://www.verywellmind.com/what-is-the-overjustification-effect-2795386 (Accessed: 27 March 2025). 
+[6] Ross, J. et al. (2024) Using games in teaching ‘boosts grades and student satisfaction’, Times Higher Education (THE). Available at: https://www.timeshighereducation.com/news/using-games-teaching-boosts-grades-and-student-satisfaction#:~:text=The%20study%20found%20that%20the,cent%20in%20the%20control%20group. (Accessed: 27 March 2025). 
 
-[7] Li, Y., Chen, D. and Deng, X. (2024) The impact of digital educational games on student’s motivation for learning: The mediating effect of learning engagement and the moderating effect of the digital environment, PloS one. Available at: https://pmc.ncbi.nlm.nih.gov/articles/PMC10783726/ (Accessed: 27 March 2025).  
+[7] Lisa-Maria Putz. (2020) Can gamification help to improve education? findings from a longitudinal study, Computers in Human Behavior. Available at: https://www.sciencedirect.com/science/article/abs/pii/S074756322030145X (Accessed: 27 March 2025). 
+
+[8] Hickman, C. (2023) How gamification can support autistic learners, Organization for Autism Research. Available at: https://researchautism.org/blog/how-gamification-can-support-autistic-learners/ (Accessed: 27 March 2025). 
+
+[9] Atherton, G. and Cross, L. (2021) The use of analog and digital games for autism interventions, Frontiers in psychology. Available at: https://pmc.ncbi.nlm.nih.gov/articles/PMC8384560/ (Accessed: 27 March 2025). 
+
+[10] Garaialde, D. (2021) Designing gamified rewards to encourage repeated app selection: Effect of reward placement , Designing gamified rewards to encourage repeated app selection: Effect of reward placement. Available at: https://discovery.ucl.ac.uk/id/eprint/10131140/1/1-s2.0-S1071581921000793-main.pdf (Accessed: 27 March 2025). 
+
+[11] Kendra Cherry, Mse. (2023) Why does the overjustification effect reduce intrinsic motivation?, Verywell Mind. Available at: https://www.verywellmind.com/what-is-the-overjustification-effect-2795386 (Accessed: 27 March 2025). 
+
+[12] Li, Y., Chen, D. and Deng, X. (2024) The impact of digital educational games on student’s motivation for learning: The mediating effect of learning engagement and the moderating effect of the digital environment, PloS one. Available at: https://pmc.ncbi.nlm.nih.gov/articles/PMC10783726/ (Accessed: 27 March 2025).  
 
