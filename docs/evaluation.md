@@ -45,26 +45,35 @@ sidebar_position: 9
 | Design a simple and easy to understand user interface.                            | MUST     | DONE  | Jack Mok                            |
 | Carry out user testing to ensure the playability and user experience of the game. | MUST     | DONE  | Ryan, Jack Pan, Jack Mok, Prantanil |
 
-### Section 1.3 - Individual Contribution
+### Section 1.3 - Individual Contribution Table for System Artefacts
 
-| Work Type            | Ryan Li                                     | Jack Mok                                           | Jack Pan                              | Prantanil                         |
-|----------------------|---------------------------------------------|----------------------------------------------------|---------------------------------------|-----------------------------------|
-| Client Liaison       |                                             |                                                    |                                       |                                   |
-| Liaison with Users   |                                             |                                                    |                                       |                                   |
-| BETT Conference      |                                             |                                                    |                                       |                                   |
-| HCI                  |                                             |                                                    |                                       |                                   |
-| Requirement analysis |                                             |                                                    |                                       |                                   |
-| Research             |                                             |                                                    |                                       |                                   |
-| Pitch Presentation   |                                             |                                                    |                                       |                                   |
-| Coding               |                                             |                                                    |                                       |                                   |
-| Testing              |                                             |                                                    |                                       |                                   |
-| Development blog     |                                             |                                                    |                                       |                                   |
-| Website Editing      |                                             |                                                    |                                       |                                   |
-| Video Editing        |                                             |                                                    |                                       |                                   |
-| Overall Contribution |                                             |                                                    |                                       |                                   |
-| Roles                | Team Leader, Game Developer, Client Liaison | UI/UX Designer, Frontend Developer, Game Developer | Researcher, Backend Developer, Tester | Game Developer, Network Developer |
+| Work Packages         | Ryan Li | Jack Mok | Jack Pan | Prantanil |
+|----------------------|---------|---------|---------|----------|
+| Research and Experiments | 40%     | 0%      | 60%     | 0%       |
+| UI Design            | 15%     | 80%     | 0%      | 5%       |
+| Coding              | 65%     | 10%     | 12%     | 8%       |
+| Testing             | 30%     | 0%      | 60%     | 0%       |
+| **Overall Contribution** | **50%**  | **19%**  | **19%**  | **12%**  |
 
----
+### Section 1.4 - Individual Contribution Table For Website
+
+
+| Work Packages          | Ryan Li | Jack Mok | Jack Pan | Prantanil |
+|-----------------------|---------|---------|---------|----------|
+| Website Template and Setup | 0%      | 50%     | 50%     | 0%       |
+| Home                 | 30%     | 70%     | 0%      | 0%       |
+| Video                | 40%     | 20%     | 10%     | 30%      |
+| Requirement          | 15%     | 85%     | 0%      | 0%       |
+| Research            | 33%     | 34%     | 33%     | 0%       |
+| UI Design            | 0%      | 100%    | 0%      | 0%       |
+| System Design        | 10%     | 70%     | 0%      | 20%      |
+| Implementation       | 5%      | 0%      | 0%      | 95%      |
+| Testing             | 25%     | 10%     | 65%     | 0%       |
+| Evaluation and Future Work | 20%     | 80%     | 0%      | 0%       |
+| User and Deployment Manuals | 40%     | 40%     | 20%     | 0%       |
+| Legal issues         | 0%      | 100%    | 0%      | 0%       |
+| Blog and Monthly Video | 0%      | 100%    | 0%      | 0%       |
+| **Overall Contribution** | **25%**  | **40%**  | **15%**  | **20%**  |
 
 ## Section 2 - Critical Evaluation
 
