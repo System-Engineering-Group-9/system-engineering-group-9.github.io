@@ -49,11 +49,11 @@ sidebar_position: 9
 
 | Work Packages            | Ryan Li | Jack Mok | Jack Pan | Prantanil |
 |--------------------------|---------|----------|----------|-----------|
-| Research and Experiments | 40%     | 0%       | 60%      | 0%        |
-| UI Design                | 15%     | 80%      | 0%       | 5%        |
-| Coding                   | 65%     | 10%      | 12%      | 8%        |
+| Research and Experiments | 50%     | 0%       | 50%      | 0%        |
+| UI Design                | 19%     | 76%      | 0%       | 5%        |
+| Coding                   | 56%     | 14%      | 17%      | 8%        |
 | Testing                  | 30%     | 0%       | 60%      | 0%        |
-| **Overall Contribution** | **50%** | **19%**  | **19%**  | **12%**   |
+| **Overall Contribution** | **45%** | **19%**  | **24%**  | **12%**   |
 
 ### Section 1.4 - Individual Contribution Table For Website
 
@@ -74,6 +74,7 @@ sidebar_position: 9
 | Blog and Monthly Video      | 0%      | 100%     | 0%       | 0%        |
 | **Overall Contribution**    | **25%** | **40%**  | **15%**  | **20%**   |
 
+*Each task is not weighted equally, the contributions do not add up proportionally to overall contribution.
 ## Section 2 - Critical Evaluation
 
 ### Section 2.1 - User Interface
