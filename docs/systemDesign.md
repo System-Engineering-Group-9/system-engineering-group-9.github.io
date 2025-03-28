@@ -146,7 +146,9 @@ client.
 
 ### Section 2.3 - UML Structure Overview
 
-Here is an overview of our classes structure, mainly showing how game managers in Unity are interrelated to each other and showing their dependencies. We can see all managers are controlled by `GameManager` which follows the MVC design pattern. However, this is only a simplicit view of the structure, where lots of variables and methods are not shown, also some classes are also ignored for illustrative purpose. In Reality, the game managers interact with each other in a much more complicated way.
+This section provides an overview of the class structure, focusing on the relationships between key game managers in Unity. The diagram illustrates how these managers interact and how they manage their children, with `GameManager` serving as the central controller, following the MVC design pattern.
+
+For simplicity, this representation omits certain variables, methods, and minor classes to enhance clarity. In reality, the interactions between game managers are more complex, involving deeper dependencies and data exchanges.
 
 ![image](./SysDesImg/UML.drawio.png)
 
