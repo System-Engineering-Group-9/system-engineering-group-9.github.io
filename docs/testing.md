@@ -152,12 +152,12 @@ We have tested our game on multiple devices across different platforms, includin
 | **MacBook Pro (2021) M1 Pro** | CPU: M1 Pro, RAM: 16GB                                   |
 | **Samsung Galaxy S20 FE**     | CPU: Snapdragon 870, RAM: 8GB                            |
 | **ASUS TUF Gaming f16 2024**  | CPU: i9 14900HX, RAM: 16GB, GPU: Nvidia GeForce RTX 4070 |
-| **Samsung Tab S8+** |CPU: Snapdragon 8 Gen 1, RAM: 8GB|
-| **MacBook Pro M3 Pro**|CPU: M3 Pro, RAM: 16GB|
-| **Motorola Razr 50 Foldable**|CPU: MediaTek Dimensity 7300X, RAM: 8GB|
-| **Xiaomi Pad 5**| CPU: Snapdragon 860, RAM: 6GB|
-| **Samsung Tab S7FE**| CPU: Snapdragon 750G, RAM: 6GB|
-| **MacBook Air M1**|CPU: M1, RAM:8GB|
+| **Samsung Tab S8+**           | CPU: Snapdragon 8 Gen 1, RAM: 8GB                        |
+| **MacBook Pro M3 Pro**        | CPU: M3 Pro, RAM: 16GB                                   |
+| **Motorola Razr 50 Foldable** | CPU: MediaTek Dimensity 7300X, RAM: 8GB                  |
+| **Xiaomi Pad 5**              | CPU: Snapdragon 860, RAM: 6GB                            |
+| **Samsung Tab S7FE**          | CPU: Snapdragon 750G, RAM: 6GB                           |
+| **MacBook Air M1**            | CPU: M1, RAM:8GB                                         |
 
 With our extensive compatibility testing, we are confident that our game will have no issue running on the devices provided in a classroom setting.
 
