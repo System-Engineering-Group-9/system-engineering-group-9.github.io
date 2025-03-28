@@ -650,9 +650,13 @@ Mark board as ready
 ```
 As shown in the code above, at startup, the system loads a JSON file named according to the board number from GameConfigManager (we have explained the responsibilities of this manager in section 3.1). If the specific layout is missing, there is a fallback to a default layout. The JSON data includes a list `TileData[] tiles` (which contains the connected tiles, coordinates, and an optional homePlayerID to indicate that the tile is a home tile) and an arrows list `ArrowData[] arrows`, which contains the coordinates and rotation of decorative direction arrows that are used to signifying that there is a crossroads. Tile prefabs are then instantiated after loading the JSON, with their appropriate materials and coordinates. Decorative direction arrows are placed above the instantiated tiles, and the connections between adjacent tiles are set up, this is later used in player movement to indicate valid direction choices. After generation is complete, a global flag BoardGenFinished is activated so the game can proceed.
 
+### 3.8 Quiz 
+
+As mentioned in section 1.1 our project utilises IBM's Granite model for question generation, the stored question sets are retrieved via 
+
 ### 3.8 Tiles
 
-As mentioned in section 3.6 our game board is made up of several connected tiles. Appart from storing references to connections and possible directions from a tile, tiles also contain other characteristics such as tileType and tilePlayerID. Our game consists of 6 different tile types that cause a player to do a specific action as well as one normal tile type with no action :
+As mentioned in section 3.6 our game board is made up of several connected tiles. Appart from storing references to connections and possible directions from a tile, tiles also contain other characteristics such as tileType and tilePlayerID. Our game consists of 7 different tile types that cause a player to do a specific action as well as one normal tile type with no action. 
 
 #### Tile Types
 
@@ -723,17 +727,50 @@ As you can see the point deduction is effected by two values, base points and a 
 
 ##### Trap
 
-The trap tile is another tile that punishes players that land on it as their final step, trap tile causes a health deduction for the given player. This works with the health system where if a player's health reaches zero they die and are unable to play the game for a specified ammount of rounds. The calculation for how much health is deducted again is random, trap tiles however do not get more or less powerful acording to milestones and hence it is simply a random number within a range of 1-2 that is deducted. After this the health is dedcuted from the apropriate player and an anvil dropping animation plays. 
+The trap tile is another tile that punishes players that land on it as their final step, trap tile causes a health deduction for the given player. This works with the health system where if a player's health reaches zero they die and are unable to play the game for a specified ammount of rounds. The calculation for how much health is deducted again is random, trap tiles however do not get more or less powerful acording to milestones and hence it is simply a random number within a range of 1-2 that is deducted. After this the health is dedcuted from the apropriate player and an anvil dropping animation plays.
 
+##### Quiz
 
+This tile initates a quiz sequence with one of the quiz questions we have generated with our Granite model and retrieved from our teacher dashboard, this process is explained in section 1.1. Only the player who has landed on the quiz tile is allowed to play the quiz, after answering the quiz sequence the player gets rewarded based of the quiz system, this has been explained in seciont 3.8. 
 
-<details>
-<summary>Quiz</summary>
-</details>
+##### Portal 
 
-<details>
-<summary>Portal</summary>
-</details>
+This is a unique tile type where the player teleports to the position of any other random tile type. 
+
+``` pseudo
+ClASS TileManager: 
+CASE Portal Tile:
+    TILE destinationTile = GetRandomPortalTile(tile)
+    if destinationTile  NOT null: 
+        currentPlayer.TeleportTo(destinationTile)
+        currentTile.TilePlayerIDS.remove(player)
+        destinationTile.TilePlayerIDS.add(player)
+
+FUNCTION GetRandomPortalTile(tile):
+LIST availableTiles = portalTiles.remove(tile)
+if availableTiles < 0:
+RETURN NULL
+length = length(availableTiles)
+RETURN random index in range(length)
+``` 
+as you can see from the above pseudocode on the case of a portal tile we first get a randomly assigned portal tile via the method GetRandomPortalTile, this method works by getting a list of all portal tiles, making a new list of tiles without the tile that the player is currently on, then returning a random tile from that list. 
+
+##### Reroll tile
+
+This tile awards the player who lands on it with a second dice roll before their turn completes, how this is implemented is shown below: 
+
+```pseudo
+CLASS TileManager: 
+CASE Re-roll Tile :
+    GameManger.HandleReroll()
+
+CLASS GameManger: 
+FUNCTION HandleReroll():
+    CALL ChangeState WITH argument GameState.RollingMovementDice
+END FUNCTION
+```
+
+as you can see above the reroll tile case causes the Game manager to switch the state back to rolling movement dice by passing the switching of the next player causing the current player to get an extra turn. 
 
 #### Player tile id system
 
@@ -827,4 +864,6 @@ As show above, the algorithim maintains an intial dictionary of directions, and 
 ### 3.12 UI 
 
 ## Multiplayer Implementation 
+
+We have also attempted to implement a remote multiplayer version of our game, due to time constraints this feature has not been fully completed but it implements some new  
 
