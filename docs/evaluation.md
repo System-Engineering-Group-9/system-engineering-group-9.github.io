@@ -47,32 +47,32 @@ sidebar_position: 9
 
 ### Section 1.3 - Individual Contribution Table for System Artefacts
 
-| Work Packages            | Ryan Li | Jack Mok | Jack Pan | Prantanil |
-|--------------------------|---------|----------|----------|-----------|
-| Research and Experiments | 40%     | 0%       | 60%      | 0%        |
-| UI Design                | 15%     | 80%      | 0%       | 5%        |
-| Coding                   | 65%     | 10%      | 12%      | 8%        |
-| Testing                  | 30%     | 0%       | 60%      | 0%        |
-| **Overall Contribution** | **50%** | **19%**  | **19%**  | **12%**   |
+| Work Packages            | Weight | Ryan Li | Jack Mok   | Jack Pan  | Prantanil |
+|--------------------------|--------|---------|------------|-----------|-----------|
+| Research and Experiments | 10%    | 30%     | 0%         | 70%       | 0%        |
+| UI Design                | 20%    | 15%     | 75%        | 5%        | 5%        |
+| Coding                   | 55%    | 50%     | 15%        | 30%       | 5%        |
+| Testing                  | 15%    | 30%     | 10%        | 60%       | 0%        |
+| **Overall Contribution** |        | **38%** | **24.75%** | **33.5%** | **3.75%** |
 
 ### Section 1.4 - Individual Contribution Table For Website
 
-| Work Packages               | Ryan Li | Jack Mok | Jack Pan | Prantanil |
-|-----------------------------|---------|----------|----------|-----------|
-| Website Template and Setup  | 0%      | 50%      | 50%      | 0%        |
-| Home                        | 30%     | 70%      | 0%       | 0%        |
-| Video                       | 40%     | 20%      | 10%      | 30%       |
-| Requirement                 | 15%     | 85%      | 0%       | 0%        |
-| Research                    | 33%     | 34%      | 33%      | 0%        |
-| UI Design                   | 0%      | 100%     | 0%       | 0%        |
-| System Design               | 10%     | 70%      | 0%       | 20%       |
-| Implementation              | 5%      | 0%       | 0%       | 95%       |
-| Testing                     | 25%     | 10%      | 65%      | 0%        |
-| Evaluation and Future Work  | 20%     | 80%      | 0%       | 0%        |
-| User and Deployment Manuals | 40%     | 40%      | 20%      | 0%        |
-| Legal issues                | 0%      | 100%     | 0%       | 0%        |
-| Blog and Monthly Video      | 0%      | 100%     | 0%       | 0%        |
-| **Overall Contribution**    | **25%** | **40%**  | **15%**  | **20%**   |
+| Work Packages               | Ryan Li   | Jack Mok  | Jack Pan  | Prantanil |
+|-----------------------------|-----------|-----------|-----------|-----------|
+| Website Template and Setup  | 0%        | 30%       | 70%       | 0%        |
+| Home                        | 10%       | 70%       | 20%       | 0%        |
+| Video                       | 40%       | 15%       | 15%       | 30%       |
+| Requirement                 | 15%       | 85%       | 0%        | 0%        |
+| Research                    | 33%       | 34%       | 33%       | 0%        |
+| UI Design                   | 0%        | 100%      | 0%        | 0%        |
+| System Design               | 10%       | 70%       | 0%        | 20%       |
+| Implementation              | 5%        | 0%        | 0%        | 95%       |
+| Testing                     | 25%       | 10%       | 65%       | 0%        |
+| Evaluation and Future Work  | 20%       | 75%       | 5%        | 0%        |
+| User and Deployment Manuals | 35%       | 35%       | 30%       | 0%        |
+| Legal issues                | 0%        | 100%      | 0%        | 0%        |
+| Blog and Monthly Video      | 0%        | 100%      | 0%        | 0%        |
+| **Overall Contribution**    | **14.8%** | **55.7%** | **18.3%** | **11.2%** |
 
 ## Section 2 - Critical Evaluation
 
