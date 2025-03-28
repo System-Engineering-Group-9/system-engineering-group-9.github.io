@@ -40,7 +40,7 @@ This architecture integrates AI-driven functionality with a data exchange system
 
 ![image](./SysDesImg/SysArchStudent.drawio.png)
 
-The **Student Board Game** is developed using the **Unity Engine**. It is a round-based game where students interact by pressing buttons to perform actions. The game logic is organized and managed through various components. All game objects, including players and interactive elements, are controlled by dedicated managers to maintain the integrity of the game flow. Our game design is mainly based on a **reward cycle**. The cycle begins with RoundManger managing the players turn, followed by QuizManger’s quiz component, then students will be rewarded accordingly by the RewardManager. This close-loop architecture provides immediate achievement feedback that reinforces learning objectives while sustaining student engagement through progressively scaled difficulty levels, all implemented within an event-driven Unity framework.
+The **Student Board Game** is developed using the **Unity Engine**. It is a round-based game where students interact by pressing buttons to perform actions. The game logic is organized and managed through various components. All game objects, including players and interactive elements, are controlled by dedicated managers to maintain the integrity of the game flow. Our game design is mainly based on a **reward cycle**. The cycle begins with RoundManger managing the players turn, followed by QuizManger’s quiz component, then students will be rewarded accordingly by the RewardManager, while GameManager will constantly checking with other managers to maintain the game state. This close-loop architecture provides immediate achievement feedback that reinforces learning objectives while sustaining student engagement through progressively scaled difficulty levels, all implemented within an event-driven Unity framework.
 
 Below is a diagram of how key components interact to managing the game state, UI, and game logic:
 
@@ -143,6 +143,16 @@ allowed to start the main game scene, preventing multiple clients from beginning
 different times. The client remains the master client for the rest of the game unless there is a
 disconnect, in which case the master client is automatically reassigned to the next available
 client.
+
+### Section 2.3 - UML Structure Overview
+
+This section provides an overview of the class structure, focusing on the relationships between key game managers in Unity. The diagram illustrates how these managers interact and how they manage their children, with `GameManager` serving as the central controller, following the MVC design pattern.
+
+For simplicity, this representation omits certain variables, methods, and minor classes to enhance clarity. In reality, the interactions between game managers are more complex, involving deeper dependencies and data exchanges.
+
+![image](./SysDesImg/UML.drawio.png)
+
+
 
 --- 
 

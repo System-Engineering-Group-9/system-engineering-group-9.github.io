@@ -45,32 +45,42 @@ sidebar_position: 9
 | Design a simple and easy to understand user interface.                            | MUST     | DONE  | Jack Mok                            |
 | Carry out user testing to ensure the playability and user experience of the game. | MUST     | DONE  | Ryan, Jack Pan, Jack Mok, Prantanil |
 
-### Section 1.3 - Individual Contribution
+### Section 1.3 - Individual Contribution Table for System Artefacts
 
-| Work Type            | Ryan Li                                     | Jack Mok                                           | Jack Pan                              | Prantanil                         |
-|----------------------|---------------------------------------------|----------------------------------------------------|---------------------------------------|-----------------------------------|
-| Client Liaison       |                                             |                                                    |                                       |                                   |
-| Liaison with Users   |                                             |                                                    |                                       |                                   |
-| BETT Conference      |                                             |                                                    |                                       |                                   |
-| HCI                  |                                             |                                                    |                                       |                                   |
-| Requirement analysis |                                             |                                                    |                                       |                                   |
-| Research             |                                             |                                                    |                                       |                                   |
-| Pitch Presentation   |                                             |                                                    |                                       |                                   |
-| Coding               |                                             |                                                    |                                       |                                   |
-| Testing              |                                             |                                                    |                                       |                                   |
-| Development blog     |                                             |                                                    |                                       |                                   |
-| Website Editing      |                                             |                                                    |                                       |                                   |
-| Video Editing        |                                             |                                                    |                                       |                                   |
-| Overall Contribution |                                             |                                                    |                                       |                                   |
-| Roles                | Team Leader, Game Developer, Client Liaison | UI/UX Designer, Frontend Developer, Game Developer | Researcher, Backend Developer, Tester | Game Developer, Network Developer |
+| Work Packages            | Ryan Li | Jack Mok | Jack Pan | Prantanil |
+|--------------------------|---------|----------|----------|-----------|
+| Research and Experiments | 40%     | 0%       | 60%      | 0%        |
+| UI Design                | 15%     | 80%      | 0%       | 5%        |
+| Coding                   | 65%     | 10%      | 12%      | 8%        |
+| Testing                  | 30%     | 0%       | 60%      | 0%        |
+| **Overall Contribution** | **50%** | **19%**  | **19%**  | **12%**   |
 
----
+### Section 1.4 - Individual Contribution Table For Website
+
+| Work Packages               | Ryan Li | Jack Mok | Jack Pan | Prantanil |
+|-----------------------------|---------|----------|----------|-----------|
+| Website Template and Setup  | 0%      | 50%      | 50%      | 0%        |
+| Home                        | 30%     | 70%      | 0%       | 0%        |
+| Video                       | 40%     | 20%      | 10%      | 30%       |
+| Requirement                 | 15%     | 85%      | 0%       | 0%        |
+| Research                    | 33%     | 34%      | 33%      | 0%        |
+| UI Design                   | 0%      | 100%     | 0%       | 0%        |
+| System Design               | 10%     | 70%      | 0%       | 20%       |
+| Implementation              | 5%      | 0%       | 0%       | 95%       |
+| Testing                     | 25%     | 10%      | 65%      | 0%        |
+| Evaluation and Future Work  | 20%     | 80%      | 0%       | 0%        |
+| User and Deployment Manuals | 40%     | 40%      | 20%      | 0%        |
+| Legal issues                | 0%      | 100%     | 0%       | 0%        |
+| Blog and Monthly Video      | 0%      | 100%     | 0%       | 0%        |
+| **Overall Contribution**    | **25%** | **40%**  | **15%**  | **20%**   |
 
 ## Section 2 - Critical Evaluation
 
 ### Section 2.1 - User Interface
 
 Throughout development, we have consistently refined the user interface based on regular testing and feedback from both teachers and students. Given that our target audience includes students with SEND (Special Educational Needs and Disabilities), we prioritized simplicity and accessibility. The interface centers on straightforward button-based interactions to ensure ease of use and inclusivity, aligning with the needs of our users.
+
+Overall, we would rate ourselves very good in this category.
 
 ### Section 2.2 - Functionality
 
@@ -80,9 +90,13 @@ The Teacher Dashboard is a web-based interface that allows teachers to easily se
 
 The Student Game App is divided into three key modules: Quiz, Board, and Combat. Each module has distinct features but works cohesively to deliver the intended gameplay and learning experience.
 
+Overall, we would rate ourselves very good in this category.
+
 ### Section 2.3 - Stability
 
 To ensure the stability and reliability of the game, we integrated continuous testing and feedback loops into our development cycle. Regular user testing and iterative improvements have strengthened the game engine and enhanced its suitability for our target users. Additionally, unit testing was performed on the backend server to validate system accuracy and maintain overall stability.
+
+Overall, we would rate ourselves good in this category.
 
 ### Section 2.4 - Efficiency
 
@@ -90,9 +104,13 @@ Efficiency is a critical focus of our project, as we aim to help teachers stream
 
 From a technical perspective, we optimized performance by integrating a lightweight, locally quantized Granite GenAI model to generate questions swiftly and efficiently. Moreover, by leveraging the Unity engine, we benefited from its high-performance capabilities and resource-efficient rendering.
 
+Overall, we would rate ourselves very good in this category.
+
 ### Section 2.5 - Compatibility
 
 We conducted extensive testing on various devices, including Android tablets and smartphones, ensuring the game performs well even on lower-spec hardware commonly found in school environments. To further enhance compatibility and reduce technical barriers, we developed the Teacher Dashboard as a web application, eliminating the need for specialized software or powerful devices.
+
+Overall, we would rate ourselves good in this category.
 
 ### Section 2.6 - Maintainability
 
@@ -100,9 +118,13 @@ Our codebase follows the Model-View-Controller (MVC) design pattern, resulting i
 
 For the Teacher Dashboard backend, we have thoroughly documented API setups and calls, ensuring clarity and ease of use for future developers, as well as facilitating smooth future expansion.
 
+Overall, we would rate ourselves very good in this category.
+
 ### Section 2.7 - Project Management
 
 Our project was effectively managed through regular team meetings during lab sessions, complemented by the use of project management tools such as Jira for task tracking and GitHub for version control. A detailed Gantt chart guided our timeline and milestones. We maintained open and frequent communication with our partners and clients at NAS and IBM, ensuring that our deliverables remained aligned with their expectations and that development stayed on track.
+
+Overall, we would rate ourselves good in this category.
 
 ---
 

@@ -134,9 +134,19 @@
   text-align: center;
 }
 
+/* Add this to your index.module.css file */
 .teamMember img {
-  width: 100%;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px; /* For round images, use 50%. For square with rounded corners, use something like 8px */
+  border: 3px solid #4e7171; /* Optional: adds a border in your theme color */
+}
+
+/* Optional hover effect */
+.teamMember img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .teamMember h3 {
@@ -166,4 +176,27 @@
   object-fit:cover;
   max-width: 45%;
   height: auto;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.socialIcon {
+  color: #4e7171; /* Match your theme color */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: #2d4545; /* Darker shade for hover state */
+  transform: scale(1.2);
+}
+
+/* Center all h1 headings within the centeredText class */
+.centeredText h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
