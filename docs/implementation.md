@@ -257,8 +257,35 @@ This pseudocode shows how the prompt is selected. If a predefined subject prompt
 
 Once generated, the backgrounds are displayed on the Teacher Dashboard for review. The teacher can then confirm their preferred images, which are uploaded to the backend using `POST /confirm-background/` for decorative backgrounds and `POST /confirm-quiz-background/` for quiz panel backgrounds, ensuring they are available for use in the final game environment.
 
+### 1.4 React + Vite Website
+We developed a React-based website for the teacher dashboard using React components. The frontend communicates with the Python backend server through api.js, which handles fetching and sending data via API requests.
+For navigation, we used react-router-dom to create browser routes, allowing users to navigate seamlessly between different pages.
+The website is styled using CSS to ensure a clean and user-friendly interface. We utilize modular CSS and CSS-in-JS techniques (such as styled-components or inline styles where needed) to maintain consistency and improve maintainability.
 
+```
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+function App() {
+   return (
+       <Router>
+           <Header />
+           <Routes>
+               <Route path="/" element={<HomePage />} />
+               <Route path="/upload-json" element={<UploadQuizQuestionPage />} />
+               <Route path="/upload-image" element={<UploadImagePage />} />
+               <Route path="/generate-questions" element={<GenerateQuestionPage />} />
+               <Route path="/room-code" element={<RoomCodePage />} />
+               <Route path="/background-image" element={<SetBackgroundImage />} />
+               <Route path="/teams" element={<TeamsPage />} />
+               <Route path="/settings" element={<SettingsPage />} />
+           </Routes>
+           <Footer />
+       </Router>
+   );
+}
+
+export default App;
+```
 
 ## Game Implementation
 ### 3.1 Game Configurations
@@ -833,6 +860,45 @@ FUNCTION MovePlayer(steps):
 
 We have a hop movement animation for each tile and camera tracking ensures the player stays in view. Prompts are presented via PromptManager, and player decisions are passed back using callbacks.
 
+As well as this Player Movement can be stopped early in three cases, as mentioned in section 3.11 and 3.9 players can choose to terminate their movement early if they either land on a home tile, or encounter another entity.
+
+On the case where a player has encountered another entity they can choose to stop for either combat or healing. Players can initate comabt with other players if this has been specifed in the game configuration settings, otherwise they can choose to heal fellow players. The logic for these encounters looks like this: 
+
+``` pseudo
+IF NOT initialMove:
+    IF PvP is allowed:
+        PROMPT player to fight other player(s) on same tile
+        IF player agrees:
+            TRIGGER combat
+            STOP movement
+            IF player died:
+                isMoving = false
+                EXIT coroutine
+
+    ELSE IF Healing is allowed:
+        PROMPT player to heal other player(s) on same tile
+        IF player agrees:
+            HEAL target player
+            STOP movement
+```
+
+As you can see in the pseudocode above players can choose to stop at a tile to heal or fight another player depending on the configuration settings of the game. PVP is only allowed when the player is not doing its inital move. 
+
+For a boss encounter the logic is simmilar to the player PVP, instead of combat with another player however it is with the main boss in game. The logic for this is illusrated below:
+```
+    IF Boss exists on tile:
+        PROMPT player to fight boss
+        IF player agrees:
+            TRIGGER boss combat
+            STOP movement
+            IF player died:
+                isMoving = false
+                EXIT coroutine
+```
+
+As you can see the the logic remains simmilar, however this encounter also checks to see if a player has died during the combat as this means they will remain inactive for the following rounds till respawn. 
+
+
 Boss Movement happens in a simmilar fashion however as no one plays as the boss, the dice are automatically rolled, all direction choices are made optimally so the boss will always move towards the closest player, this works with a Breadth First Search algorithim, how this is implemented is shown below:
 
 #### `GetDirectionTowardsPlayers` 
@@ -873,9 +939,16 @@ FUNCTION GetDirectionTowardsPlayers(startTile, availableDirections):
 As show above, the algorithim maintains an intial dictionary of directions, and maps each explored tile to its corresponding inital direction, if a player is found after moving down this direction the intial direction is returned. We make use of a queue for this traversal, this ensures that the algorithim checks all tile directions a step at a time naturally choosing the closest option. If no player is found the boss does not have an optimal choice to make and hence a fall back of any random valid direction is choosen.
 
 
+
 ### 3.11 Combat
 
+
 ### 3.12 UI 
+
+### 3.13 Buffs
+
+### 3.14 Game Modes
+
 
 ## Multiplayer Implementation 
 
