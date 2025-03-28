@@ -353,6 +353,18 @@ As you can see from the above, the entity class defines some important base stat
 
 The pseudocode also illustrates the set up for the buff system, throughout the game players can recieve buffs that provide some sort of advantage, below we will go into further depth about the types of buffs. The Entity method `UpdateBuffDuration` and `AddBuffs` are used to add buffs and manage how long they last. 
 
+#### Buff Types
+
+Our game contains several types of buffs, these can be permanent and last throughout the game or temporary and finish after the given buff duration. This is a comprehensive list of all the buff types: 
+- AttackUp - this causes a damage increase for the combat system 
+- DefenseUp - this causes a deffense increase for the combat system
+- EvadeUp - this gives a higher evade value for the combat system
+- ExtraDice - allows to roll more than one dice
+- DoublePoints - doubles point gains
+- TriplePoints - tripple point gains
+
+The Double Points and Triple Points buff are not used by the boss entity and only on the players, these are also not stackable and only the largest buff to the given player will be used. 
+
 #### Player Class and Boss Class
 
 As we have discussed alerady player and boss both inherit the Entity class, however they both also have individual stats and behaviour that is not shared between the two, below is a summary of the key individual components. 
@@ -422,7 +434,7 @@ Contains unique properties and functionality including:
 ### 3.3 Pre-game character selection 
 
 The flow diagram above describes the overall game flow for our project, we will discuss this flow in more detail in later section of this report, however we have also included a pregame stage for additional customisation of player avatars. 
-This Character selection stage allows for customisation of the color of the player avatar and what hat the player avatar wears, this is stored and is later accessed by our player manager to initalise player avatars with the correct presets. 
+This Character selection stage allows for customisation of the color of the player avatar and what hat the player avatar wears, this is stored and is later accessed by our player manager to initialise player avatars with the correct presets. 
 
 #### Character Selection 
 
@@ -565,7 +577,7 @@ As mentioned our game contains several sub managers along with the GameManager t
 
 ### 3.5 Game Setup
 
-At the start of our game after character selection we load up `ARBoard Scene` and enter the state `GameSetup` when this state starts in game manager the method. This method essentially calls our game initaliser which checks if all core components are initalised. 
+At the start of our game after character selection we load up `ARBoard Scene` and enter the state `GameSetup` when this state starts in game manager the method. This method essentially calls our game initialiser which checks if all core components are initialised. 
 
 ``` pseudo
 FUNCTION ConfirmManagerReady(managerName):
@@ -607,7 +619,7 @@ FUNCTION Start():
     NOTIFY GameInitializer that PlayerManager is ready
 ```
 
-As you can see tile manager needs to be initalise before player initalisation and tile spawn, this because players spawn in at home tiles and tiles keep track of wether there is a player on them, so it is essential to allow for players to spawn. 
+As you can see tile manager needs to be initialise before player initalisation and tile spawn, this because players spawn in at home tiles and tiles keep track of wether there is a player on them, so it is essential to allow for players to spawn. 
 
 Spawn for boss happens in a similar fashion but instead of spawning at home tiles, boss spawns in relation to a given distance between players. 
 
@@ -679,7 +691,9 @@ As shown in the code above, at startup, the system loads a JSON file named accor
 
 ### 3.8 Quiz 
 
-As mentioned in section 1.1 our project utilises IBM's Granite model for question generation, the stored question sets are retrieved via the method `Preload Questions` how this loading of questions works is shown below: 
+#### Loading Quiz 
+
+As mentioned in section 1.1 our project utilises IBM's Granite model for question generation, the stored question sets are retrieved via the method `Preload Questions`,this is a method in the `QuizManager`, how this loading of questions works is shown below: 
 
 ```psuedo
 FUNCTION PreloadQuestions():
@@ -689,7 +703,27 @@ FUNCTION PreloadQuestions():
     SET usedQuestions to empty
     SET questionsLoaded = true
 ```
-as you can see when the method is called we initalise a list of questions from the downloaded JSON, we also initalise an usedQuestions list to empty, this is where we will move questions that have been used to avoid reusing the questions players have already answered . 
+as you can see when the method is called we initialise a list of questions from the downloaded JSON, we also initialise an usedQuestions list to empty, this is where we will move questions that have been used to avoid reusing the questions players have already answered . 
+
+#### Starting a New Quiz
+
+When the quiz sequence is triggered (this happens either through a quiz tile or the start of a new round) we call the `StartNewQuiz` function in our `QuizManager` Class. The logic behind this function is shown below : 
+
+``` pseudo
+FUNCTION StartNewQuiz(isRoundQuiz):
+    IF quiz is already transitioning or active:
+        RETURN
+
+    SET OnQuizComplete = false
+    SET isRoundQuiz flag
+    DISABLE Board UI
+    START Coroutine QuizSequence()
+```
+As shown in the pseudocode above, StartNewQuiz first checks to see if the quiz is transitioning or active. If it is not, then it sets OnQuizComplete to false, checks to see if this is a quiz event triggered by the start of the round. If it is, that means all players must play the quiz and hence the flag is set and finally it turns off the Board UI and starts the Quiz Sequence. This is necessary as in our game the quiz is not another scene but instead a panel that slides up and down, hence UI elements would clutter the quiz panel.
+
+#### Main Quiz Logic 
+
+    After the StartNewQuizSequence , the main quiz logic is executed the implementation of this is shown below: 
 
 
 
@@ -770,7 +804,7 @@ The trap tile is another tile that punishes players that land on it as their fin
 
 ##### Quiz
 
-This tile initates a quiz sequence with one of the quiz questions we have generated with our Granite model and retrieved from our teacher dashboard, this process is explained in section 1.1. Only the player who has landed on the quiz tile is allowed to play the quiz, after answering the quiz sequence the player gets rewarded based of the quiz system, this has been explained in seciont 3.8. 
+This tile initates a quiz sequence with one of the quiz questions we have generated with our Granite model and retrieved from our teacher dashboard, this process is explained in section 1.1. Only the player who has landed on the quiz tile is allowed to play the quiz, after answering the quiz sequence the player gets rewarded based of the quiz system, this has been explained in section 3.8. 
 
 ##### Portal 
 
@@ -901,7 +935,8 @@ As you can see the the logic remains simmilar, however this encounter also check
 
 Boss Movement happens in a simmilar fashion however as no one plays as the boss, the dice are automatically rolled, all direction choices are made optimally so the boss will always move towards the closest player, this works with a Breadth First Search algorithim, how this is implemented is shown below:
 
-#### `GetDirectionTowardsPlayers` 
+#### `GetDirectionTowardsPlayers` \
+
 ``` psuedo
 FUNCTION GetDirectionTowardsPlayers(startTile, availableDirections):
     nextTile, currentTile = null, startTile
@@ -938,19 +973,91 @@ FUNCTION GetDirectionTowardsPlayers(startTile, availableDirections):
 
 As show above, the algorithim maintains an intial dictionary of directions, and maps each explored tile to its corresponding inital direction, if a player is found after moving down this direction the intial direction is returned. We make use of a queue for this traversal, this ensures that the algorithim checks all tile directions a step at a time naturally choosing the closest option. If no player is found the boss does not have an optimal choice to make and hence a fall back of any random valid direction is choosen.
 
-
-
 ### 3.11 Combat
 
+As mentioned in earlier sections, our game implements a combat system between entities. All entities have a given health and damage value; damage can be increased for players through buffs. For combat, two entities roll dice to get either an attack or defend score.
 
-### 3.12 UI 
+The combat system is managed by the `CombatManager`. When a combat encounter is triggered, we call `HandleFight`, which temporarily teleports the entities and camera to a combat scene, runs the combat logic, and then restores everything back to its original position.
 
-### 3.13 Buffs
+#### Combat flow
+The overall flow for combat is handled in the method HandleFight and can be described by the following pseudocode:
 
-### 3.14 Game Modes
+```
+FUNCTION HandleFight(entityA, entityB):
+    RECORD original positions and rotations
+    TELEPORT entities and camera to combat area
+    CALL CombatSequence(entityA, entityB)
+    TELEPORT entities and camera back to original positions
+```
+
+#### CombatSequence Logic
+ - Combat proceeds in two turns (one for each entity). In each turn:
+
+ - One entity attacks (rolls for attack)
+
+ - The other defends or evades (rolls accordingly)
+
+ - Damage is calculated and applied
+
+ - Death is checked
+
+The core logic is shown below:
+```psuedo
+FUNCTION CombatSequence(entityA, entityB):
+    FOR each turn (0 and 1):
+        SET attacker and defender
+
+        PROMPT attacker to roll attack dice
+        PROMPT defender to defend or evade
+
+        IF evading:
+            ROLL evade value
+            IF evade > attack:
+                NO damage
+            ELSE:
+                APPLY full damage
+        ELSE:
+            ROLL defence value
+            CALCULATE damage = max(1, attack - defence)
+            APPLY damage to defender
+
+        IF any entity dies:
+            END combat
+            BREAK
+```
+
+Each attack and defence roll includes a bonus, which is fetched via GetBonus() and is determined based on buffs and whether the entity is attacking, defending, or evading. 
+
+#### Damage Resolution
+
+After the roll results are obtained, damage is resolved in the ApplyDamage method. The logic for this is:
+
+```pseudo
+FUNCTION ApplyDamage(target, isEvade, attackValue, defenceValue, evadeValue):
+    IF isEvade:
+        IF evadeValue > attackValue:
+            damage = 0
+        ELSE:
+            damage = attackValue
+    ELSE:
+        damage = max(1, attackValue - defenceValue)
+
+    REDUCE target's health by damage
+    DISPLAY damage on screen
+```
+This system ensures that every attack always deals at least 1 damage unless the player successfully evades.
+
+#### Boss vs Player
+
+Another Key aspect to not for our 
+
+
+
+### 3.13 Game Modes
 
 
 ## Multiplayer Implementation 
 
-We have also attempted to implement a remote multiplayer version of our game, due to time constraints this feature has not been fully completed but it implements some new  
+s mentioned in earlier sections, our game implements a combat system between entities. All entities have a given health and damage value; damage can be increased for players through buffs. For combat, two entities roll dice to get either an attack or defend score.
 
+The combat system is managed by the CombatManager. When a combat encounter is triggered, we call HandleFight, which temporarily teleports the entities and camera to a combat scene, runs the combat logic, and then restores everything back to its original position.
