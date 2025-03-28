@@ -6,9 +6,9 @@ export default function TeamSection() {
         {
             name: 'Ryan Li',
             role: 'Team Leader, Game Developer, Client Liaison',
-            imageUrl: 'https://github.com/Ryanli-BP.png',
+            imageUrl: 'teamImg/ryan.jpeg',
             githubUrl: 'https://github.com/Ryanli-BP',
-            linkedinUrl: 'https://www.linkedin.com/in/ryan-li-profile'
+            linkedinUrl: 'https://www.linkedin.com/in/man-hui-li'
         },
         {
             name: 'Jack Mok',
@@ -19,17 +19,17 @@ export default function TeamSection() {
         },
         {
             name: 'Jack Pan',
-            role: 'Researcher, Full Stack Developer, Tester',
-            imageUrl: 'https://github.com/dcloud347.png',
+            role: 'Researcher, Backend Developer, Tester',
+            imageUrl: 'teamImg/jackP.jpeg',
             githubUrl: 'https://github.com/dcloud347',
-            linkedinUrl: 'https://www.linkedin.com/in/jack-pan-profile'
+            linkedinUrl: 'https://www.linkedin.com/in/yue-pan-b35aa1322'
         },
         {
             name: 'Prantanil',
             role: 'Game Developer, Network Developer',
             imageUrl: 'https://github.com/Pran-bho.png',
             githubUrl: 'https://github.com/Pran-bho',
-            linkedinUrl: 'https://www.linkedin.com/in/prantanil-profile'
+            linkedinUrl: 'https://www.linkedin.com/in/prantanil-bhowmick/'
         },
     ];
 
