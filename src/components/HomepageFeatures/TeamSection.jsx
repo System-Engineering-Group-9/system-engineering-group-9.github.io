@@ -27,7 +27,7 @@ export default function TeamSection() {
         {
             name: 'Prantanil',
             role: 'Game Developer, Network Developer',
-            imageUrl: 'https://github.com/Pran-bho.png',
+            imageUrl: 'teamImg/prantanil.jpeg',
             githubUrl: 'https://github.com/Pran-bho',
             linkedinUrl: 'https://www.linkedin.com/in/prantanil-bhowmick/'
         },

@@ -59,7 +59,7 @@ export default function Home() {
             <iframe
                 width="100%"
                 height="500px"
-                src="https://www.youtube.com/embed/Bo3ZEbmgZ4A" // Change this to your demo video link
+                src="https://www.youtube.com/embed/fvvvVxxP4b4" // Change this to your demo video link
                 title="YouTube video player"
                 style={{border: "none"}}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
