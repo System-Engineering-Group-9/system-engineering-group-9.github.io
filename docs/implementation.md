@@ -1049,15 +1049,67 @@ This system ensures that every attack always deals at least 1 damage unless the 
 
 #### Boss vs Player
 
-Another Key aspect to not for our 
+A few key differences between boss and player entites in combat: 
+- Boss can never evade
+- Players can choose to evade or defend
+- Like movement Boss' dice roll is automatic however player must click the dice roll prompt
 
+#### 3.12 AR
+Our game includes an Augmented Reality (AR) feature that allows mobile players to place the board into the physical environment using a mobile device. This system is implemented using Unity’s AR Foundation package and is activated at the beginning of the game in the ARBoard scene.
 
+AR functionality centres around surface detection and board placement. Players use a touchscreen interface to place the virtual game board on a flat surface detected in the real world. Once the board is placed, AR detection is disabled and the game proceeds with the board fixed in position.
 
+The logic behind this system is shown below:
+
+```
+FUNCTION Awake():
+    IF running on PC:
+        SET world scale to 1
+        SHOW board immediately
+    ELSE:
+        SET world scale to 0.05
+        HIDE board until placed
+
+FUNCTION FingerDown(finger):
+    IF board has already been placed OR finger is not primary:
+        RETURN
+
+    PERFORM raycast from screen position to detect planes
+
+    IF plane is hit:
+        SET board position to hit point
+        SET board scale using world scale
+
+        IF plane is horizontal:
+            ROTATE board to face camera
+
+        ACTIVATE board
+        CALL GameInitializer.InitializeGame()
+        DISABLE all planes and plane detection
+```
+As shown above, raycasting is used to detect valid surfaces for board placement. When a horizontal plane is tapped, the board is positioned at the hit point and rotated to face the player. Plane detection is disabled afterwards to lock the board in place and avoid visual clutter.
+
+This system ensures that the game board appears realistically anchored in the physical world.
 ### 3.13 Game Modes
 
+Our Game Contains 4 different Game modes: Buzz, FFA, COOP, Time Rush. Each mode alters how the game is played, how milestones work and how players interact with each other. 
+
+#### COOP
+
+In COOP players work together to defeat the boss, in this game mode players can heal each other on encounters and win the game when the boss is dead.
+
+#### FFA 
+In the Free For All mode players change milestones based on a trophy system, if they have gained enough points and are at a home they will level up 
+
+#### Time Rush
+In time rush there are consecutive questions that must be done under a stricter time limit, incentivising faster answers. 
+
+#### Buzz
+
+Buzz follows a standard buzz layout for a game whre players must buzz in to answer questions, this also encourages more competitive play among players. 
 
 ## Multiplayer Implementation 
 
-s mentioned in earlier sections, our game implements a combat system between entities. All entities have a given health and damage value; damage can be increased for players through buffs. For combat, two entities roll dice to get either an attack or defend score.
+As mentioned in earlier sections, our game implements a combat system between entities. All entities have a given health and damage value; damage can be increased for players through buffs. For combat, two entities roll dice to get either an attack or defend score.
 
 The combat system is managed by the CombatManager. When a combat encounter is triggered, we call HandleFight, which temporarily teleports the entities and camera to a combat scene, runs the combat logic, and then restores everything back to its original position.
