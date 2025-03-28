@@ -30,7 +30,7 @@ sidebar_position: 9
 | Customizable avatar with different colors and cosmetics.                                                                                                                            | SHOULD   | DONE  | Jack Mok                  |
 | Game board is generated at runtime, customizable with JSON.                                                                                                                         | SHOULD   | DONE  | Ryan, Jack Pan            |
 | Allow remote play online.                                                                                                                                                           | SHOULD   | NO    | -                         |
-| Objects (such as toys and small figures) are to be image recognized using offline AI with Granite. They would then be the avatars of the player in their virtual round of the game. | COULD   | NO    | -                         |
+| Objects (such as toys and small figures) are to be image recognized using offline AI with Granite. They would then be the avatars of the player in their virtual round of the game. | COULD    | NO    | -                         |
 | Generate 3D meshes for the background.                                                                                                                                              | COULD    | NO    | -                         |
 | Geography (linking questions to Google Earth opening), science (including scientific animations), and maths (with explainers in the center of the board).                           | WON’T DO | -     |
 
@@ -50,8 +50,8 @@ sidebar_position: 9
 | Work Packages            | Ryan Li | Jack Mok | Jack Pan | Prantanil |
 |--------------------------|---------|----------|----------|-----------|
 | Research and Experiments | 50%     | 0%       | 50%      | 0%        |
-| UI Design                | 19%     | 76%      | 0%       | 5%        |
-| Coding                   | 56%     | 14%      | 17%      | 8%        |
+| UI Design                | 19%     | 66%      | 10%      | 5%        |
+| Coding                   | 55%     | 15%      | 22%      | 8%        |
 | Testing                  | 30%     | 0%       | 60%      | 0%        |
 | **Overall Contribution** | **45%** | **19%**  | **24%**  | **12%**   |
 
