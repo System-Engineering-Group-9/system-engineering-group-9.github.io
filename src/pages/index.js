@@ -73,7 +73,7 @@ export default function Home() {
           <h1>Project Timeline</h1>
           <p>We have managed our development process using a Gantt chart.</p>
           <img alt={"development process"}
-               src='/photos/gantt chart.png'/>
+               src='photos/gantt chart.png'/>
         </div>
         <br/>
         <div className={styles.centeredText}>
