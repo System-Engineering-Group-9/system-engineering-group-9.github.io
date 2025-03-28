@@ -7,7 +7,7 @@ sidebar_position: 7
 
 ## Overview
 
-Our project aims to reduce the burden of generating lesson materials for teachers as well as create an entertaining environment where students can both learn and enjoy themselves by playing a game with their cohort. The use case of our project and its target audience has been constantly kept in mind during the development process; hence we have made several design choices to make our project as accessible and easy to use for our target audience as possible. This is achieved by using quantized AI models, optimized rendering pipelines and a lightweight networking solution.
+Our project aims to reduce the burden of generating lesson materials for teachers as well as create an entertaining environment where students can both learn and enjoy themselves by playing a game with their cohort. The use case of our project and its target audience has been constantly kept in mind during the development process; hence we have made sevral design choices to make our project as accessible and easy to use for our target audience as possible. This is achieved by using quantized AI models, optimized rendering pipelines and a lightweight networking solution.
 
 ## Technologies
 
@@ -304,7 +304,7 @@ GetCurrentRules():
 
 As shown above the key configuration settigs: Quiz Time Limit, Number of Players, Quiz Mode, Board Number are retrieved, these are used for set up and gameplay rules, if there is some error with the fetching or any parameters aren't select we have put into place appropriate backups to ensure the game continues regardless. 
 
-### 3.1 Core entity classes
+### 3.2 Core entity classes
 
 Our game contains two types of entities, Players and Boss. The player entity is what each student controls, boss is an environment entity that the player competes against . Both entities inherit from the Entity Class, a concise pseudo code version of this can be seen below: 
 
@@ -392,7 +392,7 @@ Contains unique properties and functionality including:
 </details>
 
 
-### 3.2 Pre-game character selection 
+### 3.3 Pre-game character selection 
 
 The flow diagram above describes the overall game flow for our project, we will discuss this flow in more detail in later section of this report, however we have also included a pregame stage for additional customisation of player avatars. 
 This Character selection stage allows for customisation of the color of the player avatar and what hat the player avatar wears, this is stored and is later accessed by our player manager to initalise player avatars with the correct presets. 
@@ -423,7 +423,7 @@ StartGame:
 
 The simplified pseudocode above illustrates the core logic behind this selection
 
-### 3.3 Manager Overview
+### 3.4 Manager Overview
 
 ![image](./pseudoSnippets/gameFlow.jpg)
 
@@ -536,7 +536,7 @@ As mentioned our game contains several sub managers along with the GameManager t
 - Handles physics-based dice simulation
 </details>
 
-### 3.4 Game Setup
+### 3.5 Game Setup
 
 At the start of our game after character selection we load up `ARBoard Scene` and enter the state `GameSetup` when this state starts in game manager the method. This method essentially calls our game initaliser which checks if all core components are initalised. 
 
@@ -560,7 +560,7 @@ FUNCTION ConfirmManagerReady(managerName):
 
 The above shows a simplified version of our swtich case to illustrate which managers are checked at game setup, they only enter this swtich case when the manager object is loaded and the intialisation steps for each indiivdual manager is complete.
 
-### 3.5 Player and Boss Initalisation
+### 3.6 Player and Boss Initalisation
 
 As mentioned in section 3.1 our game contains two entities, boss and player, initalisation for the player happens through player manager, the snippet below is a simplified view into how this happens: 
 
@@ -621,7 +621,7 @@ FUNCTION SpawnBossAtStartTile():
     MOVE boss to spawn position
     SET boss’s current tile reference to spawnTile
 ```
-### 3.6 Board Generation
+### 3.7 Board Generation
 
 The game board is generated at runtime based on a JSON layout file. This layout defines the structure, tile types, connections, and decorative arrows, allowing for flexible board configurations and makes creating maps easier, below we will go over how we have implemented this in our code base. 
 
@@ -650,14 +650,94 @@ Mark board as ready
 ```
 As shown in the code above, at startup, the system loads a JSON file named according to the board number from GameConfigManager (we have explained the responsibilities of this manager in section 3.1). If the specific layout is missing, there is a fallback to a default layout. The JSON data includes a list `TileData[] tiles` (which contains the connected tiles, coordinates, and an optional homePlayerID to indicate that the tile is a home tile) and an arrows list `ArrowData[] arrows`, which contains the coordinates and rotation of decorative direction arrows that are used to signifying that there is a crossroads. Tile prefabs are then instantiated after loading the JSON, with their appropriate materials and coordinates. Decorative direction arrows are placed above the instantiated tiles, and the connections between adjacent tiles are set up, this is later used in player movement to indicate valid direction choices. After generation is complete, a global flag BoardGenFinished is activated so the game can proceed.
 
-### 3.7 Tiles
+### 3.8 Tiles
 
-In our game the board is made up of several tile components, there are several types of tile componenets which trigger different actions for players that land on them, 
-the different type of tile components is outlined below: 
- - Home Tile : if a player lands on this type of tile their turn simply finishes there are no tile actions. 
+As mentioned in section 3.6 our game board is made up of several connected tiles. Appart from storing references to connections and possible directions from a tile, tiles also contain other characteristics such as tileType and tilePlayerID. Our game consists of 6 different tile types that cause a player to do a specific action as well as one normal tile type with no action :
 
-### 3.8 Movement
+#### Tile Types
 
+##### Home Tile
+
+When a player lands on their designated home tile, they are given the option to end their movement early, even if they have remaining steps. The tile serves two main purposes, depending on the selected game mode:
+
+ - Cooperative Mode: If the player has enough points, they can level up, which increases their player level, player levels gives players a permanent    buff and an increase in health, this helps players fight the boss to win the game
+ - Team / Free-For-All Mode: If the player has enough points and hasn't yet reached the maximum trophy count, they can earn a trophy. Trophies contribute toward individual progression and victory conditions.
+
+Each home tile is uniquely assigned to a player at the beginning of the game. Visually, a flag with the player's color is placed on their home tile. Level ups and trophy gains also increase the current milestone, the milestone system adds a multiplier to point gains and hence a shared milestone system prevents one player from advancing much faster than others in the game. 
+
+
+
+##### Gain Points
+
+When a players final move is a Gain Points tile they gain a certain number of points, the ammount of points they gain depends on several factors: the current milestone, any buffs they may have and base point value. The below pseudocode shows how this gain points allocation works: 
+``` psuedo
+FUNCTION HandleGainPointsTile(player):
+
+    SET milestone ← PlayerManager.CurrentMilestone
+    SET milestoneMultiplier ← 1.0 + 0.5 * (milestone - 1)
+
+    SET basePoints ← RANDOM_INT_IN_RANGE(1, 5)
+    SET finalBasePoints ← ROUND_TO_INT(basePoints * milestoneMultiplier)
+
+    SET buffMultiplier ← 1
+    IF player.HasTriplePointsBuff():
+        SET buffMultiplier ← 3
+    ELSE IF player.HasDoublePointsBuff():
+        SET buffMultiplier ← 2
+
+    SET totalPoints ← finalBasePoints * buffMultiplier
+
+    IF buffMultiplier > 1:
+        UIManager.DisplayBonusMultiplier(buffMultiplier)
+
+    CALL UIManager.DisplayPointChange(finalBasePoints)  
+    CALL UIManager.DisplayGainStarAnimation(player.ID)
+
+    CALL player.AddPoints(totalPoints)
+  ```
+
+As you can see above base point value is calculated by a random number between 1-5 inclusive, this value is then multiplied with the current milestone multiplier and any buffs the player may have. Buffs are not stacked and only the highest buff is choosen. Then after the calcuation there is an animation for gaining points and the point value is added to the relevant player. 
+
+##### Lose Points
+
+The lose points tile acts simmilarly to gain points but has the adverse effect, players who land on this tile as their final move are punished
+by having a point deduction. The calculation for this deduciton is shown below:
+
+```pseudo
+FUNCTION HandleLosePointsTile(player):
+
+    SET milestone ← PlayerManager.CurrentMilestone
+    SET dropMultiplier ← 1.0 + 0.5 * (milestone - 1)
+
+    SET basePointsLost ← RANDOM_INT_IN_RANGE(1, 5)   
+    SET finalPointsLost ← -ROUND_TO_INT(basePointsLost * dropMultiplier)
+
+    CALL UIManager.DisplayPointChange(finalPointsLost)
+    CALL UIManager.DisplayLoseStarAnimation()
+
+    CALL player.AddPoints(finalPointsLost)  
+```
+
+As you can see the point deduction is effected by two values, base points and a drop mutliplyer. Base points is again choosen by a random number generator with the range 1-5. The drop multiplier takes into account the current milestone of players and substracts points accordingly. This means that while progressing through milestones does cause faster point increases it also causes more aggresive point deductions. After the calculation is complete an animation for drop point plays and the player's points are substracted. 
+
+
+##### Trap
+
+The trap tile is another tile that punishes players that land on it as their final step, trap tile causes a health deduction for the given player. This works with the health system where if a player's health reaches zero they die and are unable to play the game for a specified ammount of rounds. The calculation for how much health is deducted again is random, trap tiles however do not get more or less powerful acording to milestones and hence it is simply a random number within a range of 1-2 that is deducted. After this the health is dedcuted from the apropriate player and an anvil dropping animation plays. 
+
+
+
+<details>
+<summary>Quiz</summary>
+</details>
+
+<details>
+<summary>Portal</summary>
+</details>
+
+#### Player tile id system
+
+### 3.9 Movement
 Player movement is a core mechanic in the game. At the start of their turn, players roll a set of dice to determine how many steps they can move across the board. This mechanic is orchestrated by the DiceManager and Dice classes and tightly with the board, animation, and prompt systems.
 
 #### Dice Rolling Logic
@@ -742,14 +822,9 @@ FUNCTION GetDirectionTowardsPlayers(startTile, availableDirections):
 As show above, the algorithim maintains an intial dictionary of directions, and maps each explored tile to its corresponding inital direction, if a player is found after moving down this direction the intial direction is returned. We make use of a queue for this traversal, this ensures that the algorithim checks all tile directions a step at a time naturally choosing the closest option. If no player is found the boss does not have an optimal choice to make and hence a fall back of any random valid direction is choosen.
 
 
-### 3.9 Combat
+### 3.11 Combat
 
-### 3.10 UI 
-
-
-
-
-
+### 3.12 UI 
 
 ## Multiplayer Implementation 
 
