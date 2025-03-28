@@ -652,9 +652,21 @@ As shown in the code above, at startup, the system loads a JSON file named accor
 
 ### 3.8 Quiz 
 
-As mentioned in section 1.1 our project utilises IBM's Granite model for question generation, the stored question sets are retrieved via 
+As mentioned in section 1.1 our project utilises IBM's Granite model for question generation, the stored question sets are retrieved via the method `Preload Questions` how this loading of questions works is shown below: 
 
-### 3.8 Tiles
+```psuedo
+FUNCTION PreloadQuestions():
+    CALL DownloadQuestionsJSON()
+
+    SET availableQuestions = copy of loaded questions
+    SET usedQuestions to empty
+    SET questionsLoaded = true
+```
+as you can see when the method is called we initalise a list of questions from the downloaded JSON, we also initalise an usedQuestions list to empty, this is where we will move questions that have been used to avoid reusing the questions players have already answered . 
+
+
+
+### 3.9 Tiles
 
 As mentioned in section 3.6 our game board is made up of several connected tiles. Appart from storing references to connections and possible directions from a tile, tiles also contain other characteristics such as tileType and tilePlayerID. Our game consists of 7 different tile types that cause a player to do a specific action as well as one normal tile type with no action. 
 
@@ -774,7 +786,9 @@ as you can see above the reroll tile case causes the Game manager to switch the 
 
 #### Player tile id system
 
-### 3.9 Movement
+We also keep track of which players are on tiles, this is essential for the combat and healing mechanics aswell as how the boss finds players and spawns in. This is done by each tile storing a list `TilePlayerIDs`, whenever a player lands on a certain tile, its unique player ID is added into that tiles list, it is subsequently also removed whenever the player moves of this tile. This done by doing `tile.TilePlayerIDs.remove(player)` and `tile.TilePlayerIDs.add(player)` which simply inserts or delets an ID from the list.   
+
+### 3.10 Movement
 Player movement is a core mechanic in the game. At the start of their turn, players roll a set of dice to determine how many steps they can move across the board. This mechanic is orchestrated by the DiceManager and Dice classes and tightly with the board, animation, and prompt systems.
 
 #### Dice Rolling Logic
