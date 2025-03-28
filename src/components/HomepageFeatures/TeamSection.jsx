@@ -19,7 +19,7 @@ export default function TeamSection() {
         },
         {
             name: 'Jack Pan',
-            role: 'Researcher, Backend Developer, Tester',
+            role: 'Researcher, Full Stack Developer, Tester',
             imageUrl: 'teamImg/jackP.jpeg',
             githubUrl: 'https://github.com/dcloud347',
             linkedinUrl: 'https://www.linkedin.com/in/yue-pan-b35aa1322'
