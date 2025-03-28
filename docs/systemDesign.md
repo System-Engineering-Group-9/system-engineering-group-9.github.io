@@ -144,6 +144,14 @@ different times. The client remains the master client for the rest of the game u
 disconnect, in which case the master client is automatically reassigned to the next available
 client.
 
+### Section 2.3 - UML Structure Overview
+
+Here is an overview of our classes structure, mainly showing how game managers in Unity are interrelated to each other and showing their dependencies. We can see all managers are controlled by `GameManager` which follows the MVC design pattern. However, this is only a simplicit view of the structure, where lots of variables and methods are not shown, also some classes are also ignored for illustrative purpose. In Reality, the game managers interact with each other in a much more complicated way.
+
+![image](./SysDesImg/UML.drawio.png)
+
+
+
 --- 
 
 ## Section 3 - System Flow
