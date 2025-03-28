@@ -722,9 +722,100 @@ FUNCTION StartNewQuiz(isRoundQuiz):
 As shown in the pseudocode above, StartNewQuiz first checks to see if the quiz is transitioning or active. If it is not, then it sets OnQuizComplete to false, checks to see if this is a quiz event triggered by the start of the round. If it is, that means all players must play the quiz and hence the flag is set and finally it turns off the Board UI and starts the Quiz Sequence. This is necessary as in our game the quiz is not another scene but instead a panel that slides up and down, hence UI elements would clutter the quiz panel.
 
 #### Main Quiz Logic 
+After the quiz panel slides up, the main logic for the quiz begins. This logic is handled by the QuizManager and consists of selecting the appropriate number of questions, displaying them one by one, tracking correct answers and time taken, and finally distributing rewards based on performance.
 
-    After the StartNewQuizSequence , the main quiz logic is executed the implementation of this is shown below: 
+The number of questions selected depends on the quiz mode (Normal, Buzz, or Time Rush). Questions are randomly selected from a preloaded list and removed from the pool after being used to avoid repetition. The player's response and streak are tracked, and the UI is updated in real time using the QuizDisplay component.
 
+The logic for this is shown below:
+
+```
+FUNCTION QuizSequence():
+    CALL StartQuizSequence()
+    CALL StartQuizLogic()
+
+    WHILE quiz is active:
+        IF timeRemaining <= 0 OR all questions answered:
+            SET quiz as inactive
+            BREAK
+
+    CALL EndQuizSequence()
+    CALL HandleQuizComplete()
+```
+
+##### StartQuizLogic Pseudocode
+```
+FUNCTION StartQuizLogic():
+    SET timer to quizDuration
+    SET currentQuestionIndex = -1
+    SET quiz as active
+    ENABLE answer buttons
+
+    SET mode = current quiz mode
+    SET questionCount = 5 IF mode is TIME_RUSH ELSE 1
+
+    IF not enough questions in pool:
+        RESET question pool
+
+    SELECT random subset of questionCount from available pool
+    REMOVE selected questions from available pool
+    STORE them as currentQuizQuestions
+
+    CALL DisplayNextQuestion()
+```
+
+Answer Evaluation Logic Pseudocode:
+```
+FUNCTION CheckAnswer(selectedIndex):
+    IF quiz not active:
+        RETURN false
+
+    GET correct answer for current question
+    INCREMENT answeredQuestionsCount
+    CALCULATE lastAnswerTime = now - questionStartTime
+
+    IF answer is correct:
+        INCREMENT correctAnswerCount
+        INCREMENT player’s quiz streak
+    ELSE:
+        RESET player’s quiz streak
+
+    RETURN true IF correct ELSE false
+```
+
+##### Quiz Completion and Reward Pseudocode
+```
+FUNCTION HandleQuizComplete():
+    DETERMINE rewardTier = EvaluateQuizPerformance()
+
+    IF isRoundQuiz:
+        FOR each player:
+            GIVE rewardTier
+    ELSE:
+        GIVE rewardTier to current player
+
+    SET OnQuizComplete = true
+```
+
+##### EvaluateQuizPerformance Pseudocode
+```
+FUNCTION EvaluateQuizPerformance():
+    SWITCH (current quiz mode):
+        CASE NORMAL:
+            RETURN EvaluateDefaultMode()
+        CASE BUZZ:
+            RETURN EvaluateBuzzMode()
+        CASE TIME_RUSH:
+            RETURN EvaluateTimeRushMode()
+```
+
+Each of these evaluation methods takes into account the player's performance (score, speed, or streaks) to return a tiered reward:
+- NoReward
+
+- SmallReward
+
+- MediumReward
+
+- BigReward
 
 
 ### 3.9 Tiles
@@ -1087,9 +1178,8 @@ FUNCTION FingerDown(finger):
         CALL GameInitializer.InitializeGame()
         DISABLE all planes and plane detection
 ```
-As shown above, raycasting is used to detect valid surfaces for board placement. When a horizontal plane is tapped, the board is positioned at the hit point and rotated to face the player. Plane detection is disabled afterwards to lock the board in place and avoid visual clutter.
+As shown above, raycasting is used to detect valid surfaces for board placement. When a horizontal plane is tapped, the board is positioned at the hit point and rotated to face the player. Plane detection is disabled afterwards to lock the board in place and avoid visual clutter. This system ensures that the game board appears realistically anchored in the physical world.
 
-This system ensures that the game board appears realistically anchored in the physical world.
 ### 3.13 Game Modes
 
 Our Game Contains 4 different Game modes: Buzz, FFA, COOP, Time Rush. Each mode alters how the game is played, how milestones work and how players interact with each other. 
@@ -1107,6 +1197,7 @@ In time rush there are consecutive questions that must be done under a stricter 
 #### Buzz
 
 Buzz follows a standard buzz layout for a game whre players must buzz in to answer questions, this also encourages more competitive play among players. 
+
 
 ## Multiplayer Implementation 
 
